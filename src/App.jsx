@@ -2,15 +2,16 @@ import { Toaster } from 'react-hot-toast';
 import './App.css';
 import Header from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
-import LocationsList from './components/LocationsList/LocationsList';
-
+import NearLocation from './components/NearLocation/NearLocation';
+import HomePage from './components/HomePage/HomePage';
 function App() {
   return (
-    <div>
+    <div >
       <Toaster />
       <Header />
       <Routes>
-        <Route path="/" element={<LocationsList />} />
+        <Route path="/" element={<HomePage />}/>
+       
       </Routes>
     </div>
   );
