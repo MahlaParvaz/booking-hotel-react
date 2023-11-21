@@ -17,6 +17,9 @@ export default {
         '--rose-500': '#f43f5e',
         '--violet-700': '#6d28d9',
         '--red': '#CC2D4A',
+        '--light-green': '#E2F1E8',
+        '--light-gray': '#F2F0F2',
+        '--dark-green': '#064749',
       },
     },
     screens: {
