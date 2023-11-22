@@ -45,14 +45,13 @@ function Header() {
   useOutsideClick(dateRef, 'dateDropDown', () => setOpenDate(false));
 
   return (
-
     <div className="header   w-full p-0 relative  flex flex-col justify-start items-center gap-4  ">
-   {/* navbar */}
+      {/* navbar */}
       <NavBar />
       <div className="headerSearch z-50 absolute top-[80px] -bg--light-gray w-full laptop:m-0   flex laptop:flex-row laptop:max-w-[1000px]  laptop:justify-between laptop:items-center mobile:gap-4 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-20">
         {/* location */}
         <div className="headerSearchItem px-2 flex  items-center laptop:flex-1 laptop:w-80 relative h-12 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
-          <MdLocationOn className="headerIcon locationIcon -text--violet-700 w-7 h-6 inline-block mr-3 " />
+          <MdLocationOn className="headerIcon locationIcon -text--red w-7 h-6 inline-block mr-3 " />
           <input
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
@@ -66,7 +65,7 @@ function Header() {
         </div>
         {/* date */}
         <div className="headerSearchItem flex items-center   relative h-12 laptop:flex-1 laptop:w-80 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
-          <HiCalendar className="headerIcon dateIcon -text--violet-700  w-7 h-5 inline-block mr-3 " />
+          <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 " />
           <div
             className="dateDropDown mobile:w-80 text-slate-500 "
             onClick={() => setOpenDate(!openDate)}
@@ -101,7 +100,7 @@ function Header() {
         </div>
         {/* room */}
         <div className="headerSearchItem flex  cursor-pointer items-center relative h-12 laptop:flex-1 laptop:w-64 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
-          <ImHome3 className="headerIcon -text--violet-700   w-7 h-5 inline-block mr-3 " />
+          <ImHome3 className="headerIcon -text--red   w-7 h-5 inline-block mr-3 " />
           <div
             id="optionDropDown "
             className="  mobile:w-80  text-slate-500 "
@@ -119,13 +118,12 @@ function Header() {
           )}
         </div>
         {/* search btn */}
-        <div className="headerSearchItem  cursor-pointer laptop:rounded-full laptop:w-11 laptop:h-11 laptop:mr-1 -bg--violet-700 text-white flex items-center relative  h-12 mobile:w-full  mobile:rounded-lg mobile:py-1  mobile:justify-center">
+        <div className="headerSearchItem  cursor-pointer laptop:rounded-full laptop:w-11 laptop:h-11 laptop:mr-1 -bg--red text-white flex items-center relative  h-12 mobile:w-full  mobile:rounded-lg mobile:py-1  mobile:justify-center">
           <button className="headerSearchBtn " onClick={handleSearch}>
             <HiSearch className="headerIcon text-lg" />
           </button>
         </div>
       </div>
-   
     </div>
   );
 }

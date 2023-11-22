@@ -38,7 +38,27 @@ a {
 .accordion-item:not(:last-child) {
   border-bottom: 1px solid #e0e2e5;
 }
+/* swiper */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
 
+.swiper_container:hover .swiper-button-prev,
+.swiper_container:hover .swiper-button-next {
+  display: flex !important;
+}
+
+/* Add these styles to make the arrows more prominent on hover */
+
+.swiper-slide-active {
+  filter: blur(0px);
+}
+
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

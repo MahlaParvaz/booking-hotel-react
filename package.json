@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ionic/react": "^7.5.6",
     "axios": "^1.6.2",
     "date-fns": "^2.30.0",
     "heroicons": "^2.0.18",
@@ -24,8 +25,10 @@
     "react-icons": "^4.12.0",
     "react-leaflet": "^4.2.1",
     "react-multi-carousel": "^2.8.4",
+    "react-owl-carousel": "^2.3.3",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.19.0",
+    "swiper": "^11.0.4",
     "toastr": "^2.1.4"
   },
   "devDependencies": {

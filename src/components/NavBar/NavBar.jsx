@@ -24,7 +24,7 @@ function NavBar() {
         <div className="navbarList flex-1 relative  h-full ">
           <button className="login flex items-center justify-center gap-2 p-2 absolute right-4 text-[16px] ">
             Login
-            <IoIosLogIn className="text-[20px] font-extrabold -text--red" />
+            <IoIosLogIn className="text-[24px] font-extrabold -text--rose-500" />
           </button>
         </div>
       </div>

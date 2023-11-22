@@ -2,13 +2,18 @@ import PopularLocation from '../PopularLocation/PopularLocation';
 import NearLocation from '../NearLocation/NearLocation';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { IoChevronDown } from 'react-icons/io5';
+import { IoChevronDown, IoThermometer } from 'react-icons/io5';
 import { FaQuestion } from 'react-icons/fa6';
-import { Carousel } from 'react-responsive-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
-// import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import { IonIcon } from '@ionic/react';
 const data = [
   {
     id: 1,
@@ -26,25 +31,56 @@ const data = [
     text: ' If you cancel the accommodation up to two days before the reservation, the amount will be refunded with a ten percent deduction. If you cancel it up to 24 hours before the stay, 60 percent of the amount will be deducted, and the remainder will be refunded to you.',
   },
 ];
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+const opinionData = [
+  {
+    id: 1,
+    avatar:
+      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Morty',
+    description:
+      'Everything went very well, there were some minor issues with the hotels maintenance, but when I requested improvement, the hotel staff handled the problem very well. This website was very good for my reservation. So far, I have made two reservations through this site and I am satisfied. Thank you.',
   },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 4.5,
+
+  {
+    id: 2,
+    avatar:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Susan',
+    description:
+      'I found the best place to stay. I went with my family to one of the cities in the Netherlands and was very satisfied with the hotel. Finding a hotel with this website is very easy.',
   },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
+  {
+    id: 3,
+    avatar:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Diana',
+    description: 'We had the most dreamy accommodation with my spouse.',
   },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
+  {
+    id: 4,
+    avatar:
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Emily',
+    description:
+      ' The stay was very comfortable. With this website, I could easily find the place I was looking for. Thank you.',
   },
-};
+  {
+    id: 5,
+    avatar:
+      'https://images.unsplash.com/photo-1488161628813-04466f872be2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'John',
+    description:
+      'So far, I have been satisfied with every hotel I booked through this site.',
+  },
+  {
+    id: 5,
+    avatar:
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Doris',
+    description:
+      'The hotels I booked were very comfortable and clean, located in the desired area. I was very satisfied. Thank you for facilitating the hotel booking process.',
+  },
+];
 
 function HomePage() {
   return (
@@ -177,44 +213,66 @@ function AccordionItem({ id, title, onOpen, open, children }) {
 
 function UsersOpinion() {
   return (
-    <div className="popularLocations w-full mt-10 mb-5  p-0 relative flex flex-col  justify-center items-center gap-6">
-      <h2 className="laptop:w-[85%] px-4  text-lg font-bold">Users opinion</h2>
-      <div className=" flex gap-6 h-[300px]">
-        <Carousel
-          responsive={responsive}
-          axis="horizontal"
-          showStatus={false}
-          className="relative"
-          customLeftArrow={<CustomLeftArrow />}
-          customRightArrow={<CustomRightArrow />}
+    <div className="swiper w-full mb-10 p-4 mt-10 relative flex flex-col justify-center items-center gap-6">
+      <h2 className=" px-4 text-lg font-bold  w-[85%]">Users opinion</h2>
+      <div className="w-[86.5%]  h-[400px] mb-10 rounded-[10px] overflow-hidden">
+        <Swiper
+          effect={'coverflow'}
+          grabCursor={true}
+          centeredSlides={true}
+          loop={true}
+          slidesPerView={'auto'}
+          spaceBetween={10}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2,
+          }}
+          // pagination={{  clickable: true }}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            clickable: true,
+          }}
+          modules={[EffectCoverflow, Pagination, Navigation]}
+          className="swiper_container  w-full h-full py-[20px] relative"
         >
-          <div>hi</div>
-        </Carousel>
+          {opinionData.map((item) => (
+            <SwiperSlide
+              key={item.id}
+              className="swiper-slide blur-[3px]  w-[300px] center bg-cover rounded-[30px] "
+            >
+              <div className="testimonialBox -bg--light-gray  flex flex-col justify-around items-center   w-[400px] h-full rounded-[30px] ">
+                <div className="-bg--dark-green rounded-t-[30px] rounded-bl-[30px] w-full flex justify-center items-center relative h-[250px]">
+                  <img
+                    className=" w-[100px] h-[100px] rounded-full object-cover "
+                    src={item.avatar}
+                    alt={item.name}
+                  />
+                </div>
+                <div className=" h-full p-4 flex flex-col justify-start top-[40px] text-[15px] rounded-tr-[30px]">
+                  <p className="name mb-2 text-center font-semibold">{item.name}</p>
+                  <p className="price overflow-hidden scroll-y-smooth mt-4 text-gray-600">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+          <div className="slider-controler">
+            <div className="swiper-button-prev slider-arrow left-5 text-[10px]  rounded-full  md:left-20 transform -translate-x-30 md:-translate-x-20 -text--dark-green">
+              <IonIcon name="arrow-back-outline" />
+            </div>
+            <div className="swiper-button-next slider-arrow left-58 md:left-70 transform -translate-x-58 md:-translate-x-70 -text--dark-green">
+              <IonIcon name="arrow-forward-outline" />
+            </div>
+            <div className="swiper-pagination  relative w-[15rem] bottom-1 ">
+              {/* Pagination styles */}
+            </div>
+          </div>
+        </Swiper>
       </div>
-    </div>
-  );
-}
-
-function CustomLeftArrow({ onClick, ...rest }) {
-  return (
-    <div
-      className="absolute top-0 bottom-0 hover:bg-white left-0 flex justify-center items-center p-3 opacity-80 hover:opacity-70 cursor-pointer z-20"
-      onClick={onClick}
-      {...rest}
-    >
-      <IoIosArrowDropleftCircle className="w-9 h-9 text-green-900" />
-    </div>
-  );
-}
-
-function CustomRightArrow({ onClick, ...rest }) {
-  return (
-    <div
-      className="absolute text-white hover:bg-white  top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-80  hover:opacity-70 cursor-pointer z-20"
-      onClick={onClick}
-      {...rest}
-    >
-      <IoIosArrowDroprightCircle className="w-9 h-9  text-green-900" />
     </div>
   );
 }
