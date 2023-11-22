@@ -4,8 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
-import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.

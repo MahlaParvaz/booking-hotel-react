@@ -35,6 +35,10 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+.accordion-item:not(:last-child) {
+  border-bottom: 1px solid #e0e2e5;
+}
+
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
