@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 function Footer() {
   return (
-    <div className="text-white  bg-black h-[270px] flex justify-around items-center">
+    <div className="footer  text-white w-full bg-black h-[270px] flex justify-around items-center">
       <div className="footerList h-[50%] ">
         <div className="footerItem flex flex-col justify-between items-start gap-6">
           <img

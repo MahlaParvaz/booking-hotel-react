@@ -3,7 +3,7 @@ import { HiCalendar, HiMinus, HiPlus, HiSearch } from 'react-icons/hi';
 import { useRef, useState } from 'react';
 import { ImHome3 } from 'react-icons/im';
 import useOutsideClick from '../../Hooks/useOutSideClick';
-import { useSearchParams } from 'react-router-dom';
+import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange, DateRangePicker } from 'react-date-range';
@@ -12,8 +12,7 @@ import NavBar from '../NavBar/NavBar';
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
-
-  const [destination, setDestination] = useState();
+  const [destination, setDestination] = useState(searchParams.get('destination') || '');
   const [options, setOptions] = useState({
     adult: 1,
     children: 0,
@@ -29,6 +28,7 @@ function Header() {
   ]);
   const [openDate, setOpenDate] = useState(false);
   const [selectedDate, setSelectedDate] = useState(false);
+  const navigate = useNavigate();
   const handleOptions = (name, opration) => {
     setOptions((prev) => {
       return {
@@ -37,8 +37,16 @@ function Header() {
       };
     });
   };
-  const handleSearch = (e) => {
-    console.log(e);
+  const handleSearch = () => {
+    const encodedParams = createSearchParams({
+      date: JSON.stringify(date),
+      destination,
+      options: JSON.stringify(options),
+    });
+    navigate({
+      pathname: '/hotels-result',
+      search: encodedParams.toString(),
+    });
   };
   //  date useRef
   const dateRef = useRef();

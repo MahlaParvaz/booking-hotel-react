@@ -48,7 +48,7 @@ function Hotels() {
                 alt={item.name}
               />
               <Link
-                to="/hotels"
+                to="/hotels-result"
                 className="bookBtn absolute -bg--light-green text-green-800 text-md w-48 flex shadow-md  hover:shadow-none justify-center rounded-xl py-1  mt-10 "
               >
                 <button>Book now</button>
