@@ -9,7 +9,7 @@ function HotelsResult() {
 
   return (
     <div className="searchList flex flex-col gap-8">
-      <h2>Search Results ({hotels.length})</h2>
+      <h2 className="font-bold ">Search Results ({hotels.length})</h2>
       {hotels.map((item) => {
         return (
           <Link
