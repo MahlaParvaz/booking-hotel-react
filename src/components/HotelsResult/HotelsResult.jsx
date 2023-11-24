@@ -3,7 +3,7 @@ import Loader from '../Loader/Loader';
 import { useHotels } from '../context/HotelResultProvider';
 
 function HotelsResult() {
-  const { isLoading, hotels } = useHotels();
+  const { isLoading, hotels, currentHotel } = useHotels();
 
   if (isLoading) return <Loader />;
 
@@ -16,7 +16,13 @@ function HotelsResult() {
             key={item.id}
             to={`/hotels-result/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
           >
-            <div className="searchItem flex gap-6">
+            <div
+              className={`searchItem flex gap-6 ${
+                item.id === currentHotel?.id
+                  ? 'current-hotel rounded-xl p-2  border-solid border-[2px] -border--red'
+                  : ''
+              }`}
+            >
               <img
                 className="w-28 h-24 object-cover rounded-xl"
                 src={item.picture_url.url}

@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import HotelsResult from './components/HotelsResult/HotelsResult';
 import HotelLayout from './components/HotelLayout/HotelLayout';
 import HotelResultProvider from './components/context/HotelResultProvider';
+import SingleHotelResult from './components/SingleHotelREsult/SingleHotelREsult';
 function App() {
   return (
     <div className="bg-white ">
@@ -20,7 +21,7 @@ function App() {
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/hotels-result" element={<HotelLayout />}>
             <Route index element={<HotelsResult />} />
-            <Route path=":id" element={<div>single hotel</div>} />
+            <Route path=":id" element={<SingleHotelResult />} />
           </Route>
         </Routes>
         <Footer />
