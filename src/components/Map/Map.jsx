@@ -1,12 +1,19 @@
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
-import { useHotels } from '../context/HotelResultProvider';
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { useEffect } from 'react';
+
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+  useMap,
+  useMapEvent,
+} from 'react-leaflet';
+
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import useGeoLocation from '../../Hooks/useGeoLocation';
 
-function Map() {
-  const { isLoading, hotels } = useHotels();
+function Map({ markerLocations }) {
   const [mapCenter, setMapCenter] = useState([20, 4]);
   const [searchParams, setSearchParams] = useSearchParams();
   const lat = searchParams.get('lat');
@@ -28,7 +35,7 @@ function Map() {
   }, [geoPosition]);
 
   return (
-    <div className="mapContainer  flex-1 relative -bg--light-gray">
+    <div className="mapContainer  flex-1 relative z-10 -bg--light-gray ">
       <MapContainer
         className="map h-full"
         center={mapCenter}
@@ -37,7 +44,7 @@ function Map() {
       >
         <button
           onClick={getPosition}
-          className="getLocation -bg--violet-700 text-white z-[1000] absolute rounded-2xl py-1 px-2 font-bold bottom-4 left-4 shadow-lg  shadow-white "
+          className="getLocation -bg--violet-700 text-white z-[800] absolute rounded-2xl py-1 px-2 font-bold bottom-4 left-4 shadow-lg  shadow-white "
         >
           {isLoadingGeoPosition ? 'Loading ...' : ' Use Your Location'}
         </button>
@@ -45,8 +52,9 @@ function Map() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
+        <DitectClick />
         <ChangeCenter position={mapCenter} />
-        {hotels.map((item) => {
+        {markerLocations.map((item) => {
           return (
             <Marker key={item.id} position={[item.latitude, item.longitude]}>
               <Popup>{item.host_location}</Popup>
@@ -63,5 +71,12 @@ export default Map;
 function ChangeCenter({ position }) {
   const map = useMap();
   map.setView(position);
+  return null;
+}
+function DitectClick() {
+  const navigate = useNavigate();
+  useMapEvent({
+    click: (e) => navigate(`/bookmark/add?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+  });
   return null;
 }

@@ -1,36 +1,12 @@
+import { Link } from 'react-router-dom';
+
 import useFetch from '../../Hooks/useFetch';
 import Loader from '../Loader/Loader';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
-import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
-import { Link, Navigate } from 'react-router-dom';
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 4.5,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-  },
-};
 
 function Hotels() {
   const { data, isLoading } = useFetch('http://localhost:5000/hotels', '');
 
   if (isLoading) return <Loader />;
-  // grid grid-cols-4 gap-6 gap-y-10 px-4
 
   return (
     <div className="nearbyLocatio mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 ">

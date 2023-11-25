@@ -1,4 +1,3 @@
-import PopularLocation from '../PopularLocation/PopularLocation';
 import NearLocation from '../NearLocation/NearLocation';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -81,7 +80,32 @@ const opinionData = [
       'The hotels I booked were very comfortable and clean, located in the desired area. I was very satisfied. Thank you for facilitating the hotel booking process.',
   },
 ];
-
+const popularData = [
+  {
+    src: '/src/assets/img/city-iran.jpg',
+    name: 'Iran',
+  },
+  {
+    src: '/src/assets/img/city-london.jpg',
+    name: 'London',
+  },
+  {
+    src: '/src/assets/img/city-paris.jpg',
+    name: 'Paris',
+  },
+  {
+    src: '/src/assets/img/city-netherland.jpg',
+    name: 'Netherland',
+  },
+  {
+    src: '/src/assets/img/city-america.jpg',
+    name: 'America',
+  },
+  {
+    src: '/src/assets/img/city-africa.jpg',
+    name: 'Africa',
+  },
+];
 function HomePage() {
   return (
     <div className="header ">
@@ -128,12 +152,39 @@ function Description() {
   );
 }
 
+function PopularLocation() {
+  return (
+    <div className="popularLocations  w-full h-[450px] mb-10 p-0 relative flex flex-col  justify-center items-center gap-6">
+      <h2 className="laptop:w-[85%] px-4  text-lg font-bold">Popular Locations</h2>
+      <div className=" grid grid-cols-6  gap-6 h-[300px]">
+        {popularData.map((item) => {
+          return (
+            <div
+              key={item.id}
+              className="location   h-[250px]   flex flex-col-reverse items-start   gap-6 cursor-pointer  "
+            >
+              <img
+                className="w-[195px] h-[200px] rounded-[40px] shadow-xl hover:shadow-none object-cover"
+                src={item.src}
+                alt="city doesn't show"
+              />
+              <div className="description text-black px-4 font-bold  ">
+                <p>{item.name}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function BookAdvertisement() {
   return (
     <div className="image w-full flex justify-center items-center  relative">
       <div className="w-[90%]  ">
         <img
-          className="w-full h-[450px] rounded-[80px]"
+          className="w-full h-[450px] rounded-[80px] object-cover"
           src="/src/assets/img/the-anam.jpg"
           alt="seaside image doesn't show"
         />

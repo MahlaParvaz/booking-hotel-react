@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import Loader from '../Loader/Loader';
 import { useHotels } from '../context/HotelResultProvider';
 

@@ -6,7 +6,7 @@ import useOutsideClick from '../../Hooks/useOutSideClick';
 import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import { DateRange, DateRangePicker } from 'react-date-range';
+import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 import NavBar from '../NavBar/NavBar';
 
@@ -144,7 +144,7 @@ function OptionsList({ options, handleOptions, setOptionsDropDown }) {
   return (
     <div
       ref={optionRef}
-      className="bg-white flex flex-col gap-4 justify-between absolute top-[50px] ml-4 rounded-lg shadow-lg w-64  px-4 py-3"
+      className="bg-white flex flex-col gap-4 justify-between absolute top-[50px] ml-4 rounded-lg shadow-lg w-64  px-4 py-3 "
     >
       <OptionsItem
         type="adult"
@@ -171,7 +171,7 @@ function OptionsList({ options, handleOptions, setOptionsDropDown }) {
 function OptionsItem({ options, type, minLimit, handleOptions }) {
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between ">
         <span>{type}</span>
         <div className="btns flex items-center justify-between w-[100px] mr-4">
           <button
