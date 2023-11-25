@@ -21,7 +21,7 @@ function Bookmark() {
               key={item.id}
               to={`${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
             >
-              <div className="bookmarkItem mb-4 border-solid border-[1px] border-slate-300 shadow hover:shadow-none rounded-xl p-4 flex items-center justify-between ">
+              <div className="bookmarkItem mb-4 border-solid border-[1px] border-slate-300 shadow hover:shadow-none rounded-2xl p-4 flex items-center justify-between ">
                 <div>
                   <ReactCountryFlag svg countryCode={item.countryCode} />
                   &nbsp; <strong>{item.cityName}</strong> &nbsp;
