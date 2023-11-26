@@ -54,9 +54,7 @@ function Header() {
 
   return (
     <div className="header   w-full p-0 relative  flex flex-col justify-start items-center gap-4  ">
-      {/* navbar */}
-      <NavBar />
-      <div className="headerSearch z-50 absolute top-[80px] -bg--light-gray w-full laptop:m-0   flex laptop:flex-row laptop:max-w-[1000px]  laptop:justify-between laptop:items-center mobile:gap-4 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-20">
+      <div className="headerSearch z-50 absolute top-[20px] -bg--light-gray w-full laptop:m-0   flex laptop:flex-row laptop:max-w-[1000px]  laptop:justify-between laptop:items-center mobile:gap-4 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-20">
         {/* location */}
         <div className="headerSearchItem px-2 flex  items-center laptop:flex-1 laptop:w-80 relative h-12 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
           <MdLocationOn className="headerIcon locationIcon -text--red w-7 h-6 inline-block mr-3 " />
@@ -184,7 +182,7 @@ function OptionsItem({ options, type, minLimit, handleOptions }) {
           <span>{options[type]}</span>
           <button
             onClick={() => handleOptions(type, 'inc')}
-            className="-bg--violet-700 text-white hover:opacity-70 p-1 rounded-lg w-7 h-7 flex items-center justify-center"
+            className="-bg--red text-white hover:opacity-70 p-1 rounded-lg w-7 h-7 flex items-center justify-center"
           >
             <HiPlus className="icon" />
           </button>

@@ -1,5 +1,5 @@
 import { IoIosLogIn } from 'react-icons/io';
-import { FaUserCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 function NavBar() {
   return (
     <div className="navbar  text-white w-full  h-16 pt-4 flex items-center justify-center  shadow-lg  bg-black">
@@ -9,13 +9,17 @@ function NavBar() {
         </div>
         <div className="navbarList flex-1  h-full">
           <ul className="flex gap-16 items-center justify-start p-2 text-[16px]  ">
-            <li className="cursor-pointer hover:border-b-4 hover:-border--red">
-              Bookmarks
-            </li>
-            <li className="cursor-pointer hover:border-b-4 hover:-border--red">
-              {' '}
-              List of hotels
-            </li>
+            <Link to="/bookmark">
+              <li className="cursor-pointer hover:border-b-4 hover:-border--red">
+                Bookmarks
+              </li>
+            </Link>
+            <Link to="/hotels">
+              <li className="cursor-pointer hover:border-b-4 hover:-border--red">
+                List of hotels
+              </li>
+            </Link>
+
             <li className="cursor-pointer hover:border-b-4 hover:-border--red">
               Exprience
             </li>

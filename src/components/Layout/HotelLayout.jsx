@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+
 import Map from '../Map/Map';
 import { useHotels } from '../context/HotelResultProvider';
 

@@ -597,7 +597,7 @@
       "market": "Amsterdam",
       "smart_location": "UK, London",
       "country_code": "NL",
-      "country": "Netherlands",
+      "country": "London",
       "latitude": "51.5054035483508",
       "longitude": "-0.12016296386718751",
       "property_type": "Apartment",
@@ -981,7 +981,7 @@
       "market": "Amsterdam",
       "smart_location": "Berlin, Germany",
       "country_code": "NL",
-      "country": "Netherlands",
+      "country": "Germany",
       "latitude": "52.515006473317875",
       "longitude": "13.381347656250002",
       "property_type": "Apartment",
@@ -1378,5 +1378,30 @@
       "host_location": "In Salah Algeria",
       "id": 9
     }
+  ],
+  "popularLocations":[
+    {
+      "place_id": "330643958",
+      "licence": "https://locationiq.com/attribution",
+      "osm_type": "relation",
+      "osm_id": "6663864",
+      "boundingbox": [
+        "35.5682071",
+        "35.8284702",
+        "51.0890493",
+        "51.6063007"
+      ],
+      "latitude": "35.6892523",
+      "longitude": "51.3896004",
+      "display_name": "Tehran, بخش مرکزی شهرستان تهران, Tehran County, Tehran Province, Iran",
+      "class": "boundary",
+      "type": "administrative",
+      "importance": 0.9232313029451586,
+      "icon": "https://locationiq.org/static/images/mapicons/poi_boundary_administrative.p.20.png",
+      "picture":"https://images.unsplash.com/photo-1527126887308-6cdf83c7d844?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      
+    }
+
   ]
+
 }

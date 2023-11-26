@@ -1,13 +1,16 @@
 import { Link } from 'react-router-dom';
-
-import useFetch from '../../Hooks/useFetch';
 import Loader from '../Loader/Loader';
+import useFetch from '../../Hooks/useFetch';
 
-function Hotels() {
-  const { data, isLoading } = useFetch('http://localhost:5000/hotels', '');
+function IranLocations() {
+  const { data, isLoading, error } = useFetch(
+    'http://localhost:5000/popularLocations',
+    ''
+  );
 
   if (isLoading) return <Loader />;
-
+  if (error) return <div>Error loading data: {error.message}</div>;
+  console.log('Data:', data);
   return (
     <div className="nearbyLocatio mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 ">
       <h2 className="laptop:w-[85%] px-4  text-lg font-bold mt-16 ">Hotels</h2>
@@ -24,8 +27,8 @@ function Hotels() {
               >
                 <img
                   className="w-full h-[200px] rounded-t-[60px] shadow-lg "
-                  src={item.picture_url.url}
-                  alt={item.name}
+                  src={item.picture}
+                  alt={item.display_name}
                 />
                 <Link
                   to={`/hotels-result/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
@@ -36,7 +39,7 @@ function Hotels() {
 
                 <div className="locationItemDesc px-6 bg-gray-100 text-[15px] h-[150px] w-full shadow-lg hover:shadow-none flex flex-col gap-1 p-4 rounded-b-[60px]  text-slate-600">
                   <p className="locaiton mt-4 ">{item.smart_location}</p>
-                  <p className="name">{item.name}</p>
+                  <p className="name">{item.display_name}</p>
                   <p className="price">
                     €&nbsp;{item.price}&nbsp;
                     <span className="text-slate-400">night</span>
@@ -51,4 +54,4 @@ function Hotels() {
   );
 }
 
-export default Hotels;
+export default IranLocations;

@@ -13,6 +13,7 @@ import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { IonIcon } from '@ionic/react';
+import PopularLocations from '../PopularLocations/PopularLocations';
 const data = [
   {
     id: 1,
@@ -80,32 +81,7 @@ const opinionData = [
       'The hotels I booked were very comfortable and clean, located in the desired area. I was very satisfied. Thank you for facilitating the hotel booking process.',
   },
 ];
-const popularData = [
-  {
-    src: '/src/assets/img/city-iran.jpg',
-    name: 'Iran',
-  },
-  {
-    src: '/src/assets/img/city-london.jpg',
-    name: 'London',
-  },
-  {
-    src: '/src/assets/img/city-paris.jpg',
-    name: 'Paris',
-  },
-  {
-    src: '/src/assets/img/city-netherland.jpg',
-    name: 'Netherland',
-  },
-  {
-    src: '/src/assets/img/city-america.jpg',
-    name: 'America',
-  },
-  {
-    src: '/src/assets/img/city-africa.jpg',
-    name: 'Africa',
-  },
-];
+
 function HomePage() {
   return (
     <div className="header ">
@@ -117,7 +93,7 @@ function HomePage() {
         />
       </div>
       <Description />
-      <PopularLocation />
+      <PopularLocations />
       <NearLocation />
       <BookAdvertisement />
       <Accordion />
@@ -147,33 +123,6 @@ function Description() {
           <br />
           Lets start booking your hotel.
         </span>
-      </div>
-    </div>
-  );
-}
-
-function PopularLocation() {
-  return (
-    <div className="popularLocations  w-full h-[450px] mb-10 p-0 relative flex flex-col  justify-center items-center gap-6">
-      <h2 className="laptop:w-[85%] px-4  text-lg font-bold">Popular Locations</h2>
-      <div className=" grid grid-cols-6  gap-6 h-[300px]">
-        {popularData.map((item) => {
-          return (
-            <div
-              key={item.id}
-              className="location   h-[250px]   flex flex-col-reverse items-start   gap-6 cursor-pointer  "
-            >
-              <img
-                className="w-[195px] h-[200px] rounded-[40px] shadow-xl hover:shadow-none object-cover"
-                src={item.src}
-                alt="city doesn't show"
-              />
-              <div className="description text-black px-4 font-bold  ">
-                <p>{item.name}</p>
-              </div>
-            </div>
-          );
-        })}
       </div>
     </div>
   );
