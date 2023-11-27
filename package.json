@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "json-server --watch server/db.json --port 5000 --delay 300",
+    "server": "json-server --watch server/db.json --port 5000 --delay 100",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -21,6 +21,7 @@
     "react-country-flag": "^3.1.0",
     "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.12.0",
     "react-leaflet": "^4.2.1",
@@ -32,6 +33,7 @@
     "toastr": "^2.1.4"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
@@ -42,6 +44,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "postcss": "^8.4.30",
     "tailwindcss": "^3.3.3",
+    "typescript": "^5.3.2",
     "vite": "^4.4.5"
   }
 }

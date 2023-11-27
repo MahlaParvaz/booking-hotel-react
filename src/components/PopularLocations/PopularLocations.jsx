@@ -22,8 +22,8 @@ const popularData = [
   },
   {
     src: '/src/assets/img/city-paris.jpg',
-    name: 'Paris',
-    pathname: '/paris',
+    name: 'France',
+    pathname: '/france',
   },
   {
     src: '/src/assets/img/city-netherland.jpg',
@@ -35,23 +35,18 @@ const popularData = [
     name: 'America',
     pathname: '/america',
   },
-  {
-    src: '/src/assets/img/city-africa.jpg',
-    name: 'Africa',
-    pathname: '/africa',
-  },
 ];
 
 function PopularLocations() {
   return (
     <div className="popularLocations w-full h-[450px] mb-10 p-0 relative flex flex-col  justify-center items-center gap-6">
       <h2 className="laptop:w-[85%] px-4 text-lg font-bold">Popular Locations</h2>
-      <div className="grid grid-cols-6 gap-6 h-[300px]">
+      <div className="grid grid-cols-5 gap-8 h-[300px]">
         {popularData.map((item) => (
           <Link key={item.name} to={`/popular-locations${item.pathname}`}>
             <div className="location h-[250px] flex flex-col-reverse items-start gap-6 cursor-pointer">
               <img
-                className="w-[195px] h-[200px] rounded-[40px] shadow-xl hover:shadow-none object-cover"
+                className="w-[230px] h-[200px] rounded-[40px] shadow-xl hover:shadow-none object-cover"
                 src={item.src}
                 alt="city doesn't show"
               />
@@ -66,8 +61,6 @@ function PopularLocations() {
           </Link>
         ))}
       </div>
-
-      {/* Use Routes to handle different route paths */}
     </div>
   );
 }

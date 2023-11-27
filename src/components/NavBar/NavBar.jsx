@@ -1,5 +1,5 @@
 import { IoIosLogIn } from 'react-icons/io';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 function NavBar() {
   return (
     <div className="navbar  text-white w-full  h-16 pt-4 flex items-center justify-center  shadow-lg  bg-black">
@@ -26,10 +26,13 @@ function NavBar() {
           </ul>
         </div>
         <div className="navbarList flex-1 relative  h-full ">
-          <button className="login flex items-center justify-center gap-2 p-2 absolute right-4 text-[16px] ">
+          <NavLink
+            to="/login"
+            className="login flex items-center justify-center gap-2 p-2 absolute right-4 text-[16px] "
+          >
             Login
             <IoIosLogIn className="text-[24px] font-extrabold -text--rose-500" />
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>
@@ -37,3 +40,36 @@ function NavBar() {
 }
 
 export default NavBar;
+// function User() {
+//   const { user, isAuthenticated, logout } = useAuth();
+//   const navigate = useNavigate();
+//   const handleLogout = () => {
+//     logout();
+//     navigate('/');
+//   };
+//   return (
+//     <div>
+//       {isAuthenticated ? (
+//         <div>
+//           <span>{user.name}</span>
+//           <button>
+//             <IoIosLogOut
+//               onClick={handleLogout}
+//               className="text-[24px] font-extrabold -text--rose-500"
+//             />
+//           </button>
+//         </div>
+//       ) : (
+//         <div className="navbarList flex-1 relative  h-full ">
+//           <NavLink
+//             to="/login"
+//             className="login flex items-center justify-center gap-2 p-2 absolute right-4 text-[16px] "
+//           >
+//             Login
+//             <IoIosLogIn className="text-[24px] font-extrabold -text--rose-500" />
+//           </NavLink>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
