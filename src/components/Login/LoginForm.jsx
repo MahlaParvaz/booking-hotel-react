@@ -2,7 +2,7 @@ import { DevTool } from '@hookform/devtools';
 import axios from 'axios';
 import { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import AuthContextProvider, { useAuth } from '../context/AuthProvider';
+import { useAuth } from '../context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 // type FormValues = {
@@ -12,55 +12,51 @@ import { useNavigate } from 'react-router-dom';
 // };
 
 const LoginForm = () => {
-  const { user, login, isAuthenticated } = useAuth();
-  const [username, setUsername] = useState('saheb');
-  const [email, setEmail] = useState('user@gmail.com');
-  const [password, setPassword] = useState('1234');
-  const form = useForm();
-  const { register, handleSubmit, formState } = form;
-  const { errors } = formState;
+  const { login, isAuthenticated, setUser } = useAuth();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+  } = useForm();
   const navigate = useNavigate();
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (username && email && password) login(username, email, password);
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.get('http://localhost:5000/users', {
+        params: {
+          username: data.username,
+          email: data.email,
+          password: data.password,
+        },
+      });
+
+      const user = response.data[0];
+
+      if (user) {
+        setUser(user);
+        login(user.username, user.email, user.password);
+        navigate('/');
+        window.location.reload();
+      } else {
+        setError('login', {
+          type: 'manual',
+          message: 'Invalid credentials. Please try again.',
+        });
+      }
+    } catch (error) {
+      console.error('Login failed:', error.response?.data || error.message);
+      setError('login', {
+        type: 'manual',
+        message: 'Invalid credentials. Please try again.',
+      });
+    }
   };
-  // const onSubmit = async (data) => {
-  //   if (username && email && password) login(username, email, password);
-  //   try {
-  //     const response = await axios.post('http://localhost:5000/users', {
-  //       username: data.username,
-  //       email: data.email,
-  //       password: data.password,
-  //     });
+  // useEffect(() => {
+  //   if (isAuthenticated) navigate('/', { replace: true });
+  // }, [isAuthenticated, navigate]);
 
-  //     const user = response.data;
-
-  //     // Assuming the API returns a user object upon successful login
-  //     login(user.email, user.password);
-  //   } catch (error) {
-  //     console.error('Login failed:', error);
-  //   }
-  // };
-  useEffect(() => {
-    if (isAuthenticated) navigate('/', { replace: true });
-  }, [isAuthenticated, navigate]);
-  // const form = useForm({
-  //   defaultValues: async () => {
-  //     const response = await fetch('https://jsonplaceholder.typicode.com/users');
-  //     const data = await response.json();
-  //     return {
-  //       username: data.username,
-  //       email: data.email,
-  //       password: data.password,
-  //     };
-  //   },
-  // });
-  // const { register, control, handleSubmit, formState } = form;
-  // const { errors } = formState;
-  // // const { name, ref, onChange, onBlur } = register('username');
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  // };
   return (
     <div className="w-full flex items-center justify-center mb-8 ">
       <form
@@ -72,8 +68,6 @@ const LoginForm = () => {
         <div className="formControll flex flex-col mb-4 w-[350px] ">
           <label htmlFor="username">Username</label>
           <input
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
             className="py-1.5 px-2 mt-1 border-solid border-[1px] border-slate-300 rounded-xl"
             type="text"
             id="username"
@@ -91,8 +85,6 @@ const LoginForm = () => {
         <div className="formControll flex flex-col mb-4 w-[350px]">
           <label htmlFor="email">Email</label>
           <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
             className="py-1.5 px-2 mt-1 border-solid border-[1px] border-slate-300 rounded-xl"
             type="email"
             id="email"
@@ -111,8 +103,6 @@ const LoginForm = () => {
         <div className="formControll flex flex-col mb-4 w-[350px]">
           <label htmlFor="password">Password</label>
           <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
             className="py-1.5 px-2 mt-1 border-solid border-[1px] border-slate-300 rounded-xl"
             type="password"
             id="password"
@@ -134,6 +124,11 @@ const LoginForm = () => {
         >
           Submit
         </button>
+        {errors.login && (
+          <p className="error -text--rose-500 text-[13px] font-semibold py-1 px-2">
+            {errors.login.message}
+          </p>
+        )}
       </form>
       {/* <DevTool control={control} /> */}
     </div>

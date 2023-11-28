@@ -5,7 +5,7 @@ import { createContext } from 'react';
 const AuthContext = createContext();
 const initialState = {
   user: null,
-  isAthenticated: false,
+  isAuthenticated: false,
 };
 
 function authReducer(state, action) {
@@ -13,12 +13,12 @@ function authReducer(state, action) {
     case 'login':
       return {
         user: action.payload,
-        isAthenticated: true,
+        isAuthenticated: true,
       };
     case 'logout':
       return {
         user: null,
-        isAthenticated: false,
+        isAuthenticated: false,
       };
 
     default:
@@ -26,56 +26,76 @@ function authReducer(state, action) {
   }
 }
 
-// const USERS_INFO = {};
-const FAKE_USER = {
-  username: 'Saheb',
-  email: 'user@gmail.com',
-  password: '1234',
-};
-
 export default function AuthContextProvider({ children }) {
-  const [{ user, isAthenticated }, dispatch] = useReducer(authReducer, initialState);
+  const [{ user, isAuthenticated }, dispatch] = useReducer(authReducer, initialState);
 
-  //   useEffect(() => {
-  //     // Fetch user data from your API and update USERS_INFO
-  //     axios
-  //       .get('http://localhost:5000/users') // Replace with your actual API endpoint
-  //       .then((response) => {
-  //         const userData = response.data;
-  //         dispatch({ type: 'login', payload: userData });
-  //       })
-  //       .catch((error) => {
-  //         console.error('Error fetching user data:', error);
-  //         dispatch({ type: 'logout' });
-  //       });
-  //   }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const storedUser = localStorage.getItem('user');
+        const storedIsAuthenticated = localStorage.getItem('isAuthenticated');
 
-  function login(username, email, password) {
-    // const userFromAPI = USERS_INFO;
-    if (
-      username === FAKE_USER.username &&
-      email === FAKE_USER.email &&
-      password === FAKE_USER.password
-    )
-      dispatch({ type: 'login', payload: FAKE_USER });
+        if (storedUser && storedIsAuthenticated === 'true') {
+          dispatch({ type: 'login', payload: JSON.parse(storedUser) });
+        } else {
+          dispatch({ type: 'logout' });
+        }
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+        dispatch({ type: 'logout' });
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  async function login(username, email, password) {
+    try {
+      const response = await axios.get('http://localhost:5000/users', {
+        params: { username, email, password },
+      });
+
+      const userData = response.data[0];
+
+      if (userData) {
+        dispatch({ type: 'login', payload: userData });
+        localStorage.setItem('user', JSON.stringify(userData));
+        localStorage.setItem('isAuthenticated', 'true');
+      } else {
+        console.error('Login failed: Invalid credentials');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   }
+
+  function setUser(user) {
+    dispatch({ type: 'login', payload: user });
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('isAuthenticated', 'true');
+  }
+
   function logout() {
     dispatch({ type: 'logout' });
+    localStorage.removeItem('user');
+    localStorage.removeItem('isAuthenticated');
   }
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        isAthenticated,
+        isAuthenticated,
         login,
         logout,
+        setUser,
       }}
     >
       {children}
     </AuthContext.Provider>
   );
 }
+
 export function useAuth() {
   return useContext(AuthContext);
 }
