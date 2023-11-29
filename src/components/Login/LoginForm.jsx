@@ -1,70 +1,33 @@
 import { DevTool } from '@hookform/devtools';
-import axios from 'axios';
-import { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthProvider';
-import { useNavigate } from 'react-router-dom';
-
-// type FormValues = {
-//   username: string,
-//   email: string,
-//   password: string | number,
-// };
+import { NavLink } from 'react-router-dom';
+import { useQuery } from '../../Hooks/useQuery';
 
 const LoginForm = () => {
-  const { login, isAuthenticated, setUser } = useAuth();
-
+  const { login } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
   } = useForm();
-  const navigate = useNavigate();
+  const query = useQuery();
+  const redirect = query.get('redirect') || '/';
 
   const onSubmit = async (data) => {
-    try {
-      const response = await axios.get('http://localhost:5000/users', {
-        params: {
-          username: data.username,
-          email: data.email,
-          password: data.password,
-        },
-      });
-
-      const user = response.data[0];
-
-      if (user) {
-        setUser(user);
-        login(user.username, user.email, user.password);
-        navigate('/');
-        window.location.reload();
-      } else {
-        setError('login', {
-          type: 'manual',
-          message: 'Invalid credentials. Please try again.',
-        });
-      }
-    } catch (error) {
-      console.error('Login failed:', error.response?.data || error.message);
-      setError('login', {
-        type: 'manual',
-        message: 'Invalid credentials. Please try again.',
-      });
-    }
+    const { username, email, password } = data;
+    login(username, email, password);
+    window.location.reload();
   };
-  // useEffect(() => {
-  //   if (isAuthenticated) navigate('/', { replace: true });
-  // }, [isAuthenticated, navigate]);
 
   return (
     <div className="w-full flex items-center justify-center mb-8 ">
       <form
-        className="form -bg--light-gray w-[400px]  mt-[100px] py-2 px-4 rounded-2xl shadow-xl flex flex-col items-center justify-center"
+        className="form bg-white w-[450px]  mt-[100px] py-2 px-4 rounded-2xl shadow-xl flex flex-col items-center justify-center"
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
-        <h2 className=" mb-8 font-bold text-[22px] text-center ">Login</h2>
+        <h2 className=" mb-8 mt-4 font-bold text-[22px] text-center ">Login</h2>
         <div className="formControll flex flex-col mb-4 w-[350px] ">
           <label htmlFor="username">Username</label>
           <input
@@ -100,7 +63,7 @@ const LoginForm = () => {
             {errors.email?.message}
           </p>
         </div>
-        <div className="formControll flex flex-col mb-4 w-[350px]">
+        <div className="formControll flex flex-col mb-5 w-[350px]">
           <label htmlFor="password">Password</label>
           <input
             className="py-1.5 px-2 mt-1 border-solid border-[1px] border-slate-300 rounded-xl"
@@ -119,7 +82,7 @@ const LoginForm = () => {
         </div>
 
         <button
-          className="btn-submit w-[350px] -bg--red p-2 rounded-xl text-white hover:opacity-75 mb-2"
+          className="btn-submit w-[350px] -bg--red p-2 rounded-xl text-white hover:opacity-75 mb-8"
           type="submit"
         >
           Submit
@@ -129,6 +92,12 @@ const LoginForm = () => {
             {errors.login.message}
           </p>
         )}
+        <div className="flex items-center justify-center mb-6">
+          <span>Don't you have an account?</span>
+          <NavLink to={`/signup?redirect=${redirect}`} className="text-blue-700 ml-3 ">
+            <u>Signup</u>
+          </NavLink>
+        </div>
       </form>
       {/* <DevTool control={control} /> */}
     </div>

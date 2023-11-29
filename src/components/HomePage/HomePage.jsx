@@ -14,6 +14,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { IonIcon } from '@ionic/react';
 import PopularLocations from '../PopularLocations/PopularLocations';
+import LoginForm from '../Login/LoginForm';
 const data = [
   {
     id: 1,
@@ -92,6 +93,7 @@ function HomePage() {
           alt=""
         />
       </div>
+    
       <Description />
       <PopularLocations />
       <NearLocation />

@@ -9,6 +9,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 import NavBar from '../NavBar/NavBar';
+import LoginForm from '../Login/LoginForm';
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();

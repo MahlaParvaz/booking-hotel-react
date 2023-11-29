@@ -18,6 +18,8 @@ import AppLayout from './components/Layout/AppLayout';
 import PopularLocationsDetail from './components/PopularDetails/PopularLocationsDetail';
 import LoginForm from './components/Login/LoginForm';
 import AuthContextProvider from './components/context/AuthProvider';
+import ProtectedRouth from './components/ProtectedRouth/ProtectedRouth';
+import SignupForm from './components/SignupForm/SignupForm';
 
 function App() {
   return (
@@ -82,13 +84,21 @@ function App() {
                     }
                   />
                 </Route>
-                <Route path="/bookmark" element={<BookmarkLayout />}>
+                <Route
+                  path="/bookmark"
+                  element={
+                    <ProtectedRouth>
+                      <BookmarkLayout />
+                    </ProtectedRouth>
+                  }
+                >
                   <Route index element={<Bookmark />} />
                   <Route path=":id" element={<SingleBookmark />} />
                   <Route path="add" element={<AddNewBookmark />} />
                 </Route>
                 {/* <Route path="/signup" element={<signupForm />} /> */}
                 <Route path="/login" element={<LoginForm />} />
+                <Route path="/signup" element={<SignupForm />} />
               </Routes>
             </HotelResultProvider>
           </BookmarkListProvider>
