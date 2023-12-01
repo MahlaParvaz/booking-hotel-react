@@ -5,6 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import HotelsInfo from '../../common/HotelsInfo';
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -42,6 +43,10 @@ function NearLocation() {
           customLeftArrow={<CustomLeftArrow />}
           customRightArrow={<CustomRightArrow />}
         >
+          {/* <div className='flex'>
+
+          <HotelsInfo  />
+          </div> */}
           {data.map((item) => {
             return (
               <Link

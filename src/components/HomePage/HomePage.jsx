@@ -1,7 +1,7 @@
 import NearLocation from '../NearLocation/NearLocation';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { IoChevronDown, IoThermometer } from 'react-icons/io5';
+import { IoChevronDown } from 'react-icons/io5';
 import { FaQuestion } from 'react-icons/fa6';
 import 'react-multi-carousel/lib/styles.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -14,7 +14,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { IonIcon } from '@ionic/react';
 import PopularLocations from '../PopularLocations/PopularLocations';
-import LoginForm from '../Login/LoginForm';
 const data = [
   {
     id: 1,
@@ -85,15 +84,15 @@ const opinionData = [
 
 function HomePage() {
   return (
-    <div className="header ">
-      <div className="landingImg  laptop:w-full bg-black w-full h-[600px] p-0 relative  flex  justify-center items-end ">
+    <div className="homepage   ">
+      <div className="landingImg  laptop:w-full bg-black mobile:w-[390px] laptop:h-[600px] p-0 relative  flex  justify-center items-end mobile:h-[150px]">
         <img
-          className="laptop:h-[500px] laptop:w-[80%]  mobile:w-full mobile:h-[500px] "
+          className="laptop:h-[500px] laptop:w-[80%] laptop:block mobile:hidden  "
           src="/src/assets/img/landing-3.png"
           alt=""
         />
       </div>
-    
+
       <Description />
       <PopularLocations />
       <NearLocation />

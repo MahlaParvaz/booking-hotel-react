@@ -23,7 +23,7 @@ import SignupForm from './components/SignupForm/SignupForm';
 
 function App() {
   return (
-    <div className="bg-white ">
+    <div className="bg-white  scroll-smooth ">
       <AppLayout>
         <AuthContextProvider>
           <BookmarkListProvider>
@@ -33,10 +33,15 @@ function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/hotels" element={<Hotels />} />
-                <Route path="/hotels-result" element={<HotelLayout />}>
+                {/* <Route path="/hotels-result" element={<HotelLayout />}>
                   <Route index element={<HotelsResult />} />
                   <Route path=":id" element={<SingleHotelResult />} />
+                </Route> */}
+                <Route path="/hotels-result">
+                  <Route index element={<HotelLayout />} />
+                  <Route path=":id" element={<SingleHotelResult />} />
                 </Route>
+
                 <Route path="/popular-locations">
                   <Route
                     path="iran"
@@ -69,7 +74,7 @@ function App() {
                     path="netherland"
                     element={
                       <PopularLocationsDetail
-                        countryFilter="Netherland"
+                        countryFilter="Netherlands"
                         title="Hotels in Netherland"
                       />
                     }
@@ -84,14 +89,7 @@ function App() {
                     }
                   />
                 </Route>
-                <Route
-                  path="/bookmark"
-                  element={
-                    <ProtectedRouth>
-                      <BookmarkLayout />
-                    </ProtectedRouth>
-                  }
-                >
+                <Route path="/bookmark" element={<BookmarkLayout />}>
                   <Route index element={<Bookmark />} />
                   <Route path=":id" element={<SingleBookmark />} />
                   <Route path="add" element={<AddNewBookmark />} />

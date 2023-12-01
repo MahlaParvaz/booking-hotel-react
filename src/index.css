@@ -8,8 +8,14 @@
 }
 body {
   min-height: 100vh;
+  /* overflow: scroll; */
+  /* scroll-behavior: smooth; */
+
   /* padding: 1rem; */
 }
+/* ::-webkit-scrollbar {
+  display: none;
+} */
 * {
   margin: 0;
   padding: 0;

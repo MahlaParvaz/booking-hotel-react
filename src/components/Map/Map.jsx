@@ -34,9 +34,9 @@ function Map({ markerLocations }) {
   }, [geoPosition]);
 
   return (
-    <div className="mapContainer  flex-1 relative z-10 -bg--light-gray ">
+    <div className="mapContainer  flex-1  relative  -bg--light-gray ">
       <MapContainer
-        className="map h-full"
+        className="map h-full  "
         center={mapCenter}
         zoom={6}
         scrollWheelZoom={true}

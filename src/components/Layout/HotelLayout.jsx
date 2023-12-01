@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import Map from '../Map/Map';
 import { useHotels } from '../context/HotelResultProvider';
+import HotelsResult from '../HotelsResult/HotelsResult';
 
 function HotelLayout() {
   const { hotels } = useHotels();
@@ -9,7 +10,8 @@ function HotelLayout() {
     <div className=" flex z-50 justify-center items-center w-full  mb-5 ">
       <div className="appLayout  mt-[6rem] w-[90%] flex justify-between items-stretch h-screen mb-130 ">
         <div className="sidebar w-[40%] flex-1 overflow-hidden overflow-y-scroll pr-[1rem] ">
-          <Outlet />
+          {/* <Outlet /> */}
+          <HotelsResult />
         </div>
         <Map markerLocations={hotels} />
       </div>

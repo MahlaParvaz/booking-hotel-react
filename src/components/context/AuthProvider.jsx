@@ -81,16 +81,6 @@ export default function AuthContextProvider({ children }) {
 
   async function signup(name, username, email, password) {
     try {
-      const usernameExists = login(username);
-
-      if (usernameExists) {
-        setError('username', {
-          type: 'manual',
-          message: 'This username already exists.',
-        });
-        return;
-      }
-
       const data = { name, username, email, password };
 
       const response = await http.post('/users', data);
@@ -98,7 +88,7 @@ export default function AuthContextProvider({ children }) {
       if (userData) {
         dispatch({ type: 'signup', payload: userData });
         setUser(userData);
-        navigate(redirect);
+        // navigate(redirect);
       } else {
         console.error('Signup failed: Invalid credentials');
       }
@@ -106,19 +96,7 @@ export default function AuthContextProvider({ children }) {
       console.error('Error during signup:', error.response?.data || error.message);
     }
   }
-  async function checkUsernameExistence(username) {
-    try {
-      // Make a request to your API to check if the username exists
-      const response = await http.get(`/users?username=${username}`);
-      return response.data.length > 0;
-    } catch (error) {
-      console.error(
-        'Error checking username existence:',
-        error.response?.data || error.message
-      );
-      return false;
-    }
-  }
+
   function setUser(user) {
     // dispatch({ type: 'login', payload: user });
     localStorage.setItem('user', JSON.stringify(user));
@@ -140,7 +118,6 @@ export default function AuthContextProvider({ children }) {
         signup,
         logout,
         setUser,
-        checkUsernameExistence,
       }}
     >
       {children}

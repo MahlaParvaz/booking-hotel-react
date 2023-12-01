@@ -8,8 +8,6 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
-import NavBar from '../NavBar/NavBar';
-import LoginForm from '../Login/LoginForm';
 
 function Header() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -55,7 +53,7 @@ function Header() {
 
   return (
     <div className="header   w-full p-0 relative  flex flex-col justify-start items-center gap-4  ">
-      <div className="headerSearch z-50 absolute top-[20px] -bg--light-gray w-full laptop:m-0   flex laptop:flex-row laptop:max-w-[1000px]  laptop:justify-between laptop:items-center mobile:gap-4 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-20">
+      <div className="headerSearch z-50 absolute top-[20px] -bg--light-gray laptop:w-full laptop:m-0   flex laptop:flex-row laptop:max-w-[1000px]  laptop:justify-between laptop:items-center mobile:gap-5 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-2 mobile:w-[95%] mobile:rounded-2xl mobile:py-5  ">
         {/* location */}
         <div className="headerSearchItem px-2 flex  items-center laptop:flex-1 laptop:w-80 relative h-12 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
           <MdLocationOn className="headerIcon locationIcon -text--red w-7 h-6 inline-block mr-3 " />
