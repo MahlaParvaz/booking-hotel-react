@@ -1,19 +1,58 @@
 import { useParams } from 'react-router-dom';
-import Loader from '../Loader/Loader';
-import { useHotels } from '../context/HotelResultProvider';
 import { useEffect, useRef, useState } from 'react';
-import Map from '../Map/Map';
-import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi';
-import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
-import useOutsideClick from '../../Hooks/useOutSideClick';
+
+import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi';
+import { FaShield } from 'react-icons/fa6';
 import { ImHome3 } from 'react-icons/im';
-import Hotels from '../Hotels/Hotels';
+import { IoCloseCircle } from 'react-icons/io5';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+
+import Loader from '../Loader/Loader';
+import { useHotels } from '../context/HotelResultProvider';
+import Map from '../Map/Map';
+import useOutsideClick from '../../Hooks/useOutSideClick';
+
 function SingleHotelResult() {
   const { id } = useParams();
   const { getHotel, isLoadingCurrHotel, currentHotel, hotels } = useHotels();
+
+  useEffect(() => {
+    console.log(currentHotel);
+    getHotel(id);
+  }, [id]);
+
+  if (isLoadingCurrHotel || !currentHotel) return <Loader />;
+
+  return (
+    <div className=" flex z-50 justify-center items-center w-full  mb-5  min-h-screen ">
+      <div className=" mt-[6rem] w-[90%]  flex flex-col items-center justify-between    ">
+        <HotelInfo currentHotel={currentHotel} />
+        <div className="amentities mb-20 w-[90%] ">
+          <h2 className="font-semibold text-[30px] text-center mb-8">Amenities</h2>
+          <div className="grid grid-cols-3 gap-4">
+            {currentHotel.amenities.map((amenity) => (
+              <div key={amenity.id} className="amenity-item">
+                {amenity}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="location  h-[400px] mb-36 w-[90%]">
+          <p className="font-semibold text-[30px] text-center mb-8">Location</p>
+          <Map markerLocations={hotels} />
+        </div>
+        <PolicyDetail currentHotel={currentHotel} />
+      </div>
+    </div>
+  );
+}
+
+export default SingleHotelResult;
+
+function HotelInfo({ currentHotel }) {
   const [openDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
     {
@@ -27,12 +66,6 @@ function SingleHotelResult() {
     children: 0,
     room: 1,
   });
-
-  useEffect(() => {
-    console.log(currentHotel);
-    getHotel(id);
-  }, [id]);
-
   const handleOptions = (name, opration) => {
     setOptions((prev) => {
       return {
@@ -45,96 +78,85 @@ function SingleHotelResult() {
   const dateRef = useRef();
   useOutsideClick(dateRef, 'dateDropDown', () => setOpenDate(false));
 
-  if (isLoadingCurrHotel || !currentHotel) return <Loader />;
-
   return (
-    <div className=" flex z-50 justify-center items-center w-full  mb-5  min-h-screen ">
-      <div className="appLayout bg-yellow-400 mt-[6rem] w-[90%]  flex flex-col justify-between h-[1000px]   ">
-        <div className="sidebar bg-red-100 flex  justify-around items-center  gap-4 p-4 pr-[1rem] mb-20 ">
-          <div className="w-[600px]">
-            <img
-              className="w-full h-96  object-cover  rounded-xl"
-              // single picture
-              src={currentHotel.picture_url.url}
-              alt={currentHotel.name}
-            />
-            <h2 className="mb-2 text-base">{currentHotel.name}</h2>
-            <div className="mb-4">
-              {currentHotel.number_of_reviews} reviews &bull;{' '}
-              {currentHotel.smart_location}
-            </div>
-            <div>
-              <h2>describe</h2>
-              {currentHotel.description}
-            </div>
-          </div>
-          <div className=" -bg--light-gray w-[35%] rounded-3xl flex flex-col items-center p-8">
-            <h2 className="text-center mb-8 font-bold">990 / Month</h2>
-            <div className="headerSearchItem flex items-center relative h-12  w-80 mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
-              <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 " />
-              <div
-                className="dateDropDown mobile:w-80 text-slate-500 "
-                onClick={() => setOpenDate(!openDate)}
-                id="dateDropDown"
-                ref={dateRef}
-              >
-                {`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(
-                  date[0].endDate,
-                  'MM/dd/yyyy'
-                )}`}
-                {openDate && (
-                  <DateRange
-                    className="date   absolute top-[50px] -left-[15px] z-50 rounded-lg shadow-lg "
-                    onChange={(item) => setDate([item.selection])}
-                    ranges={date}
-                    minDate={new Date()}
-                    moveRangeOnFirstSelection={true}
-                  />
-                )}
-              </div>
-            </div>
-            <div className="headerSearchItem  mb-8 ">
-              <div className="  mobile:w-80  text-slate-500 mb-4 ">
-                <ImHome3 className="headerIcon -text--red   w-7 h-5 inline-block mr-3 " />
-                <span>Number of guests : 2</span>
-              </div>
-              <OptionsList options={options} handleOptions={handleOptions} />
-            </div>
-
-            <div className="totalPrice flex flex-col gap-5 mb-8 w-full">
-              <div className="flex justify-between px-3">
-                <span>Pay upon booking</span>
-                <span>44444</span>
-              </div>
-              <div className="flex justify-between px-3">
-                <span>Total costs</span>
-                <span>343.5</span>
-              </div>
-            </div>
-            <button className="-bg--dark-green text-white w-56 p-2 rounded-2xl hover:-bg--light-green hover:-text--dark-green">
-              Continue booking
-            </button>
-            <span className="text-[12px]">
-              When you book this apartment, your reservation will be confirmed instantly
-            </span>
+    <div className="  flex flex-col w-full  items-center   ">
+      <div className="flex  justify-between items-center  gap-4  pr-[1rem] mb-20">
+        <div className="w-[600px] h-full   ">
+          <img
+            className="w-full h-[400px]   object-cover  rounded-xl mb-10"
+            // single picture
+            src={currentHotel.picture_url.url}
+            alt={currentHotel.name}
+          />
+          <h2 className="mb-2 text-base mt-5">{currentHotel.name}</h2>
+          <div className="mb-10">
+            {currentHotel.number_of_reviews} reviews &bull; {currentHotel.smart_location}
           </div>
         </div>
 
-        <Map markerLocations={hotels} />
+        <div className=" -bg--light-gray w-[40%] rounded-3xl flex flex-col items-center justify-center p-8 mt-8">
+          <h2 className="text-center mb-8 font-bold">990 / Month</h2>
+          <div className="headerSearchItem flex items-center relative h-12  w-80 mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
+            <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 " />
+            <div
+              className="dateDropDown mobile:w-80 text-slate-500 "
+              onClick={() => setOpenDate(!openDate)}
+              id="dateDropDown"
+              ref={dateRef}
+            >
+              {`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(
+                date[0].endDate,
+                'MM/dd/yyyy'
+              )}`}
+              {openDate && (
+                <DateRange
+                  className="date   absolute top-[50px] -left-[15px] z-50 rounded-lg shadow-lg "
+                  onChange={(item) => setDate([item.selection])}
+                  ranges={date}
+                  minDate={new Date()}
+                  moveRangeOnFirstSelection={true}
+                />
+              )}
+            </div>
+          </div>
+          <div className="headerSearchItem  mb-8 ">
+            <div className="  mobile:w-80  text-slate-500 mb-4 ">
+              <ImHome3 className="headerIcon -text--red   w-7 h-5 inline-block mr-3 " />
+              <span>Number of guests : 2</span>
+            </div>
+            <OptionsList options={options} handleOptions={handleOptions} />
+          </div>
+
+          <div className="totalPrice flex flex-col gap-5 mb-8 w-full">
+            <div className="flex justify-between px-3">
+              <span>Pay upon booking</span>
+              <span>44444</span>
+            </div>
+            <div className="flex justify-between px-3">
+              <span>Total costs</span>
+              <span>343.5</span>
+            </div>
+          </div>
+          <button className="-bg--dark-green text-white w-56 p-2 rounded-2xl hover:-bg--light-green hover:-text--dark-green">
+            Continue booking
+          </button>
+          <span className="text-[14px] mt-3">
+            When you book this apartment, your reservation will be confirmed instantly
+          </span>
+        </div>
       </div>
+      <div className="description w-[90%] mb-32">
+        <h2 className="font-semibold text-[20px] mb-5">Description</h2>
+        {currentHotel.description}
+      </div>
+      ;
     </div>
   );
 }
 
-export default SingleHotelResult;
-function OptionsList({ options, handleOptions, setOptionsDropDown }) {
-  const optionRef = useRef();
-  useOutsideClick(optionRef, 'optionDropDown', () => setOptionsDropDown(false));
+function OptionsList({ options, handleOptions }) {
   return (
-    <div
-      ref={optionRef}
-      className="bg-white flex flex-col gap-8 justify-between  top-[50px] ml-4 rounded-lg  w-96  px-4 py-3 "
-    >
+    <div className="bg-white flex flex-col gap-8 justify-between  top-[50px] ml-4 rounded-lg  w-96  px-4 py-3 ">
       <OptionsItem
         type="adult"
         options={options}
@@ -171,6 +193,43 @@ function OptionsItem({ options, type, minLimit, handleOptions }) {
           >
             <HiPlus className="icon" />
           </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+function PolicyDetail({ currentHotel }) {
+  return (
+    <div className="policyDetail  w-[90%] mb-10">
+      <h2 className="font-semibold text-[30px] text-center mb-8">Policy detail</h2>
+      <div className="grid grid-cols-3 gap-4">
+        <div className="w-72">
+          <p className="font-semibold text-[20px] mb-5">House rules</p>
+          <div className="flex flex-col mb-5 gap-2">
+            {currentHotel.house_rules.map((rules) => (
+              <div
+                key={rules.id}
+                className="flex items-start  top-16 -text--dark-green gap-2"
+              >
+                <IoCloseCircle className=" text-[18px] mt-0.5" />
+                {rules}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="w-72">
+          <p className="font-semibold text-[20px] mb-5">Cancellation policy</p>
+          <div className="flex items-start  top-16 -text--dark-green gap-2">
+            <IoCloseCircle className=" text-[20px] mt-0.2" />
+            {currentHotel.cancellation_policy}
+          </div>
+        </div>
+        <div className="w-72">
+          <p className="font-semibold text-[20px] mb-5 ">Health & Safety</p>
+          <div className="flex items-start  top-16 -text--dark-green gap-2">
+            <FaShield className=" text-[20px] mt-0.2" />
+            {currentHotel.health_safety}
+          </div>
         </div>
       </div>
     </div>

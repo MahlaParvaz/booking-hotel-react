@@ -6,7 +6,6 @@ import Header from './components/Header/Header';
 import HomePage from './components/HomePage/HomePage';
 import Hotels from './components/Hotels/Hotels';
 import HotelsResult from './components/HotelsResult/HotelsResult';
-import HotelLayout from './components/Layout/HotelLayout';
 import HotelResultProvider from './components/context/HotelResultProvider';
 import SingleHotelResult from './components/SingleHotelREsult/SingleHotelREsult';
 import BookmarkLayout from './components/Layout/BookmarkLayout';
@@ -38,7 +37,7 @@ function App() {
                   <Route path=":id" element={<SingleHotelResult />} />
                 </Route> */}
                 <Route path="/hotels-result">
-                  <Route index element={<HotelLayout />} />
+                  <Route index element={<HotelsResult />} />
                   <Route path=":id" element={<SingleHotelResult />} />
                 </Route>
 

@@ -30,9 +30,9 @@ function NavBar() {
               </li>
             </Link>
 
-            <li className="cursor-pointer hover:border-b-4 hover:-border--red">
-              Exprience
-            </li>
+            <Link to="/">
+              <li className="cursor-pointer hover:border-b-4 hover:-border--red">Home</li>
+            </Link>
           </ul>
         </div>
         <div className="navbarList flex-1 relative  h-full ">

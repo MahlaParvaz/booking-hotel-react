@@ -1,9 +1,10 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 function Footer() {
   return (
-    <div className="footer  text-white w-full bg-black h-[270px] flex justify-around items-center">
-      <div className="footerList h-[50%] ">
-        <div className="footerItem flex flex-col justify-between items-start gap-6">
+    <div className="footer  text-white w-full h-[300px]  bg-black  flex justify-around items-center">
+      <div className="footerList ">
+        <div className="footerItem  mb-10 flex flex-col justify-between items-start gap-6 ">
           <img
             src="/src/assets/img/airbnb.png"
             alt="logo doesn't show"
@@ -20,28 +21,49 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="footerList flex flex-col gap-4 justify-start items-start h-[50%]">
+      <div className="footerList mb-10  flex flex-col gap-4 justify-start items-start h-[50%]">
+        <span>Locations</span>
+        <ul className="footerItem">
+          <li className="mb-2 cursor-pointer">
+            <Link to="/Hotels">Hotels</Link>
+          </li>
+          <li className="mb-2 cursor-pointer">
+            <Link to="/popular-locations/iran">Iran</Link>
+          </li>
+          <li className="mb-2 cursor-pointer">
+            <Link to="/popular-locations/london">London</Link>
+          </li>
+          <li className="mb-2 cursor-pointer">
+            <Link to="/popular-locations/france">France</Link>
+          </li>
+          <li className="mb-2 cursor-pointer">
+            <Link to="/popular-locations/netherland">Netherland</Link>
+          </li>
+          <li className="mb-2 cursor-pointer">
+            <Link to="/popular-locations/america">America</Link>
+          </li>
+        </ul>
+      </div>
+      <div className="footerList  mb-10 flex flex-col gap-4 justify-start items-start h-[50%]">
         <span>Company</span>
         <ul className="footerItem ">
-          <li className="mb-2 cursor-pointer">Home</li>
-          <li className="mb-2 cursor-pointer">About us</li>
-          <li className="mb-2 cursor-pointer">Our team</li>
+          <li className="mb-2 cursor-pointer">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="mb-2 cursor-pointer">
+            <Link to="/about-us">About us</Link>
+          </li>
         </ul>
       </div>
-      <div className="footerList  flex flex-col gap-4 justify-start items-start h-[50%]">
-        <span>Guests</span>
-        <ul className="footerItem">
-          <li className="mb-2 cursor-pointer">Blog</li>
-        </ul>
-      </div>
-      <div className="footerList flex flex-col gap-4 justify-start items-start h-[50%]">
+
+      <div className="footerList mb-10 flex flex-col gap-4 justify-start items-start h-[50%]">
         <span>Privacy</span>
         <ul className="footerItem ">
           <li className="mb-2 cursor-pointer">Terms of Serviece</li>
           <li className="mb-2 cursor-pointer">Privacy Policy</li>
         </ul>
       </div>
-      <div className="footerList flex flex-col gap-4 justify-start items-start h-[50%]">
+      <div className="footerList mb-10 flex flex-col gap-4 justify-start items-start h-[50%]">
         <span>Stay up to date</span>
         <span>Be the first to know about our newest apartments</span>
 

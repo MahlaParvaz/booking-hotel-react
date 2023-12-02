@@ -34,16 +34,17 @@ function Map({ markerLocations }) {
   }, [geoPosition]);
 
   return (
-    <div className="mapContainer  flex-1  relative  -bg--light-gray ">
+    <>
       <MapContainer
-        className="map h-full  "
+        className="map h-full rounded-2xl  "
         center={mapCenter}
         zoom={6}
         scrollWheelZoom={true}
+        
       >
         <button
           onClick={getPosition}
-          className="getLocation -bg--violet-700 text-white z-[800] absolute rounded-2xl py-1 px-2 font-bold bottom-4 left-4 shadow-lg  shadow-white "
+          className="getLocation -bg--dark-green text-white z-[800] absolute rounded-2xl py-1 px-2 font-bold bottom-4 left-4 shadow-lg  shadow-white "
         >
           {isLoadingGeoPosition ? 'Loading ...' : ' Use Your Location'}
         </button>
@@ -61,7 +62,7 @@ function Map({ markerLocations }) {
           );
         })}
       </MapContainer>
-    </div>
+    </>
   );
 }
 
