@@ -11,7 +11,9 @@ function BookmarkLayout() {
         <div className="sidebar w-[40%] flex-1 overflow-hidden overflow-y-scroll pr-[1rem] ">
           <Outlet />
         </div>
-        <Map markerLocations={bookmarks} />
+        <div className="location  h-full mb-36 w-[50%]">
+          <Map markerLocations={bookmarks} />
+        </div>
       </div>
     </div>
   );

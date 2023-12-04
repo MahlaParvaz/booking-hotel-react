@@ -20,8 +20,8 @@ const responsive = {
     items: 2,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
+    breakpoint: { max: 390, min: 0 },
+    items: 1.2,
   },
 };
 
@@ -31,15 +31,17 @@ function NearLocation() {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="nearbyLocatio mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 ">
-      <h2 className="laptop:w-[85%] px-4  text-lg font-bold">Nearby Locations</h2>
+    <div className="nearbyLocatio mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 mobile:mt-20 mobile:mb-20  laptop:mt-0">
+      <h2 className="laptop:w-[85%] px-4  text-lg font-bold mobile:w-[85%] ">
+        Nearby Locations
+      </h2>
 
-      <div className="locationList w-[90%]  py-4 px-10 rounded-lg">
+      <div className="locationList laptop:w-[90%] mobile:w-full  py-4 px-10 rounded-lg">
         <Carousel
           responsive={responsive}
           axis="horizontal"
           showStatus={false}
-          className="relative"
+          className="relative "
           customLeftArrow={<CustomLeftArrow />}
           customRightArrow={<CustomRightArrow />}
         >

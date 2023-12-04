@@ -9,12 +9,12 @@ import LoginForm from '../Login/LoginForm';
 function NavBar() {
   return (
     <div className="navbar  text-white w-full   h-16 pt-4 flex items-center justify-center  shadow-lg  bg-black">
-      <div className="flex laptop:w-[80%] top-0 h-full justify-between items-center mobile:w-full  ">
-        <div className="navbarList  flex-1 h-full">
+      <div className="flex laptop:w-[80%] top-0 h-full justify-between items-center mobile:w-full   ">
+        <div className="navbarList  flex-1 h-full ">
           <img
             src="/src/assets/img/airbnb.png"
             alt=""
-            className="p-2 mobile:hidden  laptop:block"
+            className="p-2 mobile:hidden  laptop:block "
           />
         </div>
         <div className="navbarList laptop:flex-1 mobile:w-[95%]  h-full">

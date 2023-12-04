@@ -6,6 +6,7 @@ import Map from '../Map/Map';
 
 function HotelsResult() {
   const { hotels } = useHotels();
+
   return (
     <div className=" flex z-50 justify-center items-center w-full  mb-5 ">
       <div className="appLayout  mt-[6rem] w-[90%] flex justify-between items-stretch h-screen mb-130 ">
@@ -23,7 +24,7 @@ function HotelsResult() {
 export default HotelsResult;
 
 function Result() {
-  const { isLoading, hotels, currentHotel } = useHotels();
+  const { isLoading, currentHotel, hotels } = useHotels();
 
   if (isLoading) return <Loader />;
 
@@ -34,7 +35,7 @@ function Result() {
         return (
           <Link
             key={item.id}
-            to={`/hotels-result/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
+            to={`${item.id}?lat=${item.latitude}&lng=${item.longitude}`}
           >
             <div
               className={`searchItem flex gap-6 h-44 -bg--light-gray  rounded-3xl rounded-bl-none ${

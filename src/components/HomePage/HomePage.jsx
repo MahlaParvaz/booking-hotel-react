@@ -85,7 +85,7 @@ const opinionData = [
 function HomePage() {
   return (
     <div className="homepage   ">
-      <div className="landingImg  laptop:w-full bg-black mobile:w-[390px] laptop:h-[600px] p-0 relative  flex  justify-center items-end mobile:h-[150px]">
+      <div className="landingImg  laptop:w-full  bg-black mobile:w-[390px] laptop:h-[600px] p-0 relative  flex  justify-center items-end mobile:h-[150px]">
         <img
           className="laptop:h-[500px] laptop:w-[80%] laptop:block mobile:hidden  "
           src="/src/assets/img/landing-3.png"
@@ -107,7 +107,7 @@ export default HomePage;
 
 function Description() {
   return (
-    <div className=" w-full mt-20 flex justify-center items-center  relative">
+    <div className="mobile:hidden laptop:flex w-full mt-20 flex justify-center items-center  relative">
       <div className="w-[80%]  ">
         <img
           className="w-full"
@@ -131,15 +131,15 @@ function Description() {
 
 function BookAdvertisement() {
   return (
-    <div className="image w-full flex justify-center items-center  relative">
-      <div className="w-[90%]  ">
+    <div className="image w-full mobile:mb-20  flex justify-center items-center  relative">
+      <div className="laptop:w-[90%] mobile:w-full ">
         <img
-          className="w-full h-[450px] rounded-[80px] object-cover"
+          className="w-full h-[450px] laptop:rounded-[80px] mobile:rounded-none object-cover"
           src="/src/assets/img/the-anam.jpg"
           alt="seaside image doesn't show"
         />
       </div>
-      <div className="title  flex  flex-col absolute text-end   items-start gap-6 p-16 left-28 -bg--light-green rounded-[30px] bg-opacity-70">
+      <div className="title  flex  flex-col absolute text-end   items-start gap-6 laptop:p-16 mobile:w-[300px] laptop:w-[450px]  mobile:p-10  laptop:left-28 -bg--light-green rounded-[30px] bg-opacity-70">
         <h2 className="font-bold text-[20px] -text--dark-green mb-10 text-left">
           Lets booking your favourite hotel
         </h2>
@@ -162,7 +162,7 @@ function Accordion() {
 
   return (
     <div className=" w-full  p-4 mt-10 relative flex flex-col  justify-center items-center gap-6">
-      <h2 className="laptop:w-[85%] px-4  text-lg font-bold">Your questions</h2>
+      <h2 className="w-[85%] px-4  text-lg font-bold ">Your questions</h2>
 
       <div className="accordion w-[85%] border-solid -border--light-gray  rounded-[10px] overflow-hidden">
         {data.map((item) => (
@@ -216,7 +216,7 @@ function UsersOpinion() {
   return (
     <div className="swiper w-full mb-10 p-4 mt-10 relative flex flex-col justify-center items-center gap-6">
       <h2 className=" px-4 text-lg font-bold  w-[85%]">Users opinion</h2>
-      <div className="w-[86.5%]  h-[400px] mb-10 rounded-[10px] overflow-hidden">
+      <div className="laptop:w-[86.5%]  h-[400px] mb-10 rounded-[10px] overflow-hidden">
         <Swiper
           effect={'coverflow'}
           grabCursor={true}
@@ -237,14 +237,14 @@ function UsersOpinion() {
             clickable: true,
           }}
           modules={[EffectCoverflow, Pagination, Navigation]}
-          className="swiper_container  w-full h-full py-[20px] relative"
+          className="swiper_container w-full h-full py-[20px] relative"
         >
           {opinionData.map((item) => (
             <SwiperSlide
               key={item.id}
-              className="swiper-slide blur-[3px]  w-[300px] center bg-cover rounded-[30px] "
+              className="swiper-slide blur-[3px]  w-[300px]  center bg-cover rounded-[30px] "
             >
-              <div className="testimonialBox -bg--light-gray  flex flex-col justify-around items-center   w-[400px] h-full rounded-[30px] ">
+              <div className="testimonialBox -bg--light-gray  flex flex-col justify-around items-center   laptop:w-[400px] mobile:w-[300px] h-full rounded-[30px] ">
                 <div className="-bg--dark-green rounded-t-[30px] rounded-bl-[30px] w-full flex justify-center items-center relative h-[250px]">
                   <img
                     className=" w-[100px] h-[100px] rounded-full object-cover "

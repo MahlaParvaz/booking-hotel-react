@@ -36,10 +36,10 @@ function App() {
                   <Route index element={<HotelsResult />} />
                   <Route path=":id" element={<SingleHotelResult />} />
                 </Route> */}
-                <Route path="/hotels-result">
-                  <Route index element={<HotelsResult />} />
-                  <Route path=":id" element={<SingleHotelResult />} />
-                </Route>
+                {/* <Route path="/hotels-result">
+                </Route> */}
+                <Route path="/hotels-result" element={<HotelsResult />} />
+                <Route path="/hotels-result/:id" element={<SingleHotelResult />} />
 
                 <Route path="/popular-locations">
                   <Route

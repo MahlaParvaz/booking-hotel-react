@@ -17,21 +17,47 @@ import useUrlLocation from '../../Hooks/useUrlLocation';
 function Map({ markerLocations }) {
   const [mapCenter, setMapCenter] = useState([20, 4]);
   const [lat, lng] = useUrlLocation();
+  const navigate = useNavigate();
 
   const {
-    isLoading: isLoadingGeoPosition,
-    position: geoPosition,
+    isLoading: isLoadingPosition,
+    position: geoLocationPosition,
     getPosition,
   } = useGeoLocation();
+  // const updateMapCenter = (newCenter) => {
+  //   // Clone the newCenter array using the spread operator
+
+  //   const clonedCenter = [...newCenter];
+  //   setMapCenter(clonedCenter);
+  //   // navigate(`/hotels-result?lat=${lat}&lng=${lng}`);
+  //   console.log('clonedCenter:', clonedCenter);
 
   useEffect(() => {
-    if (lat && lng) setMapCenter([lat, lng]);
-  }, [lat, lng]);
+    // Initialize map center based on URL parameters or geolocation
+    if (lat && lng) {
+      setMapCenter([lat, lng]);
+    } else if (geoLocationPosition?.lat && geoLocationPosition?.lng) {
+      setMapCenter([geoLocationPosition.lat, geoLocationPosition.lng]);
+    }
+  }, [lat, lng, geoLocationPosition]);
 
+  // useEffect(() => {
+  //   // Initialize map center based on URL parameters or geolocation
+  //   if (lat && lng) {
+  //     setMapCenter([lat, lng]);
+  //   }
+  // }, [lat, lng, setMapCenter]);
+
+  // useEffect(() => {
+  //   if (geoLocationPosition?.lat && geoLocationPosition?.lng) {
+  //     setMapCenter([geoLocationPosition.lat, geoLocationPosition.lng]);
+  //     console.log('Map Center Updated:', geoLocationPosition);
+  //   }
+  // }, [geoLocationPosition]);
+  // // // Log for debugging
   useEffect(() => {
-    if (geoPosition?.lat && geoPosition.lng)
-      setMapCenter([geoPosition.lat, geoPosition.lng]);
-  }, [geoPosition]);
+    console.log('Map Center Updated:', mapCenter);
+  }, [mapCenter]);
 
   return (
     <>
@@ -40,13 +66,12 @@ function Map({ markerLocations }) {
         center={mapCenter}
         zoom={6}
         scrollWheelZoom={true}
-        
       >
         <button
           onClick={getPosition}
           className="getLocation -bg--dark-green text-white z-[800] absolute rounded-2xl py-1 px-2 font-bold bottom-4 left-4 shadow-lg  shadow-white "
         >
-          {isLoadingGeoPosition ? 'Loading ...' : ' Use Your Location'}
+          {isLoadingPosition ? 'Loading ...' : ' Use Your Location'}
         </button>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -54,13 +79,12 @@ function Map({ markerLocations }) {
         />
         <DitectClick />
         <ChangeCenter position={mapCenter} />
-        {markerLocations.map((item) => {
-          return (
-            <Marker key={item.id} position={[item.latitude, item.longitude]}>
-              <Popup>{item.host_location}</Popup>
-            </Marker>
-          );
-        })}
+
+        {markerLocations.map((item) => (
+          <Marker key={item.id} position={[item.latitude, item.longitude]}>
+            <Popup>{item.host_location}</Popup>
+          </Marker>
+        ))}
       </MapContainer>
     </>
   );

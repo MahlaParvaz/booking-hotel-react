@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
@@ -14,15 +14,18 @@ import Loader from '../Loader/Loader';
 import { useHotels } from '../context/HotelResultProvider';
 import Map from '../Map/Map';
 import useOutsideClick from '../../Hooks/useOutSideClick';
+import useUrlLocation from '../../Hooks/useUrlLocation';
 
 function SingleHotelResult() {
   const { id } = useParams();
   const { getHotel, isLoadingCurrHotel, currentHotel, hotels } = useHotels();
+  // const navigate = useNavigate();
+  // const [lat, lng] = useUrlLocation();
 
   useEffect(() => {
-    console.log(currentHotel);
     getHotel(id);
-  }, [id]);
+
+  }, [id ]);
 
   if (isLoadingCurrHotel || !currentHotel) return <Loader />;
 
@@ -33,8 +36,8 @@ function SingleHotelResult() {
         <div className="amentities mb-20 w-[90%] ">
           <h2 className="font-semibold text-[30px] text-center mb-8">Amenities</h2>
           <div className="grid grid-cols-3 gap-4">
-            {currentHotel.amenities.map((amenity) => (
-              <div key={amenity.id} className="amenity-item">
+            {currentHotel.amenities.map((amenity, index) => (
+              <div key={index} className="amenity-item">
                 {amenity}
               </div>
             ))}
@@ -74,6 +77,15 @@ function HotelInfo({ currentHotel }) {
       };
     });
   };
+
+  const numberOfGuests = options.adult + options.children;
+
+  const totalCostWithDates = calculateTotalCostWithDates(
+    date,
+    numberOfGuests,
+    currentHotel.price
+  );
+
   //  date useRef
   const dateRef = useRef();
   useOutsideClick(dateRef, 'dateDropDown', () => setOpenDate(false));
@@ -95,7 +107,7 @@ function HotelInfo({ currentHotel }) {
         </div>
 
         <div className=" -bg--light-gray w-[40%] rounded-3xl flex flex-col items-center justify-center p-8 mt-8">
-          <h2 className="text-center mb-8 font-bold">990 / Month</h2>
+          <h2 className="text-center mb-8 font-bold">Reservation bill</h2>
           <div className="headerSearchItem flex items-center relative h-12  w-80 mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
             <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 " />
             <div
@@ -122,19 +134,19 @@ function HotelInfo({ currentHotel }) {
           <div className="headerSearchItem  mb-8 ">
             <div className="  mobile:w-80  text-slate-500 mb-4 ">
               <ImHome3 className="headerIcon -text--red   w-7 h-5 inline-block mr-3 " />
-              <span>Number of guests : 2</span>
+              <span>Number of guests : {numberOfGuests}</span>
             </div>
             <OptionsList options={options} handleOptions={handleOptions} />
           </div>
 
           <div className="totalPrice flex flex-col gap-5 mb-8 w-full">
             <div className="flex justify-between px-3">
-              <span>Pay upon booking</span>
-              <span>44444</span>
+              <span>Price of one night</span>
+              <span>$ {currentHotel.price} </span>
             </div>
             <div className="flex justify-between px-3">
               <span>Total costs</span>
-              <span>343.5</span>
+              <span>$ {totalCostWithDates}</span>
             </div>
           </div>
           <button className="-bg--dark-green text-white w-56 p-2 rounded-2xl hover:-bg--light-green hover:-text--dark-green">
@@ -206,9 +218,9 @@ function PolicyDetail({ currentHotel }) {
         <div className="w-72">
           <p className="font-semibold text-[20px] mb-5">House rules</p>
           <div className="flex flex-col mb-5 gap-2">
-            {currentHotel.house_rules.map((rules) => (
+            {currentHotel.house_rules.map((rules, index) => (
               <div
-                key={rules.id}
+                key={index}
                 className="flex items-start  top-16 -text--dark-green gap-2"
               >
                 <IoCloseCircle className=" text-[18px] mt-0.5" />
@@ -234,4 +246,10 @@ function PolicyDetail({ currentHotel }) {
       </div>
     </div>
   );
+}
+function calculateTotalCostWithDates(date, numberOfGuests, price) {
+  const startDate = date[0].startDate;
+  const endDate = date[0].endDate;
+  const numberOfDays = Math.ceil((endDate - startDate + 1) / (1000 * 60 * 60 * 24));
+  return numberOfDays * numberOfGuests * price;
 }
