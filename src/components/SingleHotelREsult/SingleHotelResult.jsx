@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
@@ -14,7 +14,9 @@ import Loader from '../Loader/Loader';
 import { useHotels } from '../context/HotelResultProvider';
 import Map from '../Map/Map';
 import useOutsideClick from '../../Hooks/useOutSideClick';
-import useUrlLocation from '../../Hooks/useUrlLocation';
+import Checkout from '../Checkout/Checkout';
+import CalculateCheckout from '../../common/CalculateCheckout';
+import { useHotelContext } from '../context/CheckoutProvider';
 
 function SingleHotelResult() {
   const { id } = useParams();
@@ -24,8 +26,7 @@ function SingleHotelResult() {
 
   useEffect(() => {
     getHotel(id);
-
-  }, [id ]);
+  }, [id]);
 
   if (isLoadingCurrHotel || !currentHotel) return <Loader />;
 
@@ -43,7 +44,7 @@ function SingleHotelResult() {
             ))}
           </div>
         </div>
-        <div className="location  h-[400px] mb-36 w-[90%]">
+        <div className="location  h-[400px] mb-36 w-[90%] z-10">
           <p className="font-semibold text-[30px] text-center mb-8">Location</p>
           <Map markerLocations={hotels} />
         </div>
@@ -56,40 +57,17 @@ function SingleHotelResult() {
 export default SingleHotelResult;
 
 function HotelInfo({ currentHotel }) {
+  const { date, setDate, options, handleOptions, numberOfGuests, totalCost } =
+    useHotelContext();
   const [openDate, setOpenDate] = useState(false);
-  const [date, setDate] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: 'selection',
-    },
-  ]);
-  const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
-  });
-  const handleOptions = (name, opration) => {
-    setOptions((prev) => {
-      return {
-        ...prev,
-        [name]: opration === 'inc' ? options[name] + 1 : options[name] - 1,
-      };
-    });
-  };
-
-  const numberOfGuests = options.adult + options.children;
-
-  const totalCostWithDates = calculateTotalCostWithDates(
+  const state = {
     date,
     numberOfGuests,
-    currentHotel.price
-  );
-
+    totalCost,
+  };
   //  date useRef
   const dateRef = useRef();
   useOutsideClick(dateRef, 'dateDropDown', () => setOpenDate(false));
-
   return (
     <div className="  flex flex-col w-full  items-center   ">
       <div className="flex  justify-between items-center  gap-4  pr-[1rem] mb-20">
@@ -146,12 +124,18 @@ function HotelInfo({ currentHotel }) {
             </div>
             <div className="flex justify-between px-3">
               <span>Total costs</span>
-              <span>$ {totalCostWithDates}</span>
+              <span>$ {CalculateCheckout(date, options, currentHotel.price)}</span>
             </div>
           </div>
-          <button className="-bg--dark-green text-white w-56 p-2 rounded-2xl hover:-bg--light-green hover:-text--dark-green">
-            Continue booking
-          </button>
+          <div className="reserveBtn">
+            <Link
+              to={`/hotels-result/${currentHotel.id}/checkout`}
+              state={state}
+              className="-bg--dark-green text-white w-56 p-2 rounded-2xl hover:-bg--light-green hover:-text--dark-green"
+            >
+              <span>Continue booking</span>
+            </Link>
+          </div>
           <span className="text-[14px] mt-3">
             When you book this apartment, your reservation will be confirmed instantly
           </span>
@@ -161,7 +145,6 @@ function HotelInfo({ currentHotel }) {
         <h2 className="font-semibold text-[20px] mb-5">Description</h2>
         {currentHotel.description}
       </div>
-      ;
     </div>
   );
 }
@@ -246,10 +229,4 @@ function PolicyDetail({ currentHotel }) {
       </div>
     </div>
   );
-}
-function calculateTotalCostWithDates(date, numberOfGuests, price) {
-  const startDate = date[0].startDate;
-  const endDate = date[0].endDate;
-  const numberOfDays = Math.ceil((endDate - startDate + 1) / (1000 * 60 * 60 * 24));
-  return numberOfDays * numberOfGuests * price;
 }

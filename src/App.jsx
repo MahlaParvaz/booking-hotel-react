@@ -19,6 +19,8 @@ import LoginForm from './components/Login/LoginForm';
 import AuthContextProvider from './components/context/AuthProvider';
 import ProtectedRouth from './components/ProtectedRouth/ProtectedRouth';
 import SignupForm from './components/SignupForm/SignupForm';
+import Checkout from './components/Checkout/Checkout';
+import { CheckoutProvider } from './components/context/CheckoutProvider';
 
 function App() {
   return (
@@ -27,76 +29,76 @@ function App() {
         <AuthContextProvider>
           <BookmarkListProvider>
             <HotelResultProvider>
-              <Toaster />
-              <Header />
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/hotels" element={<Hotels />} />
-                {/* <Route path="/hotels-result" element={<HotelLayout />}>
-                  <Route index element={<HotelsResult />} />
-                  <Route path=":id" element={<SingleHotelResult />} />
-                </Route> */}
-                {/* <Route path="/hotels-result">
-                </Route> */}
-                <Route path="/hotels-result" element={<HotelsResult />} />
-                <Route path="/hotels-result/:id" element={<SingleHotelResult />} />
+              <CheckoutProvider>
+                <Toaster />
+                <Header />
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/hotels" element={<Hotels />} />
 
-                <Route path="/popular-locations">
-                  <Route
-                    path="iran"
-                    element={
-                      <PopularLocationsDetail
-                        countryFilter="Iran"
-                        title="Hotels in Iran"
-                      />
-                    }
-                  />
-                  <Route
-                    path="london"
-                    element={
-                      <PopularLocationsDetail
-                        countryFilter="London"
-                        title="Hotels in London"
-                      />
-                    }
-                  />
-                  <Route
-                    path="france"
-                    element={
-                      <PopularLocationsDetail
-                        countryFilter="France"
-                        title="Hotels in France"
-                      />
-                    }
-                  />
-                  <Route
-                    path="netherland"
-                    element={
-                      <PopularLocationsDetail
-                        countryFilter="Netherlands"
-                        title="Hotels in Netherland"
-                      />
-                    }
-                  />
-                  <Route
-                    path="america"
-                    element={
-                      <PopularLocationsDetail
-                        countryFilter="America"
-                        title="Hotels in America"
-                      />
-                    }
-                  />
-                </Route>
-                <Route path="/bookmark" element={<BookmarkLayout />}>
-                  <Route index element={<Bookmark />} />
-                  <Route path=":id" element={<SingleBookmark />} />
-                  <Route path="add" element={<AddNewBookmark />} />
-                </Route>
-                {/* <Route path="/signup" element={<signupForm />} /> */}
-                <Route path="/login" element={<LoginForm />} />
-                <Route path="/signup" element={<SignupForm />} />
-              </Routes>
+                  <Route path="/hotels-result" element={<HotelsResult />} />
+                  <Route path="/hotels-result/:id">
+                    <Route index element={<SingleHotelResult />} />
+                    <Route path="checkout" element={<Checkout />} />
+                  </Route>
+
+                  <Route path="/popular-locations">
+                    <Route
+                      path="iran"
+                      element={
+                        <PopularLocationsDetail
+                          countryFilter="Iran"
+                          title="Hotels in Iran"
+                        />
+                      }
+                    />
+                    <Route
+                      path="london"
+                      element={
+                        <PopularLocationsDetail
+                          countryFilter="London"
+                          title="Hotels in London"
+                        />
+                      }
+                    />
+                    <Route
+                      path="france"
+                      element={
+                        <PopularLocationsDetail
+                          countryFilter="France"
+                          title="Hotels in France"
+                        />
+                      }
+                    />
+                    <Route
+                      path="netherland"
+                      element={
+                        <PopularLocationsDetail
+                          countryFilter="Netherlands"
+                          title="Hotels in Netherland"
+                        />
+                      }
+                    />
+                    <Route
+                      path="america"
+                      element={
+                        <PopularLocationsDetail
+                          countryFilter="America"
+                          title="Hotels in America"
+                        />
+                      }
+                    />
+                  </Route>
+                  <Route path="/bookmark" element={<BookmarkLayout />}>
+                    <Route index element={<Bookmark />} />
+                    <Route path=":id" element={<SingleBookmark />} />
+                    <Route path="add" element={<AddNewBookmark />} />
+                  </Route>
+                  {/* <Route path="/signup" element={<signupForm />} /> */}
+                  <Route path="/login" element={<LoginForm />} />
+                  <Route path="/signup" element={<SignupForm />} />
+                </Routes>
+              </CheckoutProvider>
             </HotelResultProvider>
           </BookmarkListProvider>
         </AuthContextProvider>

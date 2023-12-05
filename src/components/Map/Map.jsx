@@ -17,47 +17,22 @@ import useUrlLocation from '../../Hooks/useUrlLocation';
 function Map({ markerLocations }) {
   const [mapCenter, setMapCenter] = useState([20, 4]);
   const [lat, lng] = useUrlLocation();
-  const navigate = useNavigate();
 
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,
     getPosition,
   } = useGeoLocation();
-  // const updateMapCenter = (newCenter) => {
-  //   // Clone the newCenter array using the spread operator
-
-  //   const clonedCenter = [...newCenter];
-  //   setMapCenter(clonedCenter);
-  //   // navigate(`/hotels-result?lat=${lat}&lng=${lng}`);
-  //   console.log('clonedCenter:', clonedCenter);
 
   useEffect(() => {
-    // Initialize map center based on URL parameters or geolocation
-    if (lat && lng) {
-      setMapCenter([lat, lng]);
-    } else if (geoLocationPosition?.lat && geoLocationPosition?.lng) {
+    console.log('lat', lat, 'lng', lng);
+    if (lat && lng) setMapCenter([lat, lng]);
+  }, [lat, lng]);
+
+  useEffect(() => {
+    if (geoLocationPosition?.lat && geoLocationPosition?.lng)
       setMapCenter([geoLocationPosition.lat, geoLocationPosition.lng]);
-    }
-  }, [lat, lng, geoLocationPosition]);
-
-  // useEffect(() => {
-  //   // Initialize map center based on URL parameters or geolocation
-  //   if (lat && lng) {
-  //     setMapCenter([lat, lng]);
-  //   }
-  // }, [lat, lng, setMapCenter]);
-
-  // useEffect(() => {
-  //   if (geoLocationPosition?.lat && geoLocationPosition?.lng) {
-  //     setMapCenter([geoLocationPosition.lat, geoLocationPosition.lng]);
-  //     console.log('Map Center Updated:', geoLocationPosition);
-  //   }
-  // }, [geoLocationPosition]);
-  // // // Log for debugging
-  useEffect(() => {
-    console.log('Map Center Updated:', mapCenter);
-  }, [mapCenter]);
+  }, [geoLocationPosition]);
 
   return (
     <>
@@ -79,7 +54,6 @@ function Map({ markerLocations }) {
         />
         <DitectClick />
         <ChangeCenter position={mapCenter} />
-
         {markerLocations.map((item) => (
           <Marker key={item.id} position={[item.latitude, item.longitude]}>
             <Popup>{item.host_location}</Popup>
