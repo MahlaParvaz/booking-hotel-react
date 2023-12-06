@@ -4,11 +4,14 @@ import React from 'react';
 const Input = ({ label, name, type, register, errors, pattern }) => {
   return (
     <div className="formControll flex flex-col mb-4 w-[350px]">
-      <label htmlFor={name}>{label}</label>
+      <label className="mb-2" htmlFor={name}>
+        {label}
+      </label>
       <input
-        className="py-1.5 px-2 mt-1 border-solid border-[1px] border-slate-300 rounded-xl"
+        className="p-2 mt-1 text-[16px] border-solid border-[1px] border-slate-300 rounded-xl"
         type={type}
         id={name}
+        placeholder={`Enter ${name}`}
         {...register(name, {
           required: `${label} is required`,
           pattern: {

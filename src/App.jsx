@@ -21,6 +21,8 @@ import ProtectedRouth from './components/ProtectedRouth/ProtectedRouth';
 import SignupForm from './components/SignupForm/SignupForm';
 import Checkout from './components/Checkout/Checkout';
 import { CheckoutProvider } from './components/context/CheckoutProvider';
+import CheckoutLayout from './components/Layout/CheckoutLayout';
+import Payment from './components/Payment/Payment';
 
 function App() {
   return (
@@ -37,9 +39,13 @@ function App() {
                   <Route path="/hotels" element={<Hotels />} />
 
                   <Route path="/hotels-result" element={<HotelsResult />} />
+
                   <Route path="/hotels-result/:id">
                     <Route index element={<SingleHotelResult />} />
-                    <Route path="checkout" element={<Checkout />} />
+                    <Route path="checkout" element={<CheckoutLayout />}>
+                      <Route index element={<Checkout />} />
+                      <Route path="payment" element={<Payment />} />
+                    </Route>
                   </Route>
 
                   <Route path="/popular-locations">

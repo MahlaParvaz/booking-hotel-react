@@ -4,7 +4,7 @@ import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 
 import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi';
-import { FaShield } from 'react-icons/fa6';
+import { FaShield, FaUsers } from 'react-icons/fa6';
 import { ImHome3 } from 'react-icons/im';
 import { IoCloseCircle } from 'react-icons/io5';
 import 'react-date-range/dist/styles.css'; // main style file
@@ -85,7 +85,7 @@ function HotelInfo({ currentHotel }) {
         </div>
 
         <div className=" -bg--light-gray w-[40%] rounded-3xl flex flex-col items-center justify-center p-8 mt-8">
-          <h2 className="text-center mb-8 font-bold">Reservation bill</h2>
+          <h2 className="text-center mb-8 font-bold text-[18px]">Reservation bill</h2>
           <div className="headerSearchItem flex items-center relative h-12  w-80 mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
             <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 " />
             <div
@@ -110,8 +110,8 @@ function HotelInfo({ currentHotel }) {
             </div>
           </div>
           <div className="headerSearchItem  mb-8 ">
-            <div className="  mobile:w-80  text-slate-500 mb-4 ">
-              <ImHome3 className="headerIcon -text--red   w-7 h-5 inline-block mr-3 " />
+            <div className="  mobile:w-80  text-slate-500 mb-5 ml-4">
+              <FaUsers className="headerIcon -text--red   w-5 h-5 inline-block mr-3 " />
               <span>Number of guests : {numberOfGuests}</span>
             </div>
             <OptionsList options={options} handleOptions={handleOptions} />
@@ -119,21 +119,19 @@ function HotelInfo({ currentHotel }) {
 
           <div className="totalPrice flex flex-col gap-5 mb-8 w-full">
             <div className="flex justify-between px-3">
-              <span>Price of one night</span>
+              <span>Price of one night:</span>
               <span>$ {currentHotel.price} </span>
             </div>
             <div className="flex justify-between px-3">
-              <span>Total costs</span>
+              <span>Total costs:</span>
               <span>$ {CalculateCheckout(date, options, currentHotel.price)}</span>
             </div>
           </div>
-          <div className="reserveBtn">
-            <Link
-              to={`/hotels-result/${currentHotel.id}/checkout`}
-              state={state}
-              className="-bg--dark-green text-white w-56 p-2 rounded-2xl hover:-bg--light-green hover:-text--dark-green"
-            >
-              <span>Continue booking</span>
+          <div className="reserveBtn text-[14px]">
+            <Link to={`/hotels-result/${currentHotel.id}/checkout`} state={state}>
+              <div className="-bg--dark-green text-white w-56 text-center  p-2 rounded-2xl hover:-bg--light-green hover:-text--dark-green">
+                Continue booking
+              </div>
             </Link>
           </div>
           <span className="text-[14px] mt-3">
