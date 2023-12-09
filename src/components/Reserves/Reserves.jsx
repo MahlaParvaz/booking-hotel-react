@@ -6,7 +6,7 @@ import useFetch from '../../Hooks/useFetch';
 
 function Reserves() {
   const { data, isLoading, error } = useFetch('http://localhost:5000/reserves', '');
-
+  const today = new Date();
   if (isLoading) return <Loader />;
   if (error) return <div>Error loading data: {error.message}</div>;
 
@@ -19,7 +19,7 @@ function Reserves() {
             <Link
               key={item.id}
               to={`/hotels-result/${item.id}/checkout/payment/active-reserves/reserves-info`}
-              className="flex justify-between items-center -bg--light-gray w-full rounded-3xl"
+              className="flex justify-between items-center -bg--light-gray w-full h-36 rounded-3xl mb-10"
             >
               <div>
                 <img
@@ -28,23 +28,25 @@ function Reserves() {
                   alt="hotel image doesn't show"
                 />
               </div>
-              <div className="flex justify-between items-start w-[55%]">
+              <div className="h-full  flex justify-between items-center w-[55%]">
                 <div>
-                  <p>City name:</p>
+                  <p className="font-semibold mb-4">City name:</p>
                   <p>{item.hotelName}</p>
                 </div>
                 <div>
-                  <p>Move in:</p>
+                  <p className="font-semibold mb-4">Move in:</p>
                   <p>{item.formattedStartDate}</p>
                 </div>
                 <div>
-                  <p>Move out:</p>
+                  <p className="font-semibold mb-4">Move out:</p>
                   <p>{item.formattedEndDate}</p>
                 </div>
               </div>
-              <div className="mr-10 w-[10%]">
-                <p>status:</p>
-                {item.formattedEndDate ? 'finished' : 'active'}
+              <div className="mr-10 w-[10%] h-full flex flex-col justify-center">
+                <p className="font-semibold mb-4">status:</p>
+                {new Date(item.formattedEndDate).getTime() < today.getTime()
+                  ? 'Finished'
+                  : 'Active'}
               </div>
             </Link>
           );

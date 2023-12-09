@@ -61,6 +61,7 @@
         "facebook",
         "reviews"
       ],
+      "host_email": "host@gmail.com",
       "street": "Amsterdam, Noord-Holland 1054, Netherlands",
       "neighbourhood": null,
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -192,6 +193,7 @@
         "jumio",
         "government_id"
       ],
+      "host_email": "host@gmail.com",
       "street": "Oud-West, Amsterdam, Noord-Holland 1054 HP, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -335,6 +337,7 @@
         "phone",
         "reviews"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, North Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
@@ -472,6 +475,7 @@
         "offline_government_id",
         "government_id"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, Noord-Holland 1054 AH, Netherlands",
       "neighbourhood": "Oud-West",
@@ -619,6 +623,7 @@
         "reviews",
         "work_email"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, North Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
@@ -752,6 +757,7 @@
         "email",
         "reviews"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Amsterdam, North Holland, Netherlands",
       "neighbourhood": null,
@@ -888,6 +894,7 @@
         "jumio",
         "government_id"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, Noord-Holland 1054 DM, Netherlands",
       "neighbourhood": "Oud-West",
@@ -1024,6 +1031,7 @@
         "phone",
         "reviews"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Amsterdam, NH 1056, Netherlands",
       "neighbourhood": null,
@@ -1160,6 +1168,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Ou-West, Amsterdam, Noord-Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
@@ -1306,6 +1315,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, Noord-Holland 1057, Netherlands",
       "neighbourhood": "Oud-West",
@@ -1448,6 +1458,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -1590,6 +1601,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -1732,6 +1744,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -1873,6 +1886,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -2015,6 +2029,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -2156,6 +2171,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -2298,6 +2314,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -2440,6 +2457,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -2582,6 +2600,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -2724,6 +2743,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -2866,6 +2886,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -3008,6 +3029,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -3150,6 +3172,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -3292,6 +3315,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Beachfront Avenue, Kish",
       "neighbourhood": "Oud-West",
@@ -3434,6 +3458,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Seaside Lane, Rasht",
       "neighbourhood": "Oud-West",
@@ -3576,6 +3601,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Peaceful Street, Mashhad",
       "neighbourhood": "Oud-West",
@@ -3718,6 +3744,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Modern Street, Tehran",
       "neighbourhood": "Oud-West",
@@ -3860,6 +3887,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Persian Street, Isfahan",
       "neighbourhood": "Oud-West",
@@ -4002,6 +4030,7 @@
         "reviews",
         "jumio"
       ],
+      "host_email": "host@gmail.com",
       "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
@@ -4176,8 +4205,8 @@
   ],
   "reserves": [
     {
-      "firstname": "ss",
-      "lastname": "sss",
+      "firstname": "sarah",
+      "lastname": "black",
       "phoneNumber": "41521236541",
       "email": "frontM@gmail.com",
       "paymentBy": {
@@ -4197,6 +4226,29 @@
       "hotelImage": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/5e156e2781e2590c7ae14b30516a919a",
       "hotelName": "Le Quartier Sonang-Kamar Bidadari",
       "id": 1
+    },
+    {
+      "firstname": "mahla",
+      "lastname": "parvaz",
+      "phoneNumber": "41521236541",
+      "email": "frontM@gmail.com",
+      "paymentBy": {
+        "value": "credit card",
+        "label": "Credit card"
+      },
+      "date": {
+        "startDate": "2023-12-08T20:30:00.000Z",
+        "endDate": "2023-12-15T20:30:00.000Z",
+        "key": "selection"
+      },
+      "formattedStartDate": "12/09/2023",
+      "formattedEndDate": "12/16/2023",
+      "numberOfGuests": 3,
+      "totalCost": 2280,
+      "hotelId": "9192415",
+      "hotelImage": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1293262ae799ac118c65bc0ef90bc3b8",
+      "hotelName": "Cozy apartment center Amsterdam",
+      "id": 2
     }
   ]
 }

@@ -17,6 +17,7 @@ import useOutsideClick from '../../Hooks/useOutSideClick';
 import Checkout from '../Checkout/Checkout';
 import CalculateCheckout from '../../common/CalculateCheckout';
 import { useHotelContext } from '../context/CheckoutProvider';
+import PolicyDetail from '../PolicyDetail/PolicyDetail';
 
 function SingleHotelResult() {
   const { id } = useParams();
@@ -48,7 +49,8 @@ function SingleHotelResult() {
           <p className="font-semibold text-[30px] text-center mb-8">Location</p>
           <Map markerLocations={hotels} />
         </div>
-        <PolicyDetail currentHotel={currentHotel} />
+        {/* <PolicyDetail currentHotel={currentHotel} /> */}
+        <PolicyDetail />
       </div>
     </div>
   );
@@ -191,40 +193,40 @@ function OptionsItem({ options, type, minLimit, handleOptions }) {
     </div>
   );
 }
-function PolicyDetail({ currentHotel }) {
-  return (
-    <div className="policyDetail  w-[90%] mb-10">
-      <h2 className="font-semibold text-[30px] text-center mb-8">Policy detail</h2>
-      <div className="grid grid-cols-3 gap-4">
-        <div className="w-72">
-          <p className="font-semibold text-[20px] mb-5">House rules</p>
-          <div className="flex flex-col mb-5 gap-2">
-            {currentHotel.house_rules.map((rules, index) => (
-              <div
-                key={index}
-                className="flex items-start  top-16 -text--dark-green gap-2"
-              >
-                <IoCloseCircle className=" text-[18px] mt-0.5" />
-                {rules}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="w-72">
-          <p className="font-semibold text-[20px] mb-5">Cancellation policy</p>
-          <div className="flex items-start  top-16 -text--dark-green gap-2">
-            <IoCloseCircle className=" text-[20px] mt-0.2" />
-            {currentHotel.cancellation_policy}
-          </div>
-        </div>
-        <div className="w-72">
-          <p className="font-semibold text-[20px] mb-5 ">Health & Safety</p>
-          <div className="flex items-start  top-16 -text--dark-green gap-2">
-            <FaShield className=" text-[20px] mt-0.2" />
-            {currentHotel.health_safety}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+//  function PolicyDetail({ currentHotel }) {
+//   return (
+//     <div className="policyDetail  w-[90%] mb-10">
+//       <h2 className="font-semibold text-[30px] text-center mb-8">Policy detail</h2>
+//       <div className="grid grid-cols-3 gap-4">
+//         <div className="w-72">
+//           <p className="font-semibold text-[20px] mb-5">House rules</p>
+//           <div className="flex flex-col mb-5 gap-2">
+//             {currentHotel.house_rules.map((rules, index) => (
+//               <div
+//                 key={index}
+//                 className="flex items-start  top-16 -text--dark-green gap-2"
+//               >
+//                 <IoCloseCircle className=" text-[18px] mt-0.5" />
+//                 {rules}
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//         <div className="w-72">
+//           <p className="font-semibold text-[20px] mb-5">Cancellation policy</p>
+//           <div className="flex items-start  top-16 -text--dark-green gap-2">
+//             <IoCloseCircle className=" text-[20px] mt-0.2" />
+//             {currentHotel.cancellation_policy}
+//           </div>
+//         </div>
+//         <div className="w-72">
+//           <p className="font-semibold text-[20px] mb-5 ">Health & Safety</p>
+//           <div className="flex items-start  top-16 -text--dark-green gap-2">
+//             <FaShield className=" text-[20px] mt-0.2" />
+//             {currentHotel.health_safety}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

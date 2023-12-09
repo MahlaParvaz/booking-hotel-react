@@ -24,6 +24,8 @@ import { CheckoutProvider } from './components/context/CheckoutProvider';
 import CheckoutLayout from './components/Layout/CheckoutLayout';
 import Payment from './components/Payment/Payment';
 import Reserves from './components/Reserves/Reserves';
+import ReservesInfo from './components/ReservesInfo/ReservesInfo';
+import ReserveProvider from './components/context/ReserveAuth';
 
 function App() {
   return (
@@ -33,82 +35,87 @@ function App() {
           <BookmarkListProvider>
             <HotelResultProvider>
               <CheckoutProvider>
-                <Toaster />
-                <Header />
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/hotels" element={<Hotels />} />
+                <ReserveProvider>
+                  <Toaster />
+                  <Header />
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/hotels" element={<Hotels />} />
 
-                  <Route path="/hotels-result" element={<HotelsResult />} />
+                    <Route path="/hotels-result" element={<HotelsResult />} />
 
-                  <Route path="/hotels-result/:id">
-                    <Route index element={<SingleHotelResult />} />
-                    <Route path="checkout" element={<CheckoutLayout />}>
-                      <Route index element={<Checkout />} />
-                      <Route path="payment" element={<Payment />} />
+                    <Route path="/hotels-result/:id">
+                      <Route index element={<SingleHotelResult />} />
+                      <Route path="checkout" element={<CheckoutLayout />}>
+                        <Route index element={<Checkout />} />
+                        <Route path="payment" element={<Payment />} />
+                      </Route>
                     </Route>
-                  </Route>
-                  <Route
-                    path="/hotels-result/:id/checkout/payment/active-reserves"
-                    element={<Reserves />}
-                  />
-
-                  <Route path="/popular-locations">
-                    <Route
-                      path="iran"
-                      element={
-                        <PopularLocationsDetail
-                          countryFilter="Iran"
-                          title="Hotels in Iran"
-                        />
-                      }
-                    />
-                    <Route
-                      path="london"
-                      element={
-                        <PopularLocationsDetail
-                          countryFilter="London"
-                          title="Hotels in London"
-                        />
-                      }
-                    />
-                    <Route
-                      path="france"
-                      element={
-                        <PopularLocationsDetail
-                          countryFilter="France"
-                          title="Hotels in France"
-                        />
-                      }
-                    />
-                    <Route
-                      path="netherland"
-                      element={
-                        <PopularLocationsDetail
-                          countryFilter="Netherlands"
-                          title="Hotels in Netherland"
-                        />
-                      }
-                    />
-                    <Route
-                      path="america"
-                      element={
-                        <PopularLocationsDetail
-                          countryFilter="America"
-                          title="Hotels in America"
-                        />
-                      }
-                    />
-                  </Route>
-                  <Route path="/bookmark" element={<BookmarkLayout />}>
-                    <Route index element={<Bookmark />} />
-                    <Route path=":id" element={<SingleBookmark />} />
-                    <Route path="add" element={<AddNewBookmark />} />
-                  </Route>
-                  {/* <Route path="/signup" element={<signupForm />} /> */}
-                  <Route path="/login" element={<LoginForm />} />
-                  <Route path="/signup" element={<SignupForm />} />
-                </Routes>
+                    <Route path="/hotels-result/:id/checkout/payment/active-reserves">
+                      <Route index element={<Reserves />} />
+                      <Route path="reserves-info" element={<ReservesInfo />} />
+                    </Route>
+                    <Route path="/active-reserves">
+                      <Route index element={<Reserves />} />
+                      <Route path="reserves-info" element={<ReservesInfo />} />
+                    </Route>
+                    <Route path="/popular-locations">
+                      <Route
+                        path="iran"
+                        element={
+                          <PopularLocationsDetail
+                            countryFilter="Iran"
+                            title="Hotels in Iran"
+                          />
+                        }
+                      />
+                      <Route
+                        path="london"
+                        element={
+                          <PopularLocationsDetail
+                            countryFilter="London"
+                            title="Hotels in London"
+                          />
+                        }
+                      />
+                      <Route
+                        path="france"
+                        element={
+                          <PopularLocationsDetail
+                            countryFilter="France"
+                            title="Hotels in France"
+                          />
+                        }
+                      />
+                      <Route
+                        path="netherland"
+                        element={
+                          <PopularLocationsDetail
+                            countryFilter="Netherlands"
+                            title="Hotels in Netherland"
+                          />
+                        }
+                      />
+                      <Route
+                        path="america"
+                        element={
+                          <PopularLocationsDetail
+                            countryFilter="America"
+                            title="Hotels in America"
+                          />
+                        }
+                      />
+                    </Route>
+                    <Route path="/bookmark" element={<BookmarkLayout />}>
+                      <Route index element={<Bookmark />} />
+                      <Route path=":id" element={<SingleBookmark />} />
+                      <Route path="add" element={<AddNewBookmark />} />
+                    </Route>
+                    {/* <Route path="/signup" element={<signupForm />} /> */}
+                    <Route path="/login" element={<LoginForm />} />
+                    <Route path="/signup" element={<SignupForm />} />
+                  </Routes>
+                </ReserveProvider>
               </CheckoutProvider>
             </HotelResultProvider>
           </BookmarkListProvider>
