@@ -23,6 +23,7 @@ import Checkout from './components/Checkout/Checkout';
 import { CheckoutProvider } from './components/context/CheckoutProvider';
 import CheckoutLayout from './components/Layout/CheckoutLayout';
 import Payment from './components/Payment/Payment';
+import Reserves from './components/Reserves/Reserves';
 
 function App() {
   return (
@@ -47,6 +48,10 @@ function App() {
                       <Route path="payment" element={<Payment />} />
                     </Route>
                   </Route>
+                  <Route
+                    path="/hotels-result/:id/checkout/payment/active-reserves"
+                    element={<Reserves />}
+                  />
 
                   <Route path="/popular-locations">
                     <Route

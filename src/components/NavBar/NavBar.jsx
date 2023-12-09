@@ -9,7 +9,7 @@ import LoginForm from '../Login/LoginForm';
 function NavBar() {
   return (
     <div className="navbar  text-white w-full   h-16 pt-4 flex items-center justify-center  shadow-lg  bg-black">
-      <div className="flex laptop:w-[80%] top-0 h-full justify-between items-center mobile:w-full   ">
+      <div className="flex laptop:w-[80%] top-0 h-full justify-between items-center mobile:w-full  ">
         <div className="navbarList  flex-1 h-full ">
           <img
             src="/src/assets/img/airbnb.png"
@@ -17,7 +17,7 @@ function NavBar() {
             className="p-2 mobile:hidden  laptop:block "
           />
         </div>
-        <div className="navbarList laptop:flex-1 mobile:w-[95%]  h-full">
+        <div className="navbarList laptop:w-[50%] mobile:w-[95%]  h-full">
           <ul className="flex laptop:gap-16 items-center justify-start p-2 laptop:text-[16px] mobile:text-[15px] mobile:gap-4 ">
             <Link to="/bookmark">
               <li className="cursor-pointer hover:border-b-4 hover:-border--red">
@@ -29,7 +29,11 @@ function NavBar() {
                 List of hotels
               </li>
             </Link>
-
+            <Link to="/active-reserves">
+              <li className="cursor-pointer hover:border-b-4 hover:-border--red">
+             Active reserves
+              </li>
+            </Link>
             <Link to="/">
               <li className="cursor-pointer hover:border-b-4 hover:-border--red">Home</li>
             </Link>

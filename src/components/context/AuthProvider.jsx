@@ -1,4 +1,4 @@
-import { useContext, useEffect, useReducer, useState } from 'react';
+import { useContext, useEffect, useReducer } from 'react';
 import { createContext } from 'react';
 import http from '../../services/httpService';
 import { useNavigate } from 'react-router-dom';
@@ -27,6 +27,11 @@ function authReducer(state, action) {
         user: action.payload,
         isAuthenticated: true,
       };
+    case 'reserves':
+      return {
+        user: action.payload,
+        isAuthenticated: true,
+      };
 
     default:
       throw new Error('Unknown action!');
@@ -35,10 +40,10 @@ function authReducer(state, action) {
 
 export default function AuthContextProvider({ children }) {
   const [{ user, isAuthenticated }, dispatch] = useReducer(authReducer, initialState);
-  const [error, setError] = useState('');
   const navigate = useNavigate();
   const query = useQuery();
   const redirect = query.get('redirect') || '/';
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -98,7 +103,6 @@ export default function AuthContextProvider({ children }) {
   }
 
   function setUser(user) {
-    // dispatch({ type: 'login', payload: user });
     localStorage.setItem('user', JSON.stringify(user));
     localStorage.setItem('isAuthenticated', 'true');
   }
@@ -107,6 +111,36 @@ export default function AuthContextProvider({ children }) {
     dispatch({ type: 'logout' });
     localStorage.removeItem('user');
     localStorage.removeItem('isAuthenticated');
+  }
+  async function reserves(
+    firstname,
+    lastname,
+    phoneNumber,
+    email,
+    paymentBy,
+    reservationData
+  ) {
+    try {
+      const data = {
+        firstname,
+        lastname,
+        phoneNumber,
+        email,
+        paymentBy,
+        ...reservationData,
+      };
+      const response = await http.post('/reserves', data);
+      const userData = response.data[0];
+      if (userData) {
+        dispatch({ type: 'reserves', payload: userData });
+        setUser(userData);
+        // navigate(redirect);
+      } else {
+        console.error('Reserves failed: Invalid credentials');
+      }
+    } catch (error) {
+      console.error('Error during reserves:', error.response?.data || error.message);
+    }
   }
 
   return (
@@ -118,6 +152,7 @@ export default function AuthContextProvider({ children }) {
         signup,
         logout,
         setUser,
+        reserves,
       }}
     >
       {children}

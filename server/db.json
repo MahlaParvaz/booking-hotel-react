@@ -15,13 +15,13 @@
       "transit": "Directly train connection to Central Station and  to the city center and tourist attractions.",
       "access": "Acces to shared use of the bathroom facilities  badroom, living room, and kitchen.",
       "interaction": null,
-      "house_rules": [  
-      "Checkin time",
-      "Checkout time",
-      "No smoking",
-      "No pets",
-      "No parties or events"
-    ],
+      "house_rules": [
+        "Checkin time",
+        "Checkout time",
+        "No smoking",
+        "No pets",
+        "No parties or events"
+      ],
       "thumbnail_url": "https://a0.muscache.com/im/pictures/74942550/415cd752_original.jpg?aki_policy=small",
       "medium_url": "https://a0.muscache.com/im/pictures/74942550/415cd752_original.jpg?aki_policy=medium",
       "picture_url": {
@@ -89,7 +89,7 @@
         "Washer",
         "Essentials"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy", 
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "square_feet": null,
       "price": 50,
       "weekly_price": null,
@@ -129,8 +129,6 @@
       "features": [
         "Host Has Profile Pic"
       ]
-
-
     },
     {
       "id": "9192415",
@@ -147,7 +145,7 @@
       "transit": "Vondelpark, Museum Square, Leidsplein is on walking distance, but the apartment is situated perfect for public transport (tram 1 stop across the street).  Tram tickets are available on the tram. Bikes can be rent at different shops nearby.",
       "access": null,
       "interaction": null,
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -233,9 +231,8 @@
         "Hair dryer",
         "Iron",
         "Laptop friendly workspace"
-      
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "square_feet": null,
       "price": 95,
       "weekly_price": null,
@@ -294,7 +291,7 @@
       "transit": null,
       "access": null,
       "interaction": null,
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -338,7 +335,7 @@
         "phone",
         "reviews"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, North Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -427,7 +424,7 @@
       "transit": "1 min walk to public transportation which will bring you to literally every corner of Amsterdam. Furthermore it is possible to have rental bikes or rental scooters at a store close to the apartment, so you can move quickly through the city.",
       "access": "If the weather permits, make sure to enjoy the roof terrace and BBQ!",
       "interaction": "We are at your disposal and if not around we will make sure our family or friends are.  You can e-mail or call us anytime. We can help you find a babysitter or a nice reservation in a restaurant. Bedlinen and towels are provided.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -475,7 +472,7 @@
         "offline_government_id",
         "government_id"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, Noord-Holland 1054 AH, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -575,7 +572,7 @@
       "transit": null,
       "access": null,
       "interaction": null,
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -622,7 +619,7 @@
         "reviews",
         "work_email"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, North Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -683,7 +680,7 @@
       "review_scores_value": 10,
       "license": null,
       "jurisdiction_names": "Amsterdam",
-    "cancellation_policy": "Free Cancellation up to 24hrs before checkin",
+      "cancellation_policy": "Free Cancellation up to 24hrs before checkin",
       "calculated_host_listings_count": 1,
       "reviews_per_month": 0.21,
       "geolocation": {
@@ -711,7 +708,7 @@
       "transit": null,
       "access": null,
       "interaction": null,
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -755,7 +752,7 @@
         "email",
         "reviews"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Amsterdam, North Holland, Netherlands",
       "neighbourhood": null,
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -844,7 +841,7 @@
       "transit": null,
       "access": null,
       "interaction": null,
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -891,7 +888,7 @@
         "jumio",
         "government_id"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, Noord-Holland 1054 DM, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -982,7 +979,7 @@
       "transit": "1 minute walk to public transfer and direct line of 15 minutes to Amsterdam central, dam square and leidseplein.",
       "access": "2 bikes Wifi Cards for public transfer",
       "interaction": "You can contact me any time of the day for information about the house or the city!",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -1027,7 +1024,7 @@
         "phone",
         "reviews"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Amsterdam, NH 1056, Netherlands",
       "neighbourhood": null,
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1061,7 +1058,6 @@
         "Hangers",
         "Hair dryer",
         "Iron"
-
       ],
       "square_feet": null,
       "price": 115,
@@ -1092,12 +1088,12 @@
       "review_scores_value": 8,
       "license": null,
       "jurisdiction_names": "Amsterdam",
-    "cancellation_policy": "Free Cancellation up to 24hrs before checkin",
+      "cancellation_policy": "Free Cancellation up to 24hrs before checkin",
       "calculated_host_listings_count": 1,
       "reviews_per_month": 0.12,
       "geolocation": {
         "lon": 13.381347656250002,
-        "lat":52.515006473317875
+        "lat": 52.515006473317875
       },
       "features": [
         "Host Has Profile Pic"
@@ -1118,7 +1114,7 @@
       "transit": "Best way to explore Amsterdam is by bike, but there are also several trams close to our home.",
       "access": "You can make use of the whole house",
       "interaction": "You can always text or call me to help you make your stay as comfortable as possible",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -1164,7 +1160,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Ou-West, Amsterdam, Noord-Holland 1054, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1236,7 +1232,7 @@
       "review_scores_value": 10,
       "license": null,
       "jurisdiction_names": "Amsterdam",
-    "cancellation_policy": "Free Cancellation up to 24hrs before checkin",
+      "cancellation_policy": "Free Cancellation up to 24hrs before checkin",
       "calculated_host_listings_count": 1,
       "reviews_per_month": 0.18,
       "geolocation": {
@@ -1264,7 +1260,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -1310,7 +1306,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Amsterdam, Noord-Holland 1057, Netherlands",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1406,7 +1402,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -1452,7 +1448,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1548,7 +1544,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -1594,7 +1590,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1690,7 +1686,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -1736,7 +1732,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1832,7 +1828,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -1877,7 +1873,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -1973,7 +1969,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -2019,7 +2015,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -2115,7 +2111,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -2160,7 +2156,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -2256,7 +2252,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -2302,7 +2298,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -2398,7 +2394,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -2444,7 +2440,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -2540,7 +2536,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -2586,7 +2582,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -2682,7 +2678,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -2728,7 +2724,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -2824,7 +2820,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -2870,7 +2866,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -2966,7 +2962,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -3012,7 +3008,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -3108,7 +3104,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -3154,7 +3150,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -3250,7 +3246,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -3296,7 +3292,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Beachfront Avenue, Kish",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -3392,7 +3388,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -3438,7 +3434,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Seaside Lane, Rasht",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -3534,7 +3530,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -3580,7 +3576,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Peaceful Street, Mashhad",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -3676,7 +3672,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -3722,7 +3718,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Modern Street, Tehran",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -3818,7 +3814,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -3864,7 +3860,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Persian Street, Isfahan",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -3960,7 +3956,7 @@
       "transit": "To reach my house from Central Station, you catch tram 13 (direction Geuzenveld) to tramstop Admiraal de Ruyterweg, which takes approximately 12 minutes. From there, it's a 5 minute walk to my house.  To reach my house from Schiphol, you catch a train to Amsterdam Lelylaan (7 mins) and take tram 17 (direction Centraal Station) to tramstop 'Witte de Withstraat' (6 mins). From the tramstop, it's a 5 min walk to my house. If you're travelling by car, there's usually plenty of space to park in front of or nearby the house. There's paid parking (2,40/hour) from Monday til Saturday 09h-24h. You can reach the city center (f.e. Dam Square) by foot in about 30 minutes. If you'd rather explore the city the way the locals do -by bike!- there's several bike rental shops closeby.",
       "access": "As a guest, you have access to the living room, kitchen, bathroom, toilet, laundry room and balcony. Mi casa es su casa.",
       "interaction": "If you need any help during your stay, whether organising your public transport to the airport or finding a great local place to have dinner, I'm happy to help.",
-      "house_rules": [  
+      "house_rules": [
         "Checkin time",
         "Checkout time",
         "No smoking",
@@ -4006,7 +4002,7 @@
         "reviews",
         "jumio"
       ],
-      "health_safety":"Cleaner in accordance with our COVID safe cleaning policy",
+      "health_safety": "Cleaner in accordance with our COVID safe cleaning policy",
       "street": "Oud-West, Paris, AV.de la Grande Armee, France",
       "neighbourhood": "Oud-West",
       "neighbourhood_cleansed": "De Baarsjes - Oud-West",
@@ -4176,6 +4172,31 @@
       "email": "frontM@gmail.com",
       "password": "mahla@12",
       "phone": "1-770-736-8034 x56442"
+    }
+  ],
+  "reserves": [
+    {
+      "firstname": "ss",
+      "lastname": "sss",
+      "phoneNumber": "41521236541",
+      "email": "frontM@gmail.com",
+      "paymentBy": {
+        "value": "debit card",
+        "label": "Debit card"
+      },
+      "date": {
+        "startDate": "2023-12-09T10:41:20.073Z",
+        "endDate": "2023-12-09T10:41:20.073Z",
+        "key": "selection"
+      },
+      "formattedStartDate": "12/09/2023",
+      "formattedEndDate": "12/09/2023",
+      "numberOfGuests": 1,
+      "totalCost": 160,
+      "hotelId": "743788",
+      "hotelImage": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/5e156e2781e2590c7ae14b30516a919a",
+      "hotelName": "Le Quartier Sonang-Kamar Bidadari",
+      "id": 1
     }
   ]
 }

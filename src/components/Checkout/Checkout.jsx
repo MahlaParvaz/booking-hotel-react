@@ -21,6 +21,7 @@ function Checkout() {
     totalCost,
   };
   const { currentHotel, getHotel, isLoadingCurrHotel } = useHotels();
+
   useEffect(() => {
     getHotel(id);
   }, [id]);

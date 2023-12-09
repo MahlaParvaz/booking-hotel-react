@@ -10,12 +10,6 @@ import Loader from '../Loader/Loader';
 // import Checkout from '../Checkout/Checkout';
 
 function CheckoutLayout() {
-  //   const date = state.date[0];
-  //   const formattedStartDate = format(date.startDate, 'MM/dd/yyyy');
-  //   const formattedEndDate = format(date.endDate, 'MM/dd/yyyy');
-  //   const numberOfGuests = state.numberOfGuests;
-  //   const totalCost = state.totalCost;
-
   return (
     <div className="  flex  w-full  items-center justify-center ">
       <div className="flex  flex-row-reverse justify-between items-center w-[85%]  mt-24  gap-2 p-8 mb-10 ">
@@ -29,12 +23,12 @@ export default CheckoutLayout;
 function BookingDetail() {
   const location = useLocation();
   const { state } = location;
-  const date = state.date[0] ?? state.date;
-  const formattedStartDate = format(date.startDate, 'MM/dd/yyyy');
-  const formattedEndDate = format(date.endDate, 'MM/dd/yyyy');
-  const numberOfGuests = state.numberOfGuests;
-  const totalCost = state.totalCost;
+  const date = state?.date?.[0] || state?.date;
+  const formattedStartDate = date ? format(date.startDate, 'MM/dd/yyyy') : '';
+  const formattedEndDate = date ? format(date.endDate, 'MM/dd/yyyy') : '';
 
+  const numberOfGuests = state?.numberOfGuests;
+  const totalCost = state?.totalCost;
   //   console.log('detailstate', state.date.startDate);
   const { id } = useParams();
   const { currentHotel, isLoadingCurrHotel, getHotel } = useHotels();

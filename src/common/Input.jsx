@@ -3,7 +3,7 @@ import React from 'react';
 
 const Input = ({ label, name, type, register, errors, pattern }) => {
   return (
-    <div className="formControll flex flex-col mb-4 w-[350px]">
+    <div className="formControll flex flex-col  w-[350px]">
       <label className="mb-2" htmlFor={name}>
         {label}
       </label>
@@ -20,7 +20,7 @@ const Input = ({ label, name, type, register, errors, pattern }) => {
           },
         })}
       />
-      <p className="error -text--rose-500 text-[13px] font-semibold py-1 px-2">
+      <p className="error -text--rose-500 text-[13px] font-semibold py-1 px-2 mt-1">
         {errors[name]?.message}
       </p>
     </div>
