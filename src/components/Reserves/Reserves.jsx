@@ -11,39 +11,55 @@ function Reserves() {
   if (error) return <div>Error loading data: {error.message}</div>;
 
   return (
-    <div className="reservation mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 ">
-      <h2 className="laptop:w-[80%] px-4  text-lg font-bold mt-24 ">Reserves</h2>
-      <div className="reservationList w-[80%]  py-4 px-10   ">
+    <div className="reservation mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6    ">
+      <h2 className="laptop:w-[80%] tablet:w-[85%] mobile:w-[80%] px-4  text-lg font-bold laptop:mt-24 tablet:mt-24 mobile:mt-[22rem] ">
+        Reserves
+      </h2>
+      <div className="reservationList laptop:w-[80%] tablet:w-[100%] py-4 px-10 ">
         {data.map((item) => {
           return (
             <Link
               key={item.id}
               to={`/hotels-result/${item.id}/checkout/payment/active-reserves/reserves-info`}
-              className="flex justify-between items-center -bg--light-gray w-full h-36 rounded-3xl mb-10"
+              className="flex laptop:flex-row tablet:flex-row mobile:flex-col  mobile:items-start mobile:justify-between mobile:gap-y-5 justify-between items-center -bg--light-gray w-full laptop:h-36 tablet:h-36 mobile:h-full rounded-3xl mb-10"
             >
               <div>
                 <img
-                  className="w-56 h-36 object-cover rounded-tl-3xl rounded-br-3xl"
+                  className="laptop:w-56 laptop:h-36 tablet:w-40 tablet:h-36  mobile:w-full object-cover rounded-tl-3xl rounded-br-3xl"
                   src={item.hotelImage}
                   alt="hotel image doesn't show"
                 />
               </div>
-              <div className="h-full  flex justify-between items-center w-[55%]">
+              <div className="h-full  flex laptop:flex-row tablet:flex-row laptop:items-center tablet:items-center mobile:flex-col mobile:items-start mobile:gap-y-5 mobile:px-4 justify-between items-center  laptop:w-[55%] tablet:w-[75%] ">
                 <div>
-                  <p className="font-semibold mb-4">City name:</p>
-                  <p>{item.hotelName}</p>
+                  <p className="font-semibold mb-4 tablet:text-[16px] laptop:text-[17px] mobile:text-[16px]">
+                    City name:
+                  </p>
+                  <p className="tablet:text-[14px] mobile:text-[14px]  laptop:text-[16px]">
+                    {item.hotelName}
+                  </p>
                 </div>
                 <div>
-                  <p className="font-semibold mb-4">Move in:</p>
-                  <p>{item.formattedStartDate}</p>
+                  <p className="font-semibold mb-4 tablet:text-[16px] laptop:text-[17px] mobile:text-[16px]">
+                    Move in:
+                  </p>
+                  <p className="tablet:text-[14px] mobile:text-[14px]  laptop:text-[16px]">
+                    {item.formattedStartDate}
+                  </p>
                 </div>
                 <div>
-                  <p className="font-semibold mb-4">Move out:</p>
-                  <p>{item.formattedEndDate}</p>
+                  <p className="font-semibold mb-4 tablet:text-[16px] laptop:text-[17px] mobile:text-[16px]">
+                    Move out:
+                  </p>
+                  <p className="tablet:text-[14px] mobile:text-[14px]  laptop:text-[16px]">
+                    {item.formattedEndDate}
+                  </p>
                 </div>
               </div>
-              <div className="mr-10 w-[10%] h-full flex flex-col justify-center">
-                <p className="font-semibold mb-4">status:</p>
+              <div className="laotop:mr-10 tablet:mr-10 w-[9%] h-full flex flex-col justify-center mobile:px-4 mobile:mb-5">
+                <p className="font-semibold mb-4 tablet:text-[16px] laptop:text-[17px]">
+                  status:
+                </p>
                 {new Date(item.formattedEndDate).getTime() < today.getTime()
                   ? 'Finished'
                   : 'Active'}

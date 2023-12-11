@@ -9,15 +9,15 @@ import LoginForm from '../Login/LoginForm';
 function NavBar() {
   return (
     <div className="navbar  text-white w-full   h-16 pt-4 flex items-center justify-center  shadow-lg  bg-black">
-      <div className="flex laptop:w-[80%] top-0 h-full justify-between items-center mobile:w-full  ">
+      <div className="flex laptop:w-[80%] tablet:w-full tablet:px-4 top-0 h-full justify-between items-center mobile:w-full  ">
         <div className="navbarList  flex-1 h-full ">
           <img
             src="/src/assets/img/airbnb.png"
             alt=""
-            className="p-2 mobile:hidden  laptop:block "
+            className="p-2 mobile:hidden  laptop:block tablet:block "
           />
         </div>
-        <div className="navbarList laptop:w-[50%] mobile:w-[95%]  h-full">
+        <div className="navbarList laptop:w-[50%] mobile:w-[95%] tablet:w-[50%]  h-full">
           <ul className="flex laptop:gap-16 items-center justify-start p-2 laptop:text-[16px] mobile:text-[15px] mobile:gap-4 ">
             <Link to="/bookmark">
               <li className="cursor-pointer hover:border-b-4 hover:-border--red">
@@ -31,7 +31,7 @@ function NavBar() {
             </Link>
             <Link to="/active-reserves">
               <li className="cursor-pointer hover:border-b-4 hover:-border--red">
-             Active reserves
+                Active reserves
               </li>
             </Link>
             <Link to="/">
@@ -96,7 +96,11 @@ function User() {
                 modal
                 nested
               >
-                <LoginForm />
+                <LoginForm
+                  user={user}
+                  isAuthenticated={isAuthenticated}
+                  setShowLoginPopup={() => setShowLoginPopup(false)}
+                />
               </Popup>
             </div>
           )}

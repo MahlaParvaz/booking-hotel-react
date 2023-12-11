@@ -36,8 +36,10 @@ function SingleHotelResult() {
       <div className=" mt-[6rem] w-[90%]  flex flex-col items-center justify-between    ">
         <HotelInfo currentHotel={currentHotel} />
         <div className="amentities mb-20 w-[90%] ">
-          <h2 className="font-semibold text-[30px] text-center mb-8">Amenities</h2>
-          <div className="grid grid-cols-3 gap-4">
+          <h2 className="font-semibold laptop:text-[30px] mobile:text-[24px] text-center mb-8">
+            Amenities
+          </h2>
+          <div className="grid laptop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-2 gap-4">
             {currentHotel.amenities.map((amenity, index) => (
               <div key={index} className="amenity-item">
                 {amenity}
@@ -46,10 +48,12 @@ function SingleHotelResult() {
           </div>
         </div>
         <div className="location  h-[400px] mb-36 w-[90%] z-10">
-          <p className="font-semibold text-[30px] text-center mb-8">Location</p>
+          <p className="font-semibold  text-center mb-8 laptop:text-[30px] mobile:text-[24px]">
+            Location
+          </p>
           <Map markerLocations={hotels} />
         </div>
-        {/* <PolicyDetail currentHotel={currentHotel} /> */}
+
         <PolicyDetail />
       </div>
     </div>
@@ -72,24 +76,23 @@ function HotelInfo({ currentHotel }) {
   useOutsideClick(dateRef, 'dateDropDown', () => setOpenDate(false));
   return (
     <div className="  flex flex-col w-full  items-center   ">
-      <div className="flex  justify-between items-center  gap-4  pr-[1rem] mb-20">
-        <div className="w-[600px] h-full   ">
+      <div className="laptop:flex  laptop:justify-between laptop:items-center  mobile:grid mobile:grid-cols-1 mobile:mt-64 laptop:mt-0 gap-4 tablet:flex  tablet:mt-0  pr-[1rem] mb-20">
+        <div className="laptop:w-[600px] h-full  mobile:w-[380px] tablet:ml-2  ">
           <img
-            className="w-full h-[400px]   object-cover  rounded-xl mb-10"
-            // single picture
+            className="laptop:w-full mobile:w-[350px] laptop:h-[400px] tablet:w-full  tablet:h-[300px]  mobile:h-[270px] tablet:mt-9 laptop:mt-0 object-cover  rounded-xl mb-10"
             src={currentHotel.picture_url.url}
             alt={currentHotel.name}
           />
-          <h2 className="mb-2 text-base mt-5">{currentHotel.name}</h2>
-          <div className="mb-10">
+          <h2 className="mb-2 text-base mt-5 tablet:ml-2">{currentHotel.name}</h2>
+          <div className="mb-10 tablet:ml-2">
             {currentHotel.number_of_reviews} reviews &bull; {currentHotel.smart_location}
           </div>
         </div>
 
-        <div className=" -bg--light-gray w-[40%] rounded-3xl flex flex-col items-center justify-center p-8 mt-8">
+        <div className=" -bg--light-gray laptop:w-[40%] mobile:w-[350px] rounded-3xl flex flex-col items-center justify-center p-8 mt-8">
           <h2 className="text-center mb-8 font-bold text-[18px]">Reservation bill</h2>
-          <div className="headerSearchItem flex items-center relative h-12  w-80 mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
-            <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 " />
+          <div className="headerSearchItem flex items-center relative h-12  laptop:w-80 mobile:w-full mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
+            <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 mobile:ml-2" />
             <div
               className="dateDropDown mobile:w-80 text-slate-500 "
               onClick={() => setOpenDate(!openDate)}
@@ -113,7 +116,7 @@ function HotelInfo({ currentHotel }) {
           </div>
           <div className="headerSearchItem  mb-8 ">
             <div className="  mobile:w-80  text-slate-500 mb-5 ml-4">
-              <FaUsers className="headerIcon -text--red   w-5 h-5 inline-block mr-3 " />
+              <FaUsers className="headerIcon -text--red   w-5 h-5 inline-block mr-3 mobile:ml-2 " />
               <span>Number of guests : {numberOfGuests}</span>
             </div>
             <OptionsList options={options} handleOptions={handleOptions} />
@@ -136,7 +139,7 @@ function HotelInfo({ currentHotel }) {
               </div>
             </Link>
           </div>
-          <span className="text-[14px] mt-3">
+          <span className="text-[14px] mt-4 laptop:text-start mobile:text-center">
             When you book this apartment, your reservation will be confirmed instantly
           </span>
         </div>
@@ -151,7 +154,7 @@ function HotelInfo({ currentHotel }) {
 
 function OptionsList({ options, handleOptions }) {
   return (
-    <div className="bg-white flex flex-col gap-8 justify-between  top-[50px] ml-4 rounded-lg  w-96  px-4 py-3 ">
+    <div className="bg-white flex flex-col gap-8 justify-between  top-[50px] ml-4 rounded-lg  laptop:w-96 mobile:w-[90%] px-4 py-3 ">
       <OptionsItem
         type="adult"
         options={options}
@@ -193,40 +196,3 @@ function OptionsItem({ options, type, minLimit, handleOptions }) {
     </div>
   );
 }
-//  function PolicyDetail({ currentHotel }) {
-//   return (
-//     <div className="policyDetail  w-[90%] mb-10">
-//       <h2 className="font-semibold text-[30px] text-center mb-8">Policy detail</h2>
-//       <div className="grid grid-cols-3 gap-4">
-//         <div className="w-72">
-//           <p className="font-semibold text-[20px] mb-5">House rules</p>
-//           <div className="flex flex-col mb-5 gap-2">
-//             {currentHotel.house_rules.map((rules, index) => (
-//               <div
-//                 key={index}
-//                 className="flex items-start  top-16 -text--dark-green gap-2"
-//               >
-//                 <IoCloseCircle className=" text-[18px] mt-0.5" />
-//                 {rules}
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//         <div className="w-72">
-//           <p className="font-semibold text-[20px] mb-5">Cancellation policy</p>
-//           <div className="flex items-start  top-16 -text--dark-green gap-2">
-//             <IoCloseCircle className=" text-[20px] mt-0.2" />
-//             {currentHotel.cancellation_policy}
-//           </div>
-//         </div>
-//         <div className="w-72">
-//           <p className="font-semibold text-[20px] mb-5 ">Health & Safety</p>
-//           <div className="flex items-start  top-16 -text--dark-green gap-2">
-//             <FaShield className=" text-[20px] mt-0.2" />
-//             {currentHotel.health_safety}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }

@@ -53,40 +53,30 @@ function Header() {
 
   return (
     <div className="header   w-full p-0 relative  flex flex-col justify-start items-center gap-4  ">
-      <div className="headerSearch z-50 absolute top-[20px] -bg--light-gray laptop:w-full laptop:m-0   flex laptop:flex-row laptop:max-w-[1000px]  laptop:justify-between laptop:items-center mobile:gap-5 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-2 mobile:w-[95%] mobile:rounded-2xl mobile:py-5  ">
+      <div className="headerSearch z-50 absolute top-[20px] -bg--light-gray laptop:w-full tablet:w-full laptop:m-0  tablet:m-0 flex laptop:flex-row tablet:flex-row laptop:max-w-[1000px] tablet:h-16 laptop:justify-between tablet:justify-between laptop:items-center tablet:items-center mobile:gap-5 tablet:gap-1 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-2 mobile:w-[95%] mobile:rounded-2xl mobile:py-5  ">
         {/* location */}
-        <div className="headerSearchItem px-2 flex  items-center laptop:flex-1 laptop:w-80 relative h-12 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
+        <div className="headerSearchItem px-2 flex  items-center laptop:flex-1 laptop:w-80 tablet:flex-1 tablet:w-60 relative h-12 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
           <MdLocationOn className="headerIcon locationIcon -text--red w-7 h-6 inline-block mr-3 " />
           <input
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             type="text"
             placeholder="Where are you going?"
-            className="headerSearchInput py-2 px-1  text-base mobile:w-80 -bg--light-gray"
+            className="headerSearchInput py-2 px-1 mobile:w-80 -bg--light-gray laptop:text-[16px] tablet:text-[14px]"
             name="destination"
             id="destination"
           />
           <span className="seperator laptop:inline-block mobile:hidden  w-[1px] h-8 bg-slate-300 my-0 mx-1"></span>
         </div>
         {/* date */}
-        <div className="headerSearchItem flex items-center   relative h-12 laptop:flex-1 laptop:w-80 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
+        <div className="headerSearchItem flex items-center   relative h-12 laptop:flex-1 laptop:w-80 mobile:w-full tablet:flex-1 tablet:w-48 -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
           <HiCalendar className="headerIcon dateIcon -text--red  w-7 h-5 inline-block mr-3 " />
           <div
-            className="dateDropDown mobile:w-80 text-slate-500 "
+            className="dateDropDown mobile:w-80 text-slate-500 laptop:text-[16px] tablet:text-[14px] "
             onClick={() => setOpenDate(!openDate)}
             id="dateDropDown"
             ref={dateRef}
           >
-            {/* {!selectedDate ? (
-              <span>Check-in &bull; Check-out</span>
-            ) : selectedDate ? (
-              `${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(
-                date[0].endDate,
-                'MM/dd/yyyy'
-              )}`
-            ) : (
-              ''
-            )} */}
             {`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(
               date[0].endDate,
               'MM/dd/yyyy'
@@ -104,11 +94,11 @@ function Header() {
           <span className="seperator laptop:inline-block mobile:hidden  w-[1px] h-8 bg-slate-300 my-0 mx-1"></span>
         </div>
         {/* room */}
-        <div className="headerSearchItem flex  cursor-pointer items-center relative h-12 laptop:flex-1 laptop:w-64 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
+        <div className="headerSearchItem flex  cursor-pointer items-center relative h-12 laptop:flex-1 laptop:w-64 tablet:flex-1 tablet:w-56 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center">
           <ImHome3 className="headerIcon -text--red   w-7 h-5 inline-block mr-3 " />
           <div
             id="optionDropDown "
-            className="  mobile:w-80  text-slate-500 "
+            className="  mobile:w-80  text-slate-500 laptop:text-[16px] tablet:text-[14px] "
             onClick={() => setOptionsDropDown(!optionsDropDown)}
           >
             {options.adult} adult &bull; {options.children} children &bull; {options.room}{' '}
@@ -123,7 +113,7 @@ function Header() {
           )}
         </div>
         {/* search btn */}
-        <div className="headerSearchItem  cursor-pointer laptop:rounded-full laptop:w-11 laptop:h-11 laptop:mr-1 -bg--red text-white flex items-center relative  h-12 mobile:w-full  mobile:rounded-lg mobile:py-1  mobile:justify-center">
+        <div className="headerSearchItem  cursor-pointer laptop:rounded-full laptop:w-11 laptop:h-11 laptop:mr-1 tablet:w-10 tablet:h-10 -bg--red text-white flex items-center relative  h-12 mobile:w-full  mobile:rounded-lg mobile:py-1  mobile:justify-center">
           <button className="headerSearchBtn " onClick={handleSearch}>
             <HiSearch className="headerIcon text-lg" />
           </button>
@@ -141,7 +131,7 @@ function OptionsList({ options, handleOptions, setOptionsDropDown }) {
   return (
     <div
       ref={optionRef}
-      className="bg-white flex flex-col gap-4 justify-between absolute top-[50px] ml-4 rounded-lg shadow-lg w-64  px-4 py-3 "
+      className="bg-white flex flex-col gap-4 justify-between absolute top-[50px] ml-4 rounded-lg shadow-lg w-64  px-4 py-3  "
     >
       <OptionsItem
         type="adult"

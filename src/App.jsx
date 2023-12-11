@@ -112,8 +112,8 @@ function App() {
                       <Route path="add" element={<AddNewBookmark />} />
                     </Route>
                     {/* <Route path="/signup" element={<signupForm />} /> */}
-                    <Route path="/login" element={<LoginForm />} />
-                    <Route path="/signup" element={<SignupForm />} />
+                    {/* <Route path="/login" element={<LoginForm />} /> */}
+                    {/* <Route path="/signup" element={<SignupForm />} /> */}
                   </Routes>
                 </ReserveProvider>
               </CheckoutProvider>

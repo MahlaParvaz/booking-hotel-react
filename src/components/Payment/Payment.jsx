@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useHotels } from '../context/HotelResultProvider';
 import { useState } from 'react';
 import http from '../../services/httpService';
+import { useReserveAuth } from '../context/ReserveAuth';
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
@@ -28,7 +29,7 @@ const options = [
 function Payment() {
   const location = useLocation();
   const { state } = location;
-  const { reserves } = useAuth();
+  const { reserves } = useReserveAuth();
   const navigate = useNavigate();
   const { currentHotel } = useHotels();
   const [isReserving, setReserving] = useState(false);

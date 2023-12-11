@@ -15,10 +15,14 @@ function PolicyDetail() {
 
   return (
     <div className="policyDetail w-[90%] mb-10">
-      <h2 className="font-semibold text-[30px] text-center mb-8">Policy detail</h2>
-      <div className="grid grid-cols-3 gap-4">
+      <h2 className="font-semibold laptop:text-[30px] mobile:text-[24px] text-center mb-8">
+        Policy detail
+      </h2>
+      <div className="grid laptop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-4">
         <div className="w-72">
-          <p className="font-semibold text-[20px] mb-5">House rules</p>
+          <p className="font-semibold laptop:text-[19px] mobile:text-[18px] mb-5">
+            House rules
+          </p>
           <div className="flex flex-col mb-5 gap-2">
             {currentHotel.house_rules?.map((rules, index) => (
               <div
@@ -32,14 +36,18 @@ function PolicyDetail() {
           </div>
         </div>
         <div className="w-72">
-          <p className="font-semibold text-[20px] mb-5">Cancellation policy</p>
+          <p className="font-semibold laptop:text-[19px] mobile:text-[18px] mb-5">
+            Cancellation policy
+          </p>
           <div className="flex items-start top-16 -text--dark-green gap-2">
             <IoCloseCircle className="text-[20px] mt-0.2" />
             {currentHotel.cancellation_policy}
           </div>
         </div>
         <div className="w-72">
-          <p className="font-semibold text-[20px] mb-5 ">Health & Safety</p>
+          <p className="font-semibold laptop:text-[19px] mobile:text-[18px] mb-5 ">
+            Health & Safety
+          </p>
           <div className="flex items-start top-16 -text--dark-green gap-2">
             <FaShield className="text-[20px] mt-0.2" />
             {currentHotel.health_safety}

@@ -1,19 +1,30 @@
 import { DevTool } from '@hookform/devtools';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthProvider';
-import { NavLink } from 'react-router-dom';
-import { useQuery } from '../../Hooks/useQuery';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Input from '../../common/Input';
+import { useState } from 'react';
+import SignupForm from '../SignupForm/SignupForm';
+import Popup from 'reactjs-popup';
 
-const LoginForm = () => {
+const LoginForm = ({ user, isAuthenticated }) => {
   const { login } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const query = useQuery();
-  const redirect = query.get('redirect') || '/';
+
+  const [showSignupPopup, setShowSignupPopup] = useState(false);
+
+  // const handleSignup = () => {
+  //   setShowSignupPopup(true);
+  //   setShowLoginPopup(false);
+  // };
+
+  const closeSignupPopup = () => {
+    setShowSignupPopup(false);
+  };
 
   const onSubmit = async (data) => {
     const { username, email, password } = data;
@@ -66,9 +77,32 @@ const LoginForm = () => {
         )}
         <div className="flex items-center justify-center mb-6">
           <span>Don't you have an account?</span>
-          <NavLink to={`/signup?redirect=${redirect}`} className="text-blue-700 ml-3 ">
-            <u>Signup</u>
-          </NavLink>
+          {isAuthenticated && user ? (
+            ''
+          ) : (
+            <div className="navbarList flex-1 relative h-full">
+              <button
+                onClick={() => setShowSignupPopup(true)}
+                className="text-blue-700 ml-3 "
+              >
+                <u>Signup</u>
+              </button>
+
+              {showSignupPopup && (
+                <div className="popup fixed top-0 left-0 w-full h-full -bg--light-gray z-[60] bg-opacity-5 backdrop-filter backdrop-blur-md flex justify-center items-center">
+                  <Popup
+                    open={showSignupPopup}
+                    onClose={closeSignupPopup}
+                    closeOnDocumentClick
+                    modal
+                    nested
+                  >
+                    <SignupForm closeSignupPopup={() => setShowSignupPopup(false)} />
+                  </Popup>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </form>
       {/* <DevTool control={control} /> */}

@@ -85,9 +85,9 @@ const opinionData = [
 function HomePage() {
   return (
     <div className="homepage   ">
-      <div className="landingImg  laptop:w-full  bg-black mobile:w-[390px] laptop:h-[600px] p-0 relative  flex  justify-center items-end mobile:h-[150px]">
+      <div className="landingImg  laptop:w-full tablet:w-full bg-black mobile:w-[390px] laptop:h-[600px] tablet:h-[500px] p-0 relative  flex  justify-center items-end mobile:h-[150px]">
         <img
-          className="laptop:h-[500px] laptop:w-[80%] laptop:block mobile:hidden  "
+          className="laptop:h-[500px] laptop:w-[80%] laptop:block mobile:hidden tablet:block tablet:w-[80%] tablet:h-[400px] "
           src="/src/assets/img/landing-3.png"
           alt=""
         />
@@ -107,16 +107,16 @@ export default HomePage;
 
 function Description() {
   return (
-    <div className="mobile:hidden laptop:flex w-full mt-20 flex justify-center items-center  relative">
-      <div className="w-[80%]  ">
+    <div className="mobile:hidden tablet:flex laptop:flex w-full mb-12 mt-20 flex justify-center items-center  relative">
+      <div className="laptop:w-[80%] tablet:w-[90%]  ">
         <img
-          className="w-full"
+          className="w-full tablet:h-[300px] laptop:h-full"
           src="/src/assets/img/The future is flexible.png"
           alt="seaside image doesn't show"
         />
       </div>
-      <div className="title w-[500px] flex flex-col absolute text-end top-10 items-start justify-start p-16 right-60 ">
-        <h2 className="font-bold text-[20px] -text--dark-green mb-5 text-right">
+      <div className="title laptop:w-[500px] tablet:w-[380px]  flex flex-col absolute text-end laptop:top-10 tablet:top-2 items-start justify-start p-16 laptop:right-60 tablet:right-9 ">
+        <h2 className="font-bold text-[20px] -text--dark-green tablet:w-[300px] laptop:w-full  mb-5 tablet:text-left laptop:text-start">
           Lets booking your favourite hotel
         </h2>
         <span className=" text-start">
@@ -139,7 +139,7 @@ function BookAdvertisement() {
           alt="seaside image doesn't show"
         />
       </div>
-      <div className="title  flex  flex-col absolute text-end   items-start gap-6 laptop:p-16 mobile:w-[300px] laptop:w-[450px]  mobile:p-10  laptop:left-28 -bg--light-green rounded-[30px] bg-opacity-70">
+      <div className="title  flex  flex-col absolute text-end   items-start gap-6 laptop:p-16 tablet:p-16 mobile:w-[300px] laptop:w-[450px] tablet:w-[450px] mobile:p-10  laptop:left-28 tablet:left-10 -bg--light-green rounded-[30px] bg-opacity-70">
         <h2 className="font-bold text-[20px] -text--dark-green mb-10 text-left">
           Lets booking your favourite hotel
         </h2>

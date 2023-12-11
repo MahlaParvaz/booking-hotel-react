@@ -14,8 +14,8 @@ const SignupForm = () => {
     setError,
   } = useForm();
   //   const navigate = useNavigate();
-  const query = useQuery();
-  const redirect = query.get('redirect') || '/';
+  // const query = useQuery();
+  // const redirect = query.get('redirect') || '/';
 
   const onSubmit = async (values) => {
     const { name, username, email, password, confirmPassword, terms } = values;
@@ -50,9 +50,9 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center mb-8 ">
+    <div className="w-full flex items-center justify-center mb-20  ">
       <form
-        className="form bg-white w-[450px] mt-[100px] py-2 px-4 rounded-2xl shadow-xl flex flex-col items-center justify-center"
+        className="form   bg-white w-[450px] mt-[100px] py-2 px-4 rounded-2xl shadow-xl flex flex-col items-center justify-center"
         onSubmit={handleSubmit(onSubmit)}
         noValidate
       >
@@ -110,9 +110,9 @@ const SignupForm = () => {
         )}
         <div className="flex items-center justify-center mb-6">
           <span>Have you an account?</span>
-          <NavLink to={`/login?redirect=${redirect}`} className="text-blue-700 ml-3 ">
+          <button className="text-blue-700 ml-3 ">
             <u>Login</u>
-          </NavLink>
+          </button>
         </div>
       </form>
     </div>

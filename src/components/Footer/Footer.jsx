@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 function Footer() {
   return (
-    <div className="footer  text-white w-full laptop:h-[300px] mobile:h-full mobile:p-11 laptop:p-0 bg-black  flex laptop:flex-row mobile:flex-col justify-around laptop:items-center mobile:items-start">
+    <div className="footer  text-white w-full laptop:h-[300px] mobile:h-full mobile:p-11 laptop:p-0 bg-black  flex tablet:flex-col laptop:flex-row mobile:flex-col justify-around laptop:items-center mobile:items-start">
       <div className="footerList ">
         <div className="footerItem  mb-10 flex flex-col justify-between items-start gap-6 ">
           <img

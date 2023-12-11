@@ -30,7 +30,7 @@ function Checkout() {
 
   return (
     <div className="  flex  w-full  items-center justify-center ">
-      <div className=" bg-white w-[85%] rounded-3xl flex flex-col items-center justify-start p-8 -mt-36 mr-20">
+      <div className=" bg-white laptop:w-[85%] tablet:w-full rounded-3xl flex flex-col items-center justify-start p-8 -mt-36 mr-20">
         <div className="w-full flex flex-col gap-4 mb-10">
           <h2 className="text-center font-semibold text-[20px] mb-6">Booking review</h2>
           <div className="flex  justify-between border-t-0 border-r-0 border-l-0 border-b-2 border-solid -border--light-gray p-2">

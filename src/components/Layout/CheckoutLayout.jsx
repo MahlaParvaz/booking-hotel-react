@@ -12,7 +12,7 @@ import Loader from '../Loader/Loader';
 function CheckoutLayout() {
   return (
     <div className="  flex  w-full  items-center justify-center ">
-      <div className="flex  flex-row-reverse justify-between items-center w-[85%]  mt-24  gap-2 p-8 mb-10 ">
+      <div className="flex  flex-row-reverse justify-between items-center laptop:w-[85%] tablet:w-full  mt-24  gap-2 laptop:p-8 tablet:px-0 tablet:py-8 mb-10 ">
         <BookingDetail />
         <Outlet />
       </div>
@@ -40,7 +40,7 @@ function BookingDetail() {
   if (isLoadingCurrHotel || !currentHotel) return <Loader />;
 
   return (
-    <div className="w-[60%] -bg--light-gray h-full flex flex-col rounded-3xl  mr-3 ">
+    <div className="laptop:w-[60%] tablet:w-[40%] -bg--light-gray h-full flex flex-col rounded-3xl  mr-3 ">
       <img
         className="w-full h-[300px]   object-cover  rounded-t-3xl rounded-b-0  mb-1"
         src={currentHotel.picture_url.url}
