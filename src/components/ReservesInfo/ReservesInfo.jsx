@@ -25,20 +25,20 @@ function ReservesInfo() {
 
   return (
     <div className="reservation mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 ">
-      <div className="w-[75%] flex justify-between items-center">
+      <div className="laptop:w-[75%]  tablet:w-[90%] mobile:w-[90%] flex justify-between items-center laptop:mt-0 tablet:mt-0 mobile:mt-60">
         <h2 className="laptop:w-[75%] px-4  text-lg font-bold mt-28 ">
           Reserve Information
         </h2>
         <button
           onClick={() => handleDelete(id)}
-          className=" rounded-2xl shadow-lg -bg--red hover:opacity-75 hover:shadow-none text-white py-2 px-4    mt-28"
+          className=" rounded-2xl shadow-lg -bg--red hover:opacity-75 hover:shadow-none text-white py-2 px-4 mt-28"
         >
           Cancel reserve
         </button>
       </div>
       <ReserveDetail currentReserve={currentReserve} />
       <HotelReserveInfo currentHotel={currentHotel} />
-      <div className="reservationInfo shadow-md  border border-solid -border--light-gray w-[75%] p-10 rounded-3xl   ">
+      <div className="reservationInfo shadow-md  border border-solid -border--light-gray laptop:w-[75%]  tablet:w-[90%] mobile:w-[90%] p-10 rounded-3xl   ">
         {currentReserve?.hotelId === currentHotel?.id ? <PolicyDetail /> : ''}
       </div>
     </div>
@@ -54,8 +54,8 @@ function ReserveDetail({ currentReserve }) {
   const totalDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
 
   return (
-    <div className="reservationInfo shadow-md border border-solid -border--light-gray w-[75%] p-10 rounded-3xl  ">
-      <div className="grid grid-cols-3 gap-5">
+    <div className="reservationInfo shadow-md border border-solid -border--light-gray laptop:w-[75%]  tablet:w-[90%] mobile:w-[90%]  p-10 rounded-3xl  ">
+      <div className="grid laptop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-5">
         <div>
           <span className="font-semibold text-[15px]">Move in:</span>
           <span className="ml-3"> {currentReserve.formattedStartDate}</span>
@@ -87,9 +87,9 @@ function ReserveDetail({ currentReserve }) {
 
 function HotelReserveInfo({ currentHotel }) {
   return (
-    <div className="reservationInfo shadow-md  border border-solid -border--light-gray w-[75%] p-10 rounded-3xl  ">
+    <div className="reservationInfo shadow-md  border border-solid -border--light-gray laptop:w-[75%] tablet:w-[90%] mobile:w-[90%] p-10 rounded-3xl  ">
       <h2 className=" font-semibold mb-10 text-[20px]">Hotel Information:</h2>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid laptop:grid-cols-3 tablet:grid-cols-2 mobile:grid-cols-1 gap-6">
         <div>
           <span className="font-semibold text-[15px]">City name:</span>
           <span className="ml-3">{currentHotel.name}</span>

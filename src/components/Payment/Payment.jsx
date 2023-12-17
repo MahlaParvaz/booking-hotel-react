@@ -79,10 +79,10 @@ function Payment() {
 
   return (
     <div className="  flex  w-full  items-center justify-center ">
-      <div className="  w-[85%] rounded-3xl flex flex-col items-center justify-start p-8 mt-2 mb-7 mr-20">
+      <div className="  laptop:w-[85%] mobile:w-[350px] tablet:w-[85%] rounded-3xl flex flex-col items-center justify-start p-8 laptop:-mt-2  mb-7 laptop:mr-20 mobile:m-0">
         <h2 className="text-center font-semibold text-[20px] mb-6">Payment detail</h2>
         <form
-          className="w-full flex flex-col gap-4  items-center"
+          className="laptop:w-full  flex flex-col gap-4  items-center"
           onSubmit={handleSubmit(onSubmit)}
           noValidate
         >

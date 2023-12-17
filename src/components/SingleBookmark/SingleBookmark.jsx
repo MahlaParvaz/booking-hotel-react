@@ -15,7 +15,7 @@ function SingleBookmark() {
   if (isLoadinCurrBookmark || !currentBookmark) return <Loader />;
 
   return (
-    <div className="currentBookmark">
+    <div className="currentBookmark ">
       <button
         onClick={() => navigate(-1)}
         className="btn btn--back border-solid  border-[1px] border-slate-300  py-2 text-white -bg--red shadow-md hover:shadow-none px-4 rounded-2xl"

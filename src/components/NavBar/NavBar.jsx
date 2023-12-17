@@ -14,11 +14,11 @@ function NavBar() {
           <img
             src="/src/assets/img/airbnb.png"
             alt=""
-            className="p-2 mobile:hidden  laptop:block tablet:block "
+            className=" mobile:hidden  laptop:block tablet:block "
           />
         </div>
         <div className="navbarList laptop:w-[50%] mobile:w-[95%] tablet:w-[50%]  h-full">
-          <ul className="flex laptop:gap-16 items-center justify-start p-2 laptop:text-[16px] mobile:text-[15px] mobile:gap-4 ">
+          <ul className="flex laptop:gap-16 items-center justify-start p-2 laptop:text-[16px] mobile:text-[14px]  mobile:gap-4 ">
             <Link to="/bookmark">
               <li className="cursor-pointer hover:border-b-4 hover:-border--red">
                 Bookmarks
@@ -26,12 +26,12 @@ function NavBar() {
             </Link>
             <Link to="/hotels">
               <li className="cursor-pointer hover:border-b-4 hover:-border--red">
-                List of hotels
+                 Hotels
               </li>
             </Link>
             <Link to="/active-reserves">
               <li className="cursor-pointer hover:border-b-4 hover:-border--red">
-                Active reserves
+               Reserves
               </li>
             </Link>
             <Link to="/">

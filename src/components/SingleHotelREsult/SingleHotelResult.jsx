@@ -1,12 +1,10 @@
-import { Link, NavLink, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 
 import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi';
 import { FaShield, FaUsers } from 'react-icons/fa6';
-import { ImHome3 } from 'react-icons/im';
-import { IoCloseCircle } from 'react-icons/io5';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
@@ -14,7 +12,6 @@ import Loader from '../Loader/Loader';
 import { useHotels } from '../context/HotelResultProvider';
 import Map from '../Map/Map';
 import useOutsideClick from '../../Hooks/useOutSideClick';
-import Checkout from '../Checkout/Checkout';
 import CalculateCheckout from '../../common/CalculateCheckout';
 import { useHotelContext } from '../context/CheckoutProvider';
 import PolicyDetail from '../PolicyDetail/PolicyDetail';

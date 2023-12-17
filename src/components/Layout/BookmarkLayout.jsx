@@ -7,11 +7,11 @@ function BookmarkLayout() {
   const { bookmarks } = useBookmark();
   return (
     <div className=" flex z-50 justify-center items-center w-full  mb-5 ">
-      <div className="appLayout  mt-[6rem] w-[90%] flex justify-between items-stretch h-screen mb-130 ">
-        <div className="sidebar w-[40%] flex-1 overflow-hidden overflow-y-scroll pr-[1rem] ">
+      <div className="appLayout  mobile:mt-[90%] laptop:mt-[6rem] tablet:mt-[6rem] mobile:flex-col w-[90%] flex laptop:flex-row tablet:flex-row  justify-between laptop:items-stretch tablet:items-stretch mobile:items-center laptop:h-screen tablet:h-screen mobile:h-[180vh]  ">
+        <div className="sidebar laptop:w-[40%] tablet:w-[40%] mobile:w-[300px] flex-1 overflow-hidden overflow-y-scroll pr-[1rem] ">
           <Outlet />
         </div>
-        <div className="location  h-full mb-36 w-[50%]">
+        <div className="location laptop:h-full tablet:h-full mobile:h-[440px] mb-36 laptop:w-[50%] tablet:w-[50%] mobile:w-full ">
           <Map markerLocations={bookmarks} />
         </div>
       </div>

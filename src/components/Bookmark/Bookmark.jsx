@@ -15,7 +15,7 @@ function Bookmark() {
 
   if (isLoading) return <Loader />;
   if (!bookmarks.length) return <p>there is no bookmarked location</p>;
- 
+
   return (
     <div>
       <h2 className=" my-4 font-medium">BookmarkList</h2>

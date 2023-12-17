@@ -4167,6 +4167,15 @@
       "longitude": "2.626887028698111",
       "host_location": "In Salah Algeria",
       "id": 9
+    },
+    {
+      "cityName": "Abalessa",
+      "country": "Algeria",
+      "countryCode": "DZ",
+      "latitude": "20.97913618029371",
+      "longitude": "4.4665856738901075",
+      "host_location": "Abalessa Algeria",
+      "id": 10
     }
   ],
   "users": [

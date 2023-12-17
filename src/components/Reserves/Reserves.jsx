@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
-import { useAuth } from '../context/AuthProvider';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import useFetch from '../../Hooks/useFetch';
 
