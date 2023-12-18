@@ -1,9 +1,6 @@
-// Input.js
-import React from 'react';
-
 const Input = ({ label, name, type, register, errors, pattern }) => {
   return (
-    <div className="formControll flex flex-col  w-[350px]">
+    <div className="formControll flex flex-col  w-[350px] mb-4">
       <label className="mb-2" htmlFor={name}>
         {label}
       </label>
