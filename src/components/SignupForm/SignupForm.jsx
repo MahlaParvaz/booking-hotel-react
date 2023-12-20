@@ -49,7 +49,7 @@ const SignupForm = () => {
 
       <div className="absolute laptop:right-40 tablet:right-40  mobile:right-1.5 z-50">
         <form
-          className="form   bg-white laptop:bg-opacity-100 tablet:bg-opacity-80 mobile:bg-opacity-80 laptop:w-[450px] tablet:w-[450px] mobile:w-[380px]  laptop:mt-[100px] tablet:mt-[50px] mobile:mt-[50px] py-2 px-4 rounded-2xl shadow-xl flex flex-col items-center justify-center"
+          className="form   bg-white laptop:bg-opacity-100 tablet:bg-opacity-80 mobile:bg-opacity-80 laptop:w-[450px] tablet:w-[450px] mobile:w-[380px]  laptop:mt-[50px] tablet:mt-[50px] mobile:mt-[50px] py-2 px-4 rounded-2xl shadow-xl flex flex-col items-center justify-center"
           onSubmit={handleSubmit(onSubmit)}
           noValidate
         >

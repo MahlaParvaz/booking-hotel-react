@@ -13,11 +13,12 @@ import {
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import useGeoLocation from '../../Hooks/useGeoLocation';
 import useUrlLocation from '../../Hooks/useUrlLocation';
+import { useHotels } from '../context/HotelResultProvider';
 
 function Map({ markerLocations }) {
   const [mapCenter, setMapCenter] = useState([20, 4]);
   const [lat, lng] = useUrlLocation();
-
+  const { currentHotel } = useHotels();
   const {
     isLoading: isLoadingPosition,
     position: geoLocationPosition,
@@ -25,21 +26,21 @@ function Map({ markerLocations }) {
   } = useGeoLocation();
 
   useEffect(() => {
-    console.log('lat', lat, 'lng', lng);
     if (lat && lng) setMapCenter([lat, lng]);
   }, [lat, lng]);
 
   useEffect(() => {
-    if (geoLocationPosition?.lat && geoLocationPosition?.lng)
-      setMapCenter([geoLocationPosition.lat, geoLocationPosition.lng]);
-  }, [geoLocationPosition]);
+    if (currentHotel?.latitude && currentHotel?.longitude) {
+      setMapCenter([currentHotel.latitude, currentHotel.longitude]);
+    }
+  }, [currentHotel]);
 
   return (
     <>
       <MapContainer
         className="map h-full rounded-2xl  "
         center={mapCenter}
-        zoom={6}
+        zoom={7}
         scrollWheelZoom={true}
       >
         <button
@@ -68,7 +69,9 @@ export default Map;
 
 function ChangeCenter({ position }) {
   const map = useMap();
-  map.setView(position);
+  useEffect(() => {
+    map.setView(position);
+  }, [position, map]);
   return null;
 }
 function DitectClick() {

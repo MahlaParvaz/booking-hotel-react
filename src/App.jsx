@@ -7,7 +7,7 @@ import HomePage from './components/HomePage/HomePage';
 import Hotels from './components/Hotels/Hotels';
 import HotelsResult from './components/HotelsResult/HotelsResult';
 import HotelResultProvider from './components/context/HotelResultProvider';
-import SingleHotelResult from './components/SingleHotelREsult/SingleHotelREsult';
+import SingleHotelResult from './components/SingleHotelResult/SingleHotelResult';
 import BookmarkLayout from './components/Layout/BookmarkLayout';
 import BookmarkListProvider from './components/context/BookmarkListProvider';
 import Bookmark from './components/Bookmark/Bookmark';
@@ -38,6 +38,9 @@ function App() {
     if (currentPath === '/login' || currentPath === '/signup') {
       // If it is, navigate without the header
       navigate(currentPath, { state: { hideHeader: true } });
+    } else {
+      // For other paths, navigate with the header
+      navigate(currentPath, { state: { hideHeader: false } });
     }
   }, [navigate]);
 
@@ -55,12 +58,11 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/hotels" element={<Hotels />} />
 
-                    <Route path="/hotels-result" element={<HotelsResult />} />
-
-                    <Route path="/hotels-result/:id">
-                      <Route index element={<SingleHotelResult />} />
+                    <Route path="/hotels-result">
+                      <Route index element={<HotelsResult />} />
+                      <Route path=":id" element={<SingleHotelResult />} />
                       <Route
-                        path="checkout"
+                        path=":id/checkout"
                         element={
                           <ProtectedRouth>
                             <CheckoutLayout />
@@ -82,6 +84,7 @@ function App() {
                       />
                       <Route path="reserves-info" element={<ReservesInfo />} />
                     </Route>
+
                     <Route path="/active-reserves">
                       <Route
                         index

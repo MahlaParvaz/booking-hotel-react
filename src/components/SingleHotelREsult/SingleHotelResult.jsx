@@ -4,7 +4,7 @@ import { DateRange } from 'react-date-range';
 import { format } from 'date-fns';
 
 import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi';
-import { FaShield, FaUsers } from 'react-icons/fa6';
+import {  FaUsers } from 'react-icons/fa6';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
@@ -19,8 +19,7 @@ import PolicyDetail from '../PolicyDetail/PolicyDetail';
 function SingleHotelResult() {
   const { id } = useParams();
   const { getHotel, isLoadingCurrHotel, currentHotel, hotels } = useHotels();
-  // const navigate = useNavigate();
-  // const [lat, lng] = useUrlLocation();
+
 
   useEffect(() => {
     getHotel(id);
@@ -50,7 +49,6 @@ function SingleHotelResult() {
           </p>
           <Map markerLocations={hotels} />
         </div>
-
         <PolicyDetail />
       </div>
     </div>
