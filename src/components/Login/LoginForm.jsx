@@ -1,11 +1,12 @@
-import { DevTool } from '@hookform/devtools';
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthProvider';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import Input from '../../common/Input';
+import { useEffect } from 'react';
 
 const LoginForm = () => {
   const { user, isAuthenticated, login } = useAuth();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -16,6 +17,10 @@ const LoginForm = () => {
     const { username, email, password } = data;
     login(username, email, password);
   };
+
+  useEffect(() => {
+    if (isAuthenticated) navigate('/', { replace: true });
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className="w-full relative flex laptop:h-[115vh] tablet:h-[120vh] mobile:h-[125vh] ">

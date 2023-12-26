@@ -13,10 +13,14 @@ function Footer() {
           <span>Contactn number :0458712 </span>
           <div className="footerSoacial flex justify-between gap-6 text-lg cursor-pointer">
             <span className="linkdin">
-              <FaLinkedinIn />
+              <a href="https://linkedin.com/in/mahla-parvaz-64037822a">
+                <FaLinkedinIn />
+              </a>
             </span>
             <span className="github">
-              <FaGithub />
+              <a href="https://github.com/MahlaParvaz">
+                <FaGithub />
+              </a>
             </span>
           </div>
         </div>
@@ -51,7 +55,7 @@ function Footer() {
             <Link to="/">Home</Link>
           </li>
           <li className="mb-2 cursor-pointer">
-            <Link to="/about-us">About us</Link>
+            <Link>About us</Link>
           </li>
         </ul>
       </div>

@@ -1,10 +1,7 @@
-import { useState } from 'react';
-
 import { IoIosLogIn, IoIosLogOut } from 'react-icons/io';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
-import Popup from 'reactjs-popup';
-import LoginForm from '../Login/LoginForm';
+import { HiOutlineUser } from 'react-icons/hi2';
 
 function NavBar() {
   return (
@@ -65,9 +62,10 @@ function User() {
         <div className="navbarList flex-1 relative  h-full ">
           <NavLink
             onClick={handleLogout}
-            className="logout flex items-center justify-center gap-2 p-2 absolute right-4 laptop:text-[16px] mobile:text-[15px] "
+            className="logout flex items-center justify-center gap-1 p-2 absolute right-4 laptop:text-[16px] mobile:text-[15px] "
           >
-            {user.username}
+            {/* {user.username} */}
+            <HiOutlineUser className="text-[24px] font-extrabold -text--light-gray" />
             <IoIosLogOut className="text-[24px] font-extrabold -text--rose-500" />
           </NavLink>
         </div>

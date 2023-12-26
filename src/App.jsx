@@ -1,5 +1,5 @@
 import { Toaster } from 'react-hot-toast';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header/Header';
@@ -29,20 +29,9 @@ import ReserveProvider from './components/context/ReserveAuth';
 import { useEffect } from 'react';
 
 function App() {
-  const navigate = useNavigate();
+  const location = useLocation();
 
-  useEffect(() => {
-    const currentPath = window.location.pathname;
-
-    // Check if the current path is a login or signup route
-    if (currentPath === '/login' || currentPath === '/signup') {
-      // If it is, navigate without the header
-      navigate(currentPath, { state: { hideHeader: true } });
-    } else {
-      // For other paths, navigate with the header
-      navigate(currentPath, { state: { hideHeader: false } });
-    }
-  }, [navigate]);
+  const currentPath = location.pathname;
 
   return (
     <div className="bg-white  scroll-smooth ">
@@ -53,7 +42,10 @@ function App() {
               <CheckoutProvider>
                 <ReserveProvider>
                   <Toaster />
-                  <Header />
+                  {currentPath === '/login' || currentPath === '/signup' ? null : (
+                    <Header />
+                  )}
+
                   <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/hotels" element={<Hotels />} />
