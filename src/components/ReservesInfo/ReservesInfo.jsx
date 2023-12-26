@@ -25,7 +25,7 @@ function ReservesInfo() {
 
   return (
     <div className="reservation mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 ">
-      <div className="laptop:w-[75%]  tablet:w-[90%] mobile:w-[90%] flex justify-between items-center laptop:mt-0 tablet:mt-0 mobile:mt-60">
+      <div className="laptop:w-[75%]  tablet:w-[90%] mobile:w-[90%] flex justify-between items-center laptop:mt-0 tablet:mt-0 mobile:mt-0 ">
         <h2 className="laptop:w-[75%] px-4  text-lg font-bold mt-28 ">
           Reserve Information
         </h2>

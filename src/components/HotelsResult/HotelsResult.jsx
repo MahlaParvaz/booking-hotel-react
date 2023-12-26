@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+
+import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 import { useHotels } from '../context/HotelResultProvider';
 import Map from '../Map/Map';
@@ -13,11 +13,11 @@ function HotelsResult() {
 
   return (
     <div className="flex z-50 justify-center items-center w-full mb-5">
-      <div className="appLayout laptop:mt-[6rem] tablet:mt-[6rem] mobile:mt-[22rem] w-[90%] flex justify-between items-stretch laptop:h-screen tablet:h-[175vh] mobile:h-[175vh] laptop:flex-row tablet:flex-col mobile:flex-col mb-130">
+      <div className="appLayout laptop:mt-[6rem] tablet:mt-[6rem] mobile:mt-[110px]  w-[90%] flex justify-between items-stretch laptop:h-screen tablet:h-[175vh] mobile:h-[175vh] laptop:flex-row tablet:flex-col mobile:flex-col mb-130">
         <div className="sidebar laptop:w-[40%] tablet:w-full mobile:w-[360px] flex-1 overflow-hidden overflow-y-scroll pr-[1rem] rounded-2xl">
           <Result currentHotel={currentHotel} isLoading={isLoading} hotels={hotels} />
         </div>
-        <div className="laptop:w-[50%] laptop:mt-0 laptop:h-auto tablet:mt-14 tablet:h-96 mobile:h-96 mobile:mt-10">
+        <div className="laptop:w-[50%] laptop:mt-0 laptop:h-auto tablet:mt-14 tablet:h-96 mobile:h-96 mobile:mt-10 z-10">
           <Map markerLocations={hotels} />
         </div>
       </div>
@@ -31,7 +31,7 @@ function Result({ isLoading, currentHotel, hotels }) {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="searchList flex flex-col gap-6">
+    <div className="searchList flex flex-col gap-6 ">
       <h2 className="font-bold">Search Results ({hotels.length})</h2>
       {hotels.map((item) => (
         <Link

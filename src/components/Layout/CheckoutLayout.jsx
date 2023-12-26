@@ -12,7 +12,7 @@ import Loader from '../Loader/Loader';
 function CheckoutLayout() {
   return (
     <div className="  flex  w-full  items-center justify-center ">
-      <div className="flex  laptop:flex-row-reverse tablet:flex-col justify-between items-center laptop:w-[85%] tablet:w-full  laptop:mt-24 tablet:mt-24  gap-2 laptop:p-8 tablet:px-0 tablet:py-8 mb-10 mobile:flex-col mobile:mt-96 ">
+      <div className="flex  laptop:flex-row-reverse tablet:flex-col justify-between items-center laptop:w-[85%] tablet:w-full  laptop:mt-24 tablet:mt-24  gap-2 laptop:p-8 tablet:px-0 tablet:py-8 mb-10 mobile:flex-col mobile:mt-[110px] ">
         <BookingDetail />
         <Outlet />
       </div>

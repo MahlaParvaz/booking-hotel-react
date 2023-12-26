@@ -10,7 +10,7 @@ function Reserves() {
 
   return (
     <div className="reservation mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6    ">
-      <h2 className="laptop:w-[80%] tablet:w-[85%] mobile:w-[80%] px-4  text-lg font-bold laptop:mt-24 tablet:mt-24 mobile:mt-[22rem] ">
+      <h2 className="laptop:w-[80%] tablet:w-[85%] mobile:w-[80%] px-4  text-lg font-bold laptop:mt-24 tablet:mt-24 mobile:mt-[110px]  ">
         Reserves
       </h2>
       <div className="reservationList laptop:w-[80%] tablet:w-[100%] py-4 px-10 ">

@@ -12,10 +12,10 @@ function PopularLocationsDetail({ countryFilter, title }) {
 
   return (
     <div className=" mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6 ">
-      <h2 className="laptop:w-[85%] tablet:w-[85%] px-4  text-lg font-bold mt-28 ">
+      <h2 className="laptop:w-[85%] tablet:w-[85%] mobile:w-[85%] px-4  text-lg font-bold mt-28 ">
         {title}
       </h2>
-      <div className="locationList w-[90%]  py-4 px-10 rounded-lg grid laptop:grid-cols-4 gap-7 tablet:grid-cols-2 mobile:grid-cols-1 mobile:mt-44 tablet:mt-0">
+      <div className="locationList w-[90%]  py-4 px-10 rounded-lg grid laptop:grid-cols-4 gap-7 tablet:grid-cols-2 mobile:grid-cols-1 mobile:mt-0 tablet:mt-0">
         {filteredHotels.map((item) => (
           <CountryDetails
             key={item.id}
