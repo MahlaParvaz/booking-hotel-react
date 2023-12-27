@@ -74,8 +74,17 @@ function App() {
                           </ProtectedRouth>
                         }
                       />
+
                       <Route path="reserves-info" element={<ReservesInfo />} />
                     </Route>
+                    <Route
+                      path="/active-reserves"
+                      element={
+                        <ProtectedRouth>
+                          <Reserves />
+                        </ProtectedRouth>
+                      }
+                    />
                     <Route path="/popular-locations">
                       <Route
                         path="iran"

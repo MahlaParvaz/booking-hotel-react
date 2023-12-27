@@ -13,6 +13,7 @@ function HeaderLocation({ destination, setDestination }) {
         name="destination"
         id="destination"
       />
+      
       <span className="seperator laptop:inline-block mobile:hidden  w-[1px] h-8 bg-slate-300 my-0 mx-1"></span>
     </div>
   );

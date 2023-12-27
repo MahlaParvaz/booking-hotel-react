@@ -1,12 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { useAuth } from '../context/AuthProvider';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import Input from '../../common/Input';
 import { useEffect } from 'react';
+import { useQuery } from '../../Hooks/useQuery';
 
 const LoginForm = () => {
   const { user, isAuthenticated, login } = useAuth();
   const navigate = useNavigate();
+  const query = useQuery();
+  const redirect = query.get('redirect') || '/';
   const {
     register,
     handleSubmit,
@@ -19,7 +22,7 @@ const LoginForm = () => {
   };
 
   useEffect(() => {
-    if (isAuthenticated) navigate('/', { replace: true });
+    if (isAuthenticated) navigate(redirect, { replace: true });
   }, [isAuthenticated, navigate]);
 
   return (

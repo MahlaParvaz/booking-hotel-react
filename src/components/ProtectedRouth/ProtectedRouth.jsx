@@ -7,16 +7,25 @@ function ProtectedRoute({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleRedirect = () => {
-      if (!isAuthenticated && !user) {
-        // Save the current path to local storage
-        localStorage.setItem('redirectPath', window.location.pathname);
+    const storedRedirectPath = localStorage.getItem('redirectPath');
+
+    if (!isAuthenticated && !user) {
+      const storedUser = localStorage.getItem('user');
+      if (!storedUser) {
         navigate('/login');
       }
-    };
-
-    handleRedirect();
+    }
+    if (isAuthenticated && storedRedirectPath) {
+      localStorage.removeItem('redirectPath');
+      navigate(storedRedirectPath, { replace: true });
+    }
   }, [isAuthenticated, user, navigate]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      localStorage.setItem('user', JSON.stringify(user));
+    }
+  }, [isAuthenticated, user]);
 
   return isAuthenticated ? children : null;
 }

@@ -54,11 +54,12 @@ export default function AuthContextProvider({ children }) {
       } catch (error) {
         console.error('Error fetching user data:', error);
         dispatch({ type: 'logout' });
-      }
+      } 
     };
 
     fetchData();
   }, []);
+
   useEffect(() => {
     if (reloadPage) {
       const timer = setTimeout(() => {
@@ -81,7 +82,6 @@ export default function AuthContextProvider({ children }) {
         dispatch({ type: 'login', payload: userData });
         setUser(userData);
         setReloadPage(true);
-
         navigate(redirect, { replace: true });
         toast.success('Your login was successful');
       } else {
@@ -154,7 +154,6 @@ export default function AuthContextProvider({ children }) {
         setUser,
       }}
     >
-      
       {children}
     </AuthContext.Provider>
   );
