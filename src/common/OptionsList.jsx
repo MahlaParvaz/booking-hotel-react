@@ -16,7 +16,7 @@ function OptionsList({ options, setOptions, setOptionsDropDown }) {
   return (
     <div
       ref={optionRef}
-      className="bg-white z-50 flex flex-col gap-4 justify-between absolute top-[50px] ml-4 rounded-lg shadow-lg w-64  px-4 py-3  "
+      className="bg-white z-50 flex flex-col gap-4 justify-between absolute top-[50px] laptop:ml-6 tablet:ml-6 rounded-lg shadow-lg laptop:w-72 tablet:w-72 mobile:w-[310px]  px-4 py-3  "
     >
       <OptionsItem
         type="adult"

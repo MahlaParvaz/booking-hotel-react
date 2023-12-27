@@ -34,7 +34,7 @@ function HeaderPopup({
         </div>
       </div>
       {showPopup && (
-        <div className="popup  fixed  top-0 left-0 w-full h-full -bg--light-gray z-[60] bg-opacity-5 backdrop-filter backdrop-blur-md flex justify-center items-center  ">
+        <div className="popup laptop:hidden tablet:hidden  mobile:flex  fixed  top-0 left-0 w-full h-full -bg--light-gray z-[60] bg-opacity-5 backdrop-filter backdrop-blur-md flex justify-center items-center  ">
           <Popup
             open={showPopup}
             onClose={handleClosePopup}
@@ -42,18 +42,16 @@ function HeaderPopup({
             modal
             nested
           >
-            <div className="rounded-lg overflow-x-hidden scroll-smooth  -bg--light-gray flex flex-col items-center justify-center  p-1.5  h-[400px] ">
+            <div className="rounded-lg overflow-x-hidden scroll-smooth  bg-slate-900 flex flex-col items-center justify-center  p-1.5  h-[400px] ">
               <div className="h-[330px] flex flex-col">
                 <div className="flex-1">
                   <HeaderLocation
                     destination={destination}
                     setDestination={setDestination}
                   />
-                  <hr className=" w-[90%] m-auto  my-4 border-t border-solid border-[1px] border-slate-300 " />
                 </div>
                 <div className="flex-1">
                   <HeaderDatePicker date={date} setDate={setDate} />
-                  <hr className=" w-[90%] m-auto  my-4 border-t border-solid border-[1px] border-slate-300 " />
                 </div>
                 <div className="flex-1">
                   <HeaderRooms options={options} setOptions={setOptions} />

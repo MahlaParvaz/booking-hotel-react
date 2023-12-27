@@ -83,6 +83,8 @@ export default function ReserveProvider({ children }) {
     }
   }
 
+  // ... (other imports)
+
   async function getReserves(id) {
     setIsLoadingCurrReserve(true);
     try {
@@ -90,7 +92,13 @@ export default function ReserveProvider({ children }) {
       setCurrentReserve(data);
       setIsLoadingCurrReserve(false);
     } catch (error) {
-      toast.error(error.message);
+      if (error.response && error.response.status === 404) {
+        // toast.error('Reservation not found');
+        console.log(error);
+      } else {
+        // Handle other errors
+        toast.error('Error fetching reservation data');
+      }
       setIsLoadingCurrReserve(false);
     }
   }

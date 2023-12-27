@@ -21,6 +21,7 @@ function ReservesInfo() {
 
   const handleDelete = async (id) => {
     await deleteReserve(id);
+    
   };
 
   return (

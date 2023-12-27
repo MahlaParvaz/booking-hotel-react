@@ -1,6 +1,6 @@
 const Input = ({ label, name, type, register, errors, pattern }) => {
   return (
-    <div className="formControll flex flex-col  w-[350px] mb-4">
+    <div className="formControll flex flex-col  w-[350px] mb-3">
       <label className="mb-2" htmlFor={name}>
         {label}
       </label>

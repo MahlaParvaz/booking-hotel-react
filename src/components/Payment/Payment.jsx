@@ -2,18 +2,17 @@ import { useForm } from 'react-hook-form';
 import Select from 'react-select';
 import Input from '../../common/Input';
 import toast, { Toaster } from 'react-hot-toast';
-import { useAuth } from '../context/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useHotels } from '../context/HotelResultProvider';
 import { useState } from 'react';
-import http from '../../services/httpService';
 import { useReserveAuth } from '../context/ReserveAuth';
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
     width: '350px',
     borderRadius: '0.75rem',
-    borderColor: state.isFocused ? '#F2F0F2' : provided.borderColor,
+    boxShadow: 'none',
+    border: 'none',
   }),
   menu: (provided) => ({
     ...provided,
@@ -117,18 +116,21 @@ function Payment() {
             register={register}
             errors={errors}
           />
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <p className="mb-2">Payment by</p>
-            <Select
-              options={options}
-              styles={customStyles}
-              {...register('paymentBy', {
-                required: 'Payment is required',
-              })}
-              onChange={(selectedOption) => {
-                setValue('paymentBy', selectedOption);
-              }}
-            />
+            <div className=" mt-1  border-solid border-[1px] border-slate-300 rounded-xl">
+              <Select
+                options={options}
+                styles={customStyles}
+                {...register('paymentBy', {
+                  required: 'Payment is required',
+                })}
+                onChange={(selectedOption) => {
+                  setValue('paymentBy', selectedOption);
+                }}
+              />
+            </div>
+
             {errors.paymentBy && (
               <p className="error text-rose-500 text-[13px] font-semibold py-1 px-2">
                 {errors.paymentBy.message || 'Payment is required'}
