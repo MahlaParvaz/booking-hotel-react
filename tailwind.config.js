@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { fontFamily } from 'tailwindcss/defaultTheme';
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -20,6 +22,9 @@ export default {
         '--light-green': '#E2F1E8',
         '--light-gray': '#F2F0F2',
         '--dark-green': '#064749',
+      },
+      fontFamily: {
+        sans: ['Vazir', ...fontFamily.sans],
       },
     },
     screens: {

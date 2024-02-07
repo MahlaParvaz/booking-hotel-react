@@ -1,32 +1,30 @@
 import { Toaster } from 'react-hot-toast';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
-import './App.css';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
-import Header from './components/Header/Header';
-import HomePage from './components/HomePage/HomePage';
-import Hotels from './components/Hotels/Hotels';
-import HotelsResult from './components/HotelsResult/HotelsResult';
-import HotelResultProvider from './components/context/HotelResultProvider';
-import SingleHotelResult from './components/SingleHotelResult/SingleHotelResult';
-import BookmarkLayout from './components/Layout/BookmarkLayout';
-import BookmarkListProvider from './components/context/BookmarkListProvider';
-import Bookmark from './components/Bookmark/Bookmark';
-import SingleBookmark from './components/SingleBookmark/SingleBookmark';
-import AddNewBookmark from './components/AddNewBookmark/AddNewBookmark';
-import AppLayout from './components/Layout/AppLayout';
-import PopularLocationsDetail from './components/PopularDetails/PopularLocationsDetail';
-import LoginForm from './components/Login/LoginForm';
-import AuthContextProvider from './components/context/AuthProvider';
-import ProtectedRouth from './components/ProtectedRouth/ProtectedRouth';
-import SignupForm from './components/SignupForm/SignupForm';
-import Checkout from './components/Checkout/Checkout';
-import { CheckoutProvider } from './components/context/CheckoutProvider';
-import CheckoutLayout from './components/Layout/CheckoutLayout';
-import Payment from './components/Payment/Payment';
-import Reserves from './components/Reserves/Reserves';
-import ReservesInfo from './components/ReservesInfo/ReservesInfo';
-import ReserveProvider from './components/context/ReserveAuth';
-import { useEffect } from 'react';
+import Header from './ui/Header';
+import Hotels from './pages/Hotels';
+import HotelsResult from './pages/HotelsResult';
+import HotelResultProvider from './features/hotels/HotelResultProvider';
+import SingleHotelResult from './features/hotels/SingleHotelResult';
+import BookmarkLayout from './features/bookmaks/BookmarkLayout';
+import BookmarkListProvider from './features/bookmaks/BookmarkListProvider';
+import Bookmark from './pages/Bookmark';
+import SingleBookmark from './features/bookmaks/SingleBookmark';
+import AddNewBookmark from './features/bookmaks/AddNewBookmark';
+import AppLayout from './Layout/AppLayout';
+import PopularLocationsDetail from './pages/PopularLocationsDetail';
+import LoginForm from './features/authentication/LoginForm';
+import AuthContextProvider from './features/authentication/AuthProvider';
+import ProtectedRoute from './ui/ProtectedRoute';
+import SignupForm from './features/authentication/SignupForm';
+import Checkout from './pages/Checkout';
+import CheckoutLayout from './features/checkout/CheckoutLayout';
+import Payment from './features/checkout/Payment';
+import Reserves from './pages/Reserves';
+import ReservesInfo from './features/reserve/ReservesInfo';
+import ReserveProvider from './features/reserve/ReserveAuth';
+import Home from './pages/Home';
+import { SearchHotelsProvider } from './features/checkout/CheckoutProvider';
 
 function App() {
   const location = useLocation();
@@ -39,15 +37,16 @@ function App() {
         <AuthContextProvider>
           <BookmarkListProvider>
             <HotelResultProvider>
-              <CheckoutProvider>
+              <SearchHotelsProvider>
                 <ReserveProvider>
                   <Toaster />
-                  {currentPath === '/login' || currentPath === '/signup' ? null : (
+                  {currentPath === '/login' ||
+                  currentPath === '/signup' ? null : (
                     <Header />
                   )}
 
                   <Routes>
-                    <Route path="/" element={<HomePage />} />
+                    <Route path="*" element={<Home />} />
                     <Route path="/hotels" element={<Hotels />} />
 
                     <Route path="/hotels-result">
@@ -56,9 +55,9 @@ function App() {
                       <Route
                         path=":id/checkout"
                         element={
-                          <ProtectedRouth>
+                          <ProtectedRoute>
                             <CheckoutLayout />
-                          </ProtectedRouth>
+                          </ProtectedRoute>
                         }
                       >
                         <Route index element={<Checkout />} />
@@ -69,9 +68,9 @@ function App() {
                       <Route
                         index
                         element={
-                          <ProtectedRouth>
+                          <ProtectedRoute>
                             <Reserves />
-                          </ProtectedRouth>
+                          </ProtectedRoute>
                         }
                       />
 
@@ -80,9 +79,9 @@ function App() {
                     <Route
                       path="/active-reserves"
                       element={
-                        <ProtectedRouth>
+                        <ProtectedRoute>
                           <Reserves />
-                        </ProtectedRouth>
+                        </ProtectedRoute>
                       }
                     />
                     <Route path="/popular-locations">
@@ -135,9 +134,9 @@ function App() {
                     <Route
                       path="/bookmark"
                       element={
-                        <ProtectedRouth>
+                        <ProtectedRoute>
                           <BookmarkLayout />
-                        </ProtectedRouth>
+                        </ProtectedRoute>
                       }
                     >
                       <Route index element={<Bookmark />} />
@@ -148,7 +147,7 @@ function App() {
                     <Route path="/login" element={<LoginForm />} />
                   </Routes>
                 </ReserveProvider>
-              </CheckoutProvider>
+              </SearchHotelsProvider>
             </HotelResultProvider>
           </BookmarkListProvider>
         </AuthContextProvider>

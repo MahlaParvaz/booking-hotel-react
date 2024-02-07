@@ -1,14 +1,18 @@
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+@import url('../public/fonts/font.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue,
-    sans-serif;
-}
+/* :root {
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+} */
 body {
   min-height: 100vh;
-
+  font-family: 'Vazir';
 }
 * {
   margin: 0;
@@ -35,6 +39,239 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+@layer components {
+  .app-container {
+    @apply w-full laptop:h-[450px] mb-10 p-0 relative flex flex-col  justify-center items-center gap-6 mobile:mt-[110px] tablet:mt-0 laptop:mt-0;
+  }
+  .bannerText {
+    @apply laptop:w-[500px] tablet:w-[380px]  flex flex-col absolute text-end laptop:top-10 tablet:top-2 items-start justify-start p-16 laptop:right-60 tablet:right-9;
+  }
+  .popular__location {
+    @apply h-[250px] flex flex-col-reverse items-start gap-6 cursor-pointer;
+  }
+  .popular__img {
+    @apply laptop:w-[230px] mobile:w-[300px] tablet:w-[200px] h-[200px] rounded-[40px] shadow-xl hover:shadow-none object-cover;
+  }
+  .carousel-btn {
+    @apply absolute text-white hover:bg-white top-0 bottom-0  flex justify-center items-center p-3 opacity-80 hover:opacity-70 cursor-pointer z-20;
+  }
+  /* card */
+  .card {
+    @apply flex flex-col items-center justify-center w-[270px]  py-2 px-2  cursor-pointer;
+  }
+  .card__img {
+    @apply w-full h-[200px] rounded-t-[60px] shadow-lg;
+  }
+
+  .card__description {
+    @apply px-6 bg-gray-100 text-[15px] h-[150px] w-full shadow-lg hover:shadow-none flex flex-col gap-1 p-4 rounded-b-[60px]  text-slate-600;
+  }
+  .cards {
+    @apply w-[90%]  py-4 px-10 rounded-lg grid laptop:grid-cols-4 tablet:grid-cols-2 mobile:grid-cols-1 mobile:mt-0 tablet:mt-0  gap-7;
+  }
+  .advertisement__desc {
+    @apply flex  flex-col absolute text-end   items-start gap-6 laptop:p-16 tablet:p-16 mobile:w-[300px] laptop:w-[450px] tablet:w-[450px] mobile:p-10  laptop:left-28 tablet:left-10 -bg--light-green rounded-[30px] bg-opacity-70;
+  }
+  .advertisement__btn {
+    @apply -bg--dark-green shadow-lg hover:opacity-80 hover:shadow-none px-4 py-2 w-[150px] h-10 rounded-full text-white text-sm;
+  }
+  .advertisement__title {
+    @apply font-bold text-[20px] -text--dark-green mb-10 text-left;
+  }
+  .accordion {
+    @apply w-full  p-4 mt-10 relative flex flex-col  justify-center items-center gap-6;
+  }
+  .accordion__item {
+    @apply w-[85%] border-solid -border--light-gray  rounded-[10px] overflow-hidden;
+  }
+  .item__header {
+    @apply p-[20px] cursor-pointer flex items-center justify-between font-bold  text-[14px];
+  }
+  .item__chevron {
+    @apply w-[35px] h-[35px] hover:-bg--light-green -text--dark-green px-2 hover:rounded-full  ease-out duration-300;
+  }
+  .item__content {
+    @apply ease-in-out duration-300 max-h-0 opacity-0 overflow-hidden text-[14px]  leading-6 px-4;
+  }
+  .swiper {
+    @apply w-full mb-10 p-4 mt-10 relative flex flex-col justify-center items-center gap-6;
+  }
+  .bookmark__item {
+    @apply mb-4 border-solid border-[1px] border-slate-300 shadow hover:shadow-none rounded-2xl p-4 flex items-center justify-between;
+  }
+  .bookmark__current {
+    @apply border-solid border-[2px] -border--red -bg--light-gray;
+  }
+  .checkout__container {
+    @apply bg-white laptop:w-[85%] tablet:w-full rounded-3xl flex flex-col items-center justify-start p-8 laptop:-mt-36 tablet:-mt-36 laptop:mr-20 tablet:mr-0 mobile:mt-5;
+  }
+  .checkout-layout {
+    @apply flex  laptop:flex-row-reverse tablet:flex-col justify-between items-center laptop:w-[85%] tablet:w-full  laptop:mt-24 tablet:mt-24  gap-2 laptop:p-8 tablet:px-0 tablet:py-8 mb-10 mobile:flex-col mobile:mt-[110px];
+  }
+  .checkout__list {
+    @apply laptop:w-full tablet:w-[90%] flex flex-col gap-4 mb-10 mobile:w-[320px];
+  }
+  .list__item {
+    @apply flex  justify-between border-t-0 border-r-0 border-l-0 border-b-2 border-solid -border--light-gray p-2;
+  }
+
+  .payment__form {
+    @apply rounded-3xl flex flex-col items-center justify-start p-8 laptop:-mt-2  mb-7 laptop:mr-20 mobile:m-0;
+  }
+
+  .hotel-result-layout {
+    @apply laptop:mt-[6rem] tablet:mt-[6rem] mobile:mt-[110px]  w-[90%] flex justify-between items-stretch laptop:h-screen tablet:h-[175vh] mobile:h-[175vh] laptop:flex-row tablet:flex-col mobile:flex-col;
+  }
+  .result__sidebar {
+    @apply laptop:w-[40%] tablet:w-full mobile:w-[360px] flex-1 overflow-hidden overflow-y-scroll pr-[1rem] rounded-2xl;
+  }
+  .result__map {
+    @apply laptop:w-[50%] laptop:mt-0 laptop:h-auto tablet:mt-14 tablet:h-96 mobile:h-96 mobile:mt-10 z-10;
+  }
+  .search-list__item {
+    @apply flex gap-6 laptop:text-[16px] tablet:text-[15px] mobile:text-[14px] -bg--light-gray h-44 rounded-3xl rounded-bl-none;
+  }
+  .item__img {
+    @apply laptop:w-56 tablet:w-56 mobile:w-32 object-cover rounded-3xl rounded-bl-none rounded-tr-none;
+  }
+  .app-title {
+    @apply laptop:w-[80%] tablet:w-[85%] mobile:w-[80%] px-4  text-lg font-bold laptop:mt-24 tablet:mt-24 mobile:mt-[110px];
+  }
+  /* reservation */
+  .reservation {
+    @apply mb-10 w-full  p-0 h-full flex flex-col  justify-center items-center gap-6;
+  }
+  .reservation__card {
+    @apply flex laptop:flex-row tablet:flex-row mobile:flex-col  mobile:items-start mobile:justify-between mobile:gap-y-5 justify-between items-center -bg--light-gray w-full laptop:h-36 tablet:h-36 mobile:h-full rounded-3xl mb-10;
+  }
+  .reservation__img {
+    @apply laptop:w-56 laptop:h-36 tablet:w-40 tablet:h-36  mobile:w-full object-cover rounded-tl-3xl rounded-br-3xl;
+  }
+  .reservation__content {
+    @apply h-full  flex laptop:flex-row tablet:flex-row laptop:items-center tablet:items-center mobile:flex-col mobile:items-start mobile:gap-y-5 mobile:px-4 justify-between items-center  laptop:w-[55%] tablet:w-[75%];
+  }
+  .content__title {
+    @apply font-semibold mb-4 tablet:text-[16px] laptop:text-[17px] mobile:text-[16px];
+  }
+  .content__detail {
+    @apply tablet:text-[14px] mobile:text-[14px]  laptop:text-[16px];
+  }
+  .content__status {
+    @apply laptop:mr-10 tablet:mr-10 w-[9%] h-full flex flex-col justify-center mobile:px-4 mobile:mb-5;
+  }
+  .reservation-info {
+    @apply shadow-md  border border-solid -border--light-gray laptop:w-[75%] tablet:w-[90%] mobile:w-[90%] p-10 rounded-3xl;
+  }
+
+  .reservation__detail {
+    @apply laptop:w-[75%]  tablet:w-[90%] mobile:w-[90%] flex justify-between items-center laptop:mt-0 tablet:mt-0 mobile:mt-0;
+  }
+  .booking-info {
+    @apply laptop:w-[60%] tablet:w-[90%] tablet:mb-5 -bg--light-gray h-full flex flex-col rounded-3xl  laptop:mr-3 tablet:m-0 mobile:m-0 mobile:w-[90%];
+  }
+  .booking-info__date {
+    @apply flex h-20 px-4  gap-2 justify-between mb-5;
+  }
+  .date__icon {
+    @apply text-green-800  w-5 h-5 inline-block mr-1 -mt-0.5;
+  }
+  .date__title {
+    @apply font-semibold text-[16px];
+  }
+  .date__info {
+    @apply flex w-[50%]  flex-col justify-between p-2;
+  }
+  /* bookamrk */
+  .bookmark-input {
+    @apply border-solid border-[1px] border-slate-300 shadow p-2 rounded-2xl w-full;
+  }
+  .bookmark-layout {
+    @apply mobile:mt-[110px]  laptop:mt-[6rem] tablet:mt-[6rem] mobile:flex-col w-[90%] flex laptop:flex-row tablet:flex-row  justify-between laptop:items-stretch tablet:items-stretch mobile:items-center laptop:h-screen tablet:h-screen mobile:h-[180vh];
+  }
+  .bookmark__sidebar {
+    @apply laptop:w-[40%] tablet:w-[40%] mobile:w-[300px] flex-1 overflow-hidden overflow-y-scroll pr-[1rem];
+  }
+  .bookmark__map {
+    @apply laptop:h-full tablet:h-full mobile:h-[440px] mb-36 laptop:w-[50%] tablet:w-[50%] mobile:w-full;
+  }
+
+  .current-bookmark__item {
+    @apply mb-4 border-solid border-[1px] border-slate-300 shadow hover:shadow-none p-4 flex items-center justify-between rounded-2xl;
+  }
+  .header-search {
+    @apply laptop:px-5 laptop:flex tablet:flex mobile:hidden z-50 absolute top-[20px] laptop:h-14 -bg--light-gray laptop:w-full tablet:w-full laptop:m-0  tablet:m-0 flex laptop:flex-row tablet:flex-row laptop:max-w-[1000px]  tablet:h-16 laptop:justify-between tablet:justify-between laptop:items-center tablet:items-center mobile:gap-5 tablet:gap-1 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-2 mobile:w-[95%] mobile:rounded-2xl mobile:py-5;
+  }
+  .search__item {
+    @apply flex  cursor-pointer items-center relative h-14 laptop:flex-1 laptop:w-72 tablet:flex-1 tablet:w-56 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center  mobile:border mobile:border-none  mobile:p-[0.08rem] laptop:bg-none tablet:bg-none   laptop:border-none tablet:border-none;
+  }
+  .search__input {
+    @apply text-slate-400  placeholder:text-slate-500  py-2 px-1 w-80 -bg--light-gray laptop:bg-none tablet:bg-none;
+  }
+  .search__seperator {
+    @apply laptop:inline-block mobile:hidden  w-[1px] h-8 bg-slate-300 my-0 mx-1;
+  }
+  .mobile-header {
+    @apply laptop:hidden tablet:hidden mobile:flex z-30 absolute top-[20px]  -bg--light-gray flex h-14 justify-between items-center  flex-col border-none px-3 py-2 w-[95%] rounded-2xl;
+  }
+  .popup {
+    @apply laptop:hidden tablet:hidden  mobile:flex  fixed  top-0 left-0 w-full h-full -bg--light-gray z-[60] bg-opacity-5 backdrop-filter backdrop-blur-md flex justify-center items-center;
+  }
+  .option-list {
+    @apply bg-white flex flex-col justify-between top-[50px] px-4 py-3;
+  }
+  /* icons */
+  .header__icon {
+    @apply -text--red w-7 h-6 inline-block mr-3;
+  }
+  /* btns */
+  .mobile-search--btn {
+    @apply mt-10 cursor-pointer mr-1 -bg--red text-white flex items-center relative  h-14 w-full rounded-xl justify-center;
+  }
+  .btn--secondary {
+    @apply rounded-xl shadow-lg -bg--red hover:opacity-75 hover:shadow-none text-white py-2 px-4;
+  }
+  .btn--primary {
+    @apply mt-5 -bg--dark-green text-white p-2 text-center rounded-2xl hover:-bg--light-green hover:-text--dark-green;
+  }
+  .btn--back {
+    @apply border-solid  border-[1px] border-slate-300  py-2 text-white -bg--red shadow-md hover:shadow-none px-4 rounded-2xl;
+  }
+  .btn--bookmark {
+    @apply w-24 py-2 px-4 rounded-lg text-white;
+  }
+  .btn--card {
+    @apply absolute -bg--light-green text-green-800  w-48 flex shadow-md  hover:shadow-none justify-center rounded-xl py-1  mt-10;
+  }
+  /* login  signup */
+
+  .login__form,
+  .signup__form {
+    @apply absolute laptop:right-40 tablet:right-40  mobile:right-12 z-50;
+  }
+  .form {
+    @apply bg-white laptop:bg-opacity-100 tablet:bg-opacity-80 mobile:bg-opacity-80 laptop:w-[450px] tablet:w-[450px] mobile:w-[380px]  laptop:mt-[50px] tablet:mt-[50px] mobile:mt-[50px] py-2 px-4 rounded-2xl shadow-xl flex flex-col items-center justify-center;
+  }
+  .login__img,
+  .signup__img {
+    @apply h-full laptop:w-[75%] tablet:w-full mobile:w-full object-cover rounded-tr-3xl rounded-br-3xl;
+  }
+  /* logout */
+  .logout {
+    @apply flex items-center justify-center gap-1 p-2 absolute right-4 laptop:text-[16px] mobile:text-[15px];
+  }
+  /* navbar */
+  .navbar {
+    @apply flex laptop:w-[80%] tablet:w-full tablet:px-4 top-0 h-full justify-between items-center mobile:w-full;
+  }
+  .navbar-list {
+    @apply flex laptop:flex tablet:flex mobile:hidden laptop:gap-16 items-center justify-start p-2 laptop:text-[16px] mobile:text-[14px]  mobile:gap-4;
+  }
+  .navbar-list > li {
+    @apply cursor-pointer hover:border-b-4 hover:-border--red;
+  }
+}
+
 .accordion-item:not(:last-child) {
   border-bottom: 1px solid #e0e2e5;
 }
@@ -44,8 +281,8 @@ a {
   display: none !important;
 }
 
-.swiper_container:hover .swiper-button-prev,
-.swiper_container:hover .swiper-button-next {
+.swiper__container:hover .swiper-button-prev,
+.swiper__container:hover .swiper-button-next {
   display: flex !important;
 }
 
@@ -57,4 +294,3 @@ a {
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: none;
 }
-
