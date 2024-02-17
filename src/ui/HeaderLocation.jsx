@@ -4,7 +4,7 @@ import { useSearchHotelsContext } from '../features/checkout/CheckoutProvider';
 function HeaderLocation() {
   const { destination, setDestination } = useSearchHotelsContext();
   return (
-    <div className="search__item  ">
+    <div className="search__item laptop:w-72  tablet:w-[224px]">
       <MdLocationOn className="header__icon " />
       <input
         value={destination}

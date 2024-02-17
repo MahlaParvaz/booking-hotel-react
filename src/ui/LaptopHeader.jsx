@@ -9,7 +9,7 @@ function LaptopHeader() {
   return (
     <div className="header-search  ">
       <HeaderLocation />
-      <div className="search__item laptop:w-80  tablet:w-48 ">
+      <div className="search__item laptop:w-72  tablet:mr-5 tablet:w-[220px]">
         <DatePicker />
         <span className="search__seperator "></span>
       </div>

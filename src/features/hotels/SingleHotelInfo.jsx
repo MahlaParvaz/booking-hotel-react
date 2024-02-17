@@ -19,7 +19,7 @@ function SingleHotelInfo({ currentHotel }) {
 
   return (
     <div className="flex flex-col w-full  items-center   ">
-      <div className="laptop:flex  laptop:justify-between laptop:items-center  mobile:grid mobile:grid-cols-1 mobile:mt-[10px]  laptop:mt-0 gap-4 tablet:flex  tablet:mt-0  pr-[1rem] mb-20">
+      <div className="laptop:flex  laptop:justify-between laptop:items-center  mobile:grid mobile:grid-cols-1 mobile:mt-[10px]  laptop:mt-0 gap-4 tablet:flex  tablet:mt-0   mb-20 tablet:w-[700px]">
         <div className="laptop:w-[600px] h-full  mobile:w-[380px] tablet:ml-2  ">
           <img
             className="laptop:w-full mobile:w-[350px] laptop:h-[400px] tablet:w-full  tablet:h-[300px]  mobile:h-[270px] tablet:mt-9 laptop:mt-0 object-cover  rounded-xl mb-10"

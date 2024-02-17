@@ -6,9 +6,9 @@ import MobileNavbar from './MobileNavbar';
 
 function NavBar() {
   return (
-    <div className=" text-white w-full   h-16 p-2 flex items-center justify-center  shadow-lg  bg-black">
+    <div className=" text-white w-full h-16 p-2 flex items-center justify-center  shadow-lg  bg-black">
       <div className="navbar   ">
-        <div className=" p-2  flex-1 h-full ">
+        <div className=" laptop:p-2 tablet:p-2 mobile:p-0 flex-1 h-full  ">
           <img
             src="/src/assets/img/airbnb.png"
             alt=""

@@ -200,13 +200,13 @@ a {
     @apply mb-4 border-solid border-[1px] border-slate-300 shadow hover:shadow-none p-4 flex items-center justify-between rounded-2xl;
   }
   .header-search {
-    @apply laptop:px-5 laptop:flex tablet:flex mobile:hidden z-50 absolute top-[20px] laptop:h-14 -bg--light-gray laptop:w-full tablet:w-full laptop:m-0  tablet:m-0 flex laptop:flex-row tablet:flex-row laptop:max-w-[1000px]  tablet:h-16 laptop:justify-between tablet:justify-between laptop:items-center tablet:items-center mobile:gap-5 tablet:gap-1 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-2 mobile:w-[95%] mobile:rounded-2xl mobile:py-5;
+    @apply laptop:px-5 laptop:flex tablet:flex mobile:hidden z-50 absolute top-[20px] laptop:h-14 -bg--light-gray laptop:w-full tablet:w-[760px] laptop:m-0  tablet:ml-1 tablet:m-0 flex laptop:flex-row tablet:flex-row laptop:max-w-[1000px]  tablet:h-16 laptop:justify-between tablet:justify-between laptop:items-center tablet:items-center mobile:gap-5 tablet:gap-1 laptop:gap-1 laptop:border laptop:rounded-2xl laptop:p-1 mobile:flex-col  mobile:border-none mobile:px-3 mobile:mt-2 mobile:w-[95%] mobile:rounded-2xl mobile:py-5;
   }
   .search__item {
-    @apply flex  cursor-pointer items-center relative h-14 laptop:flex-1 laptop:w-72 tablet:flex-1 tablet:w-56 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center  mobile:border mobile:border-none  mobile:p-[0.08rem] laptop:bg-none tablet:bg-none   laptop:border-none tablet:border-none;
+    @apply flex  cursor-pointer items-center relative h-14 laptop:flex-1 laptop:w-72 tablet:flex-1 mobile:w-full -bg--light-gray  mobile:rounded-lg mobile:py-1  mobile:justify-center  mobile:border mobile:border-none  mobile:p-[0.08rem] laptop:bg-none tablet:bg-none   laptop:border-none tablet:border-none;
   }
   .search__input {
-    @apply text-slate-400  placeholder:text-slate-500  py-2 px-1 w-80 -bg--light-gray laptop:bg-none tablet:bg-none;
+    @apply text-slate-400  placeholder:text-slate-500  py-2 px-1 w-72 -bg--light-gray laptop:bg-none tablet:bg-none;
   }
   .search__seperator {
     @apply laptop:inline-block mobile:hidden  w-[1px] h-8 bg-slate-300 my-0 mx-1;

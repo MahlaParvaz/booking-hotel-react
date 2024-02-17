@@ -16,10 +16,7 @@ function MobileHeader() {
   };
 
   return (
-    <div
-      onClick={handlePopup}
-      className="mobile-header "
-    >
+    <div onClick={handlePopup} className="mobile-header ">
       <div className="px-2 flex  items-center relative w-full -bg--light-gray rounded-lg  justify-center">
         <MdLocationOn className="header__icon" />
         <div className="search__input  mobile:w-80 ">Where are you going?</div>

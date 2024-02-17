@@ -18,7 +18,7 @@ function DatePicker() {
       <HiCalendar className=" header__icon h-6 mobile:ml-2" />
 
       <div
-        className="dateDropDown mobile:w-80 text-slate-500 "
+        className="dateDropDown mobile:w-80  text-slate-500  tablet:text-[15px]"
         onClick={() => setOpenDate(!openDate)}
         id="dateDropDown"
         ref={dateRef}

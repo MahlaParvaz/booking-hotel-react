@@ -8,11 +8,11 @@ function HeaderRooms() {
   const [optionsDropDown, setOptionsDropDown] = useState(false);
 
   return (
-    <div className="search__item mobile:py-2">
-      <ImHome3 className="header__icon   h-5  " />
+    <div className="search__item mobile:py-2  tablet:w-[230px] laptop:w-72">
+      <ImHome3 className="header__icon h-5  " />
       <div
         id="optionDropDown "
-        className="  mobile:w-80  text-slate-500  laptop:text-[16px] tablet:text-[14px] "
+        className="  mobile:w-80   text-slate-500  laptop:text-[16px] tablet:text-[15px] "
         onClick={() => setOptionsDropDown(!optionsDropDown)}
       >
         {options.adult} adult &bull; {options.children} children &bull;{' '}
