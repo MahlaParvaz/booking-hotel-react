@@ -6,7 +6,7 @@ function Footer() {
       <div className="footerList ">
         <div className="footerItem  mb-10 flex flex-col justify-between items-start gap-6 ">
           <img
-            src="/public/img/airbnb.png"
+            src="/img/airbnb.png"
             alt="logo doesn't show"
             className="footerLogo  "
           />

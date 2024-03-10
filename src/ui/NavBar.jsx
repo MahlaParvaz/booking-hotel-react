@@ -10,7 +10,7 @@ function NavBar() {
       <div className="navbar   ">
         <div className=" laptop:p-2 tablet:p-2 mobile:p-0 flex-1 h-full  ">
           <img
-            src="/public/img/airbnb.png"
+            src="/img/airbnb.png"
             alt=""
             className=" mobile:hidden  laptop:block tablet:block "
           />

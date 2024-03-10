@@ -1,6 +1,6 @@
 @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
 
-@import url('../public/fonts/font.css');
+@import url('/fonts/font.css');
 
 @tailwind base;
 @tailwind components;

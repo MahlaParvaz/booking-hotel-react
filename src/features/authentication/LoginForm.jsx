@@ -30,7 +30,7 @@ const LoginForm = () => {
       <div className="w-full blur-sm">
         <img
           className="login__img"
-          src="/public/img/city-iran.jpg"
+          src="/img/city-iran.jpg"
           alt="image doesn't show"
         />
       </div>

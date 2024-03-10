@@ -6,7 +6,7 @@ function BookAdvertisement() {
       <div className="laptop:w-[90%] mobile:w-full ">
         <img
           className="w-full h-[450px] laptop:rounded-[80px] mobile:rounded-none object-cover"
-          src="/public/img/the-anam.jpg"
+          src="/img/the-anam.jpg"
           alt="seaside image doesn't show"
         />
       </div>

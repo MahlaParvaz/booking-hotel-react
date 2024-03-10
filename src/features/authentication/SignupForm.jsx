@@ -42,7 +42,7 @@ const SignupForm = () => {
       <div className="w-full blur-sm ">
         <img
           className="signup__img "
-          src="/public/img/city-paris.jpg"
+          src="/img/city-paris.jpg"
           alt="image doesn't show"
         />
       </div>
