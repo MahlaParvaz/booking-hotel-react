@@ -42,17 +42,13 @@ const SignupForm = () => {
       <div className="w-full blur-sm ">
         <img
           className="signup__img "
-          src="/public/assets/img/city-paris.jpg"
+          src="/public/img/city-paris.jpg"
           alt="image doesn't show"
         />
       </div>
 
       <div className="signup__form ">
-        <form
-          className="form "
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
-        >
+        <form className="form " onSubmit={handleSubmit(onSubmit)} noValidate>
           <h2 className="mb-8 mt-4 font-bold text-[22px] text-center ">
             Signup
           </h2>
@@ -102,10 +98,7 @@ const SignupForm = () => {
             register={register}
             errors={errors}
           />
-          <button
-            className="btn btn--secondary w-[350px]  mb-8 "
-            type="submit"
-          >
+          <button className="btn btn--secondary w-[350px]  mb-8 " type="submit">
             Submit
           </button>
           {errors.login && (

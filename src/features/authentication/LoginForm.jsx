@@ -30,7 +30,7 @@ const LoginForm = () => {
       <div className="w-full blur-sm">
         <img
           className="login__img"
-          src={'/public/assets/img/city-iran.jpg'}
+          src="/public/img/city-iran.jpg"
           alt="image doesn't show"
         />
       </div>
@@ -67,10 +67,7 @@ const LoginForm = () => {
             errors={errors}
           />
 
-          <button
-            className="btn btn--secondary  w-[350px] mb-8 mt-5"
-            type="submit"
-          >
+          <button className="btn btn--secondary  w-[350px] mb-8 mt-5" type="submit">
             Submit
           </button>
           {errors.login && (
