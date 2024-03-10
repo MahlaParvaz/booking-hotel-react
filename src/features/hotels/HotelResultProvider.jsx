@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import useFetchData from '../../hooks/useFetchData';
+import useFetchData from '../../Hooks/useFetchData';
 import toast from 'react-hot-toast';
 import http from '../../services/httpService';
 

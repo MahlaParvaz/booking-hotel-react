@@ -1,5 +1,5 @@
 import Loader from '../ui/Loader';
-import useFetchData from '../hooks/useFetchData';
+import useFetchData from '../Hooks/useFetchData';
 import Card from '../ui/Card';
 
 function PopularLocationsDetail({ countryFilter, title }) {

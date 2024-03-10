@@ -1,4 +1,4 @@
-import useFetchData from '../hooks/useFetchData';
+import useFetchData from '../Hooks/useFetchData';
 import Loader from './Loader';
 import Card from './Card';
 
