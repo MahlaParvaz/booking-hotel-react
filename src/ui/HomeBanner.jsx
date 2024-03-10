@@ -4,7 +4,7 @@ function HomeBanner() {
       <div className="laptop:w-[80%] tablet:w-[90%]  ">
         <img
           className="w-full tablet:h-[300px] laptop:h-full"
-          src="/src/assets/img/The future is flexible 1.svg"
+          src="/public/assets/img/The future is flexible 1.svg"
           alt="seaside image doesn't show"
         />
       </div>

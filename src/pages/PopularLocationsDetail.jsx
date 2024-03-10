@@ -1,6 +1,6 @@
 import Loader from '../ui/Loader';
-import useFetchData from '../Hooks/useFetchData';
 import Card from '../ui/Card';
+import useFetchData from '../Hooks/useFetchData';
 
 function PopularLocationsDetail({ countryFilter, title }) {
   const { data, isLoading, error } = useFetchData(

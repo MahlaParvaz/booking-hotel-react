@@ -3,27 +3,27 @@ import HotelsInfo from '../ui/HotelsInfo';
 
 const popularData = [
   {
-    src: '/src/assets/img/city-iran.svg',
+    src: '/public/assets/img/city-iran.svg',
     name: 'Iran',
     pathname: '/iran',
   },
   {
-    src: '/src/assets/img/city-london 1.svg',
+    src: '/public/assets/img/city-london 1.svg',
     name: 'London',
     pathname: '/london',
   },
   {
-    src: '/src/assets/img/city-paris 1.svg',
+    src: '/public/assets/img/city-paris 1.svg',
     name: 'France',
     pathname: '/france',
   },
   {
-    src: '/src/assets/img/city-netherland 1.svg',
+    src: '/public/assets/img/city-netherland 1.svg',
     name: 'Netherland',
     pathname: '/netherland',
   },
   {
-    src: '/src/assets/img/city-america 1.svg',
+    src: '/public/assets/img/city-america 1.svg',
     name: 'America',
     pathname: '/america',
   },

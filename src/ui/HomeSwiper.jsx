@@ -13,7 +13,7 @@ import { arrowBackOutline, arrowForwardOutline } from 'ionicons/icons';
 const opinionData = [
   {
     id: 1,
-    avatar: '/src/assets/img/morty.svg',
+    avatar: '/public/assets/img/morty.svg',
     name: 'Morty',
     description:
       'Everything went very well, there were some minor issues with the hotels maintenance, but when I requested improvement, the hotel staff handled the problem very well. This website was very good for my reservation. So far, I have made two reservations through this site and I am satisfied. Thank you.',
@@ -21,34 +21,34 @@ const opinionData = [
 
   {
     id: 2,
-    avatar: '/src/assets/img/suan.svg',
+    avatar: '/public/assets/img/suan.svg',
     name: 'Susan',
     description:
       'I found the best place to stay. I went with my family to one of the cities in the Netherlands and was very satisfied with the hotel. Finding a hotel with this website is very easy.',
   },
   {
     id: 3,
-    avatar: '/src/assets/img/diana.svg',
+    avatar: '/public/assets/img/diana.svg',
     name: 'Diana',
     description: 'We had the most dreamy accommodation with my spouse.',
   },
   {
     id: 4,
-    avatar: '/src/assets/img/emily.svg',
+    avatar: '/public/assets/img/emily.svg',
     name: 'Emily',
     description:
       ' The stay was very comfortable. With this website, I could easily find the place I was looking for. Thank you.',
   },
   {
     id: 5,
-    avatar: '/src/assets/img/john.svg',
+    avatar: '/public/assets/img/john.svg',
     name: 'John',
     description:
       'So far, I have been satisfied with every hotel I booked through this site.',
   },
   {
     id: 6,
-    avatar: '/src/assets/img/doris.svg',
+    avatar: '/public/assets/img/doris.svg',
     name: 'Doris',
     description:
       'The hotels I booked were very comfortable and clean, located in the desired area. I was very satisfied. Thank you for facilitating the hotel booking process.',
