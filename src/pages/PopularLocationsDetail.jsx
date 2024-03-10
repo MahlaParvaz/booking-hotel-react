@@ -1,9 +1,9 @@
 import Loader from '../ui/Loader';
-import useFetch from '../hooks/useFetch';
+import useFetchData from '../hooks/useFetchData';
 import Card from '../ui/Card';
 
 function PopularLocationsDetail({ countryFilter, title }) {
-  const { data, isLoading, error } = useFetch(
+  const { data, isLoading, error } = useFetchData(
     'http://localhost:5000/hotels',
     ''
   );

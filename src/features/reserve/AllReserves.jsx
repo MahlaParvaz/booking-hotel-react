@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import Loader from '../../ui/Loader';
-import useFetch from '../../hooks/useFetch';
+import useFetchData from '../../hooks/useFetchData';
 
 function AllReserves() {
-  const { data, isLoading, error } = useFetch(
+  const { data, isLoading, error } = useFetchData(
     'http://localhost:5000/reserves',
     ''
   );

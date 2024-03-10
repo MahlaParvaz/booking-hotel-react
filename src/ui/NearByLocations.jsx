@@ -1,4 +1,4 @@
-import useFetch from '../hooks/useFetch';
+import useFetchData from '../hooks/useFetchData';
 import Loader from '../ui/Loader';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -27,7 +27,7 @@ const responsive = {
   },
 };
 function NearByLocations() {
-  const { data, isLoading } = useFetch('http://localhost:5000/hotels', '');
+  const { data, isLoading } = useFetchData('http://localhost:5000/hotels', '');
 
   if (isLoading) return <Loader />;
 

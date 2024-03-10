@@ -1,9 +1,9 @@
-import useFetch from '../hooks/useFetch';
+import useFetchData from '../hooks/useFetchData';
 import Loader from './Loader';
 import Card from './Card';
 
 function HotelsInfo() {
-  const { data, isLoading, error } = useFetch(
+  const { data, isLoading, error } = useFetchData(
     'http://localhost:5000/hotels',
     ''
   );
