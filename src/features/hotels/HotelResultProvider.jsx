@@ -2,8 +2,9 @@ import { createContext, useContext, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
-import useFetch from '../../hooks/useFetch';
 import http from '../../services/httpService';
+import useFetch from '../../hooks/useFetch';
+
 const HotelContext = createContext();
 const BASE_URL = 'http://localhost:5000/hotels';
 
