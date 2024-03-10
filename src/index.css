@@ -193,7 +193,7 @@ a {
     @apply laptop:w-[40%] tablet:w-[40%] mobile:w-[300px] flex-1 overflow-hidden overflow-y-scroll pr-[1rem];
   }
   .bookmark__map {
-    @apply laptop:h-full tablet:h-full mobile:h-[440px] mb-36 laptop:w-[50%] tablet:w-[50%] mobile:w-full;
+    @apply laptop:h-full tablet:h-full mobile:h-[440px] mb-36 laptop:w-[50%] tablet:w-[50%] mobile:w-full z-10;
   }
 
   .current-bookmark__item {
@@ -218,7 +218,7 @@ a {
     @apply laptop:hidden tablet:hidden  mobile:flex  fixed  top-0 left-0 w-full h-full -bg--light-gray z-[60] bg-opacity-5 backdrop-filter backdrop-blur-md flex justify-center items-center;
   }
   .option-list {
-    @apply bg-white flex flex-col justify-between top-[50px] px-4 py-3;
+    @apply bg-white flex flex-col justify-between top-[50px] px-4 py-3 ;
   }
   /* icons */
   .header__icon {

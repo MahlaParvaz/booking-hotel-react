@@ -39,7 +39,7 @@ function SingleHotelInfo({ currentHotel }) {
           <h2 className="text-center mb-8 font-bold text-[18px]">
             Reservation bill
           </h2>
-          <div className="flex items-center relative h-12  laptop:w-80 mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
+          <div className="flex cursor-pointer items-center relative h-12  laptop:w-80 mb-8 mobile:w-full bg-white  mobile:rounded-lg mobile:py-1  mobile:justify-center ">
             <DatePicker />
           </div>
           <div className=" mb-8 ">
