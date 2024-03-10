@@ -1,4 +1,4 @@
-import useFetchData from '../Hooks/useFetchData';
+import useFetchData from '../hooks/useFetchData';
 import Loader from '../ui/Loader';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';

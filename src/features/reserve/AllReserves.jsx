@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Loader from '../../ui/Loader';
-import useFetchData from '../../Hooks/useFetchData';
+import useFetchData from '../../hooks/useFetchData';
 
 function AllReserves() {
   const { data, isLoading, error } = useFetchData(
