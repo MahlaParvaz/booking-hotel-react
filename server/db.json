@@ -4101,7 +4101,60 @@
       "email": "parivash@gmail.com",
       "password": "pari@123",
       "id": 7
+    },
+    {
+      "username": "malmal",
+      "email": "frontM@gmail.com",
+      "password": "malmal@123",
+      "id": 8
     }
   ],
-  "reserves": []
+  "reserves": [
+    {
+      "firstname": "malmal",
+      "lastname": "mal",
+      "phoneNumber": "09181111111",
+      "email": "frontM@gmail.com",
+      "paymentBy": {
+        "value": "debit card",
+        "label": "Debit card"
+      },
+      "date": {
+        "startDate": "2024-04-27T20:30:00.000Z",
+        "endDate": "2024-04-28T20:30:00.000Z",
+        "key": "selection"
+      },
+      "formattedStartDate": "04/28/2024",
+      "formattedEndDate": "04/29/2024",
+      "numberOfGuests": 2,
+      "totalCost": 380,
+      "hotelId": "9192415",
+      "hotelImage": "https://plus.unsplash.com/premium_photo-1670360414903-19e5832f8bc4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "hotelName": "Cozy apartment center Amsterdam",
+      "id": 1
+    },
+    {
+      "firstname": "malmal",
+      "lastname": "mali",
+      "phoneNumber": "09181111111",
+      "email": "frontM@gmail.com",
+      "paymentBy": {
+        "value": "debit card",
+        "label": "Debit card"
+      },
+      "date": {
+        "startDate": "2024-04-28T16:46:33.405Z",
+        "endDate": "2024-04-28T16:46:33.405Z",
+        "key": "selection"
+      },
+      "formattedStartDate": "04/28/2024",
+      "formattedEndDate": "04/28/2024",
+      "numberOfGuests": 2,
+      "totalCost": 320,
+      "hotelId": "743788",
+      "hotelImage": "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "hotelName": "Le Quartier Sonang-Kamar Bidadari",
+      "id": 2
+    }
+  ]
 }
