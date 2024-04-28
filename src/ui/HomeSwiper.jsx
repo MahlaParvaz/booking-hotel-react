@@ -64,7 +64,7 @@ function HomeSwiper() {
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
-          loop={true}
+          loop={opinionData.length > 0}
           slidesPerView={'auto'}
           spaceBetween={10}
           coverflowEffect={{

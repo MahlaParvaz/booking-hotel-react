@@ -7,7 +7,6 @@ function PolicyDetail() {
   const { currentHotel } = useHotels();
 
   if (!currentHotel) {
-    // Render a loading state or return null
     return <Loader />;
   }
 

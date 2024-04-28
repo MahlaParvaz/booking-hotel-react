@@ -4,8 +4,8 @@ import { FaUsers } from 'react-icons/fa6';
 import CalculateCheckout from '../../ui/CalculateCheckout';
 import { useSearchHotelsContext } from '../checkout/CheckoutProvider';
 import RoomsOptionsItem from '../../common/RoomsOptionsItem';
-import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import 'react-date-range/dist/styles.css'; 
+import 'react-date-range/dist/theme/default.css';
 import DatePicker from '../../common/DatePicker';
 
 function SingleHotelInfo({ currentHotel }) {

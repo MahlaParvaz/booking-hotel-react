@@ -1,13 +1,13 @@
 // CheckoutProvider.jsx
 
-import  { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import CalculateCheckout from '../../ui/CalculateCheckout';
-import { useHotels } from '../hotels/HotelResultProvider';
 import {
   createSearchParams,
   useNavigate,
   useSearchParams,
 } from 'react-router-dom';
+import { useHotels } from '../hotels/HotelResultProvider';
 
 const SearchHotelsContext = createContext();
 

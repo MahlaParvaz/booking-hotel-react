@@ -19,8 +19,7 @@ function ReservesInfo() {
     }
   }, [id, currentReserve]);
 
-  if (isLoadingCurrResevere || !currentReserve || !currentHotel)
-    return <Loader />;
+ 
 
   const handleDelete = async (id) => {
     await deleteReserve(id);
@@ -39,11 +38,21 @@ function ReservesInfo() {
           Cancel reserve
         </button>
       </div>
-      <ReserveDetail currentReserve={currentReserve} />
-      <HotelReserveInfo currentHotel={currentHotel} />
-      <div className="reservation-info ">
-        {currentReserve?.hotelId === currentHotel?.id ? <PolicyDetail /> : ''}
-      </div>
+      {isLoadingCurrResevere || !currentReserve || !currentHotel ? (
+        <Loader />
+      ) : (
+        <>
+          <ReserveDetail currentReserve={currentReserve} />
+          <HotelReserveInfo currentHotel={currentHotel} />
+          <div className="reservation-info ">
+            {currentReserve?.hotelId === currentHotel?.id ? (
+              <PolicyDetail />
+            ) : (
+              ''
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

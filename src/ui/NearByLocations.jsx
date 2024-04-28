@@ -28,41 +28,41 @@ const responsive = {
 };
 function NearByLocations() {
   const { data, isLoading } = useFetchData('http://localhost:5000/hotels', '');
-
-  if (isLoading) return <Loader />;
-
   return (
     <div className="app-container   h-full  mobile:mt-20 mobile:mb-20 ">
       <h2 className="laptop:w-[85%] px-4  text-lg font-bold mobile:w-[85%] ">
         Nearby Locations
       </h2>
-
       <div className="laptop:w-[90%] mobile:w-full  py-4 px-10 rounded-lg ">
-        <Carousel
-          responsive={responsive}
-          axis="horizontal"
-          showStatus={false}
-          className="relative py-2"
-          customLeftArrow={<CustomLeftArrow />}
-          customRightArrow={<CustomRightArrow />}
-          rtl="true"
-        >
-          {data.map((item) => {
-            return (
-              <Card
-                key={item.id}
-                item={item}
-                picture={item.picture_url.url}
-                name={item.name}
-                latitude={item.latitude}
-                longitude={item.longitude}
-                id={item.id}
-                price={item.price}
-                location={item.smart_location}
-              />
-            );
-          })}
-        </Carousel>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <Carousel
+            responsive={responsive}
+            axis="horizontal"
+            showStatus={false}
+            className="relative py-2"
+            customLeftArrow={<CustomLeftArrow />}
+            customRightArrow={<CustomRightArrow />}
+            rtl="true"
+          >
+            {data.map((item) => {
+              return (
+                <Card
+                  key={item.id}
+                  item={item}
+                  picture={item.picture_url.url}
+                  name={item.name}
+                  latitude={item.latitude}
+                  longitude={item.longitude}
+                  id={item.id}
+                  price={item.price}
+                  location={item.smart_location}
+                />
+              );
+            })}
+          </Carousel>
+        )}
       </div>
     </div>
   );

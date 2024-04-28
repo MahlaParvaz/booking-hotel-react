@@ -89,7 +89,6 @@ export default function ReserveProvider({ children }) {
     }
   }
 
-  // ... (other imports)
 
   async function getReserves(id) {
     setIsLoadingCurrReserve(true);
@@ -102,7 +101,6 @@ export default function ReserveProvider({ children }) {
         // toast.error('Reservation not found');
         console.log(error);
       } else {
-        // Handle other errors
         toast.error('Error fetching reservation data');
       }
       setIsLoadingCurrReserve(false);

@@ -4,7 +4,6 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Header from './ui/Header';
 import Hotels from './pages/Hotels';
 import HotelsResult from './pages/HotelsResult';
-import HotelResultProvider from './features/hotels/HotelResultProvider';
 import SingleHotelResult from './features/hotels/SingleHotelResult';
 import BookmarkLayout from './features/bookmaks/BookmarkLayout';
 import BookmarkListProvider from './features/bookmaks/BookmarkListProvider';
@@ -25,6 +24,7 @@ import ReservesInfo from './features/reserve/ReservesInfo';
 import ReserveProvider from './features/reserve/ReserveAuth';
 import Home from './pages/Home';
 import { SearchHotelsProvider } from './features/checkout/CheckoutProvider';
+import { HotelResultProvider } from './features/hotels/HotelResultProvider';
 
 function App() {
   const location = useLocation();

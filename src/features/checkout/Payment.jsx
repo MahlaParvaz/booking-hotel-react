@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useHotels } from '../hotels/HotelResultProvider';
 import { useState } from 'react';
 import { useReserveAuth } from '../reserve/ReserveAuth';
+import Loader from '../../ui/Loader';
 const customStyles = {
   control: (provided, state) => ({
     ...provided,
@@ -91,67 +92,71 @@ function Payment() {
         <h2 className="text-center font-semibold text-[20px] mb-6">
           Payment detail
         </h2>
-        <form
-          className="laptop:w-full  flex flex-col gap-4  items-center"
-          onSubmit={handleSubmit(onSubmit)}
-          noValidate
-        >
-          <Input
-            label="First Name"
-            name="firstname"
-            type="text"
-            register={register}
-            errors={errors}
-          />
-          <Input
-            label="Last Name"
-            name="lastname"
-            type="text"
-            register={register}
-            errors={errors}
-          />
-          <Input
-            label="Phone Number"
-            name="phoneNumber"
-            type="tel"
-            register={register}
-            errors={errors}
-          />
-          <Input
-            label="Email"
-            name="email"
-            type="email"
-            pattern={
-              /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-            }
-            register={register}
-            errors={errors}
-          />
-          <div className="flex flex-col ">
-            <p className="mb-2">Payment by</p>
-            <div className=" mt-1  border-solid border-[1px] border-slate-300 rounded-xl">
-              <Select
-                options={options}
-                styles={customStyles}
-                {...register('paymentBy', {
-                  required: 'Payment is required',
-                })}
-                onChange={(selectedOption) => {
-                  setValue('paymentBy', selectedOption);
-                }}
-              />
+        {isReserving ? (
+          <Loader />
+        ) : (
+          <form
+            className="laptop:w-full  flex flex-col gap-4  items-center"
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+          >
+            <Input
+              label="First Name"
+              name="firstname"
+              type="text"
+              register={register}
+              errors={errors}
+            />
+            <Input
+              label="Last Name"
+              name="lastname"
+              type="text"
+              register={register}
+              errors={errors}
+            />
+            <Input
+              label="Phone Number"
+              name="phoneNumber"
+              type="tel"
+              register={register}
+              errors={errors}
+            />
+            <Input
+              label="Email"
+              name="email"
+              type="email"
+              pattern={
+                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+              }
+              register={register}
+              errors={errors}
+            />
+            <div className="flex flex-col ">
+              <p className="mb-2">Payment by</p>
+              <div className=" mt-1  border-solid border-[1px] border-slate-300 rounded-xl">
+                <Select
+                  options={options}
+                  styles={customStyles}
+                  {...register('paymentBy', {
+                    required: 'Payment is required',
+                  })}
+                  onChange={(selectedOption) => {
+                    setValue('paymentBy', selectedOption);
+                  }}
+                />
+              </div>
+
+              {errors.paymentBy && (
+                <p className="error text-rose-500 text-[13px] font-semibold py-1 px-2">
+                  {errors.paymentBy.message || 'Payment is required'}
+                </p>
+              )}
             </div>
 
-            {errors.paymentBy && (
-              <p className="error text-rose-500 text-[13px] font-semibold py-1 px-2">
-                {errors.paymentBy.message || 'Payment is required'}
-              </p>
-            )}
-          </div>
-
-          <button className="btn btn--primary w-[350px] ">Pay now</button>
-          <Toaster />
-        </form>
+            <button className="btn btn--primary w-[350px] ">Pay now</button>
+            <Toaster />
+          </form>
+        )}
       </div>
     </div>
   );

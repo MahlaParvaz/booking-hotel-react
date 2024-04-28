@@ -57,55 +57,58 @@ function AddNewBookmark() {
     await createBookmark(newBookmark);
     navigate('/bookmark');
   };
-  if (isLoadingGeoCoding) return <Loader />;
   if (geoCodingError) return <storng>{geoCodingError}</storng>;
 
   return (
     <div>
       <h2 className="font-medium">Bookmark New Location</h2>
-      <form className=" mt-8" onSubmit={handleSubmit}>
-        <div className="formControl mb-4 relative">
-          <label htmlFor="cityName " className="formLable block mb-2 ">
-            CityName
-          </label>
-          <input
-            value={cityName}
-            onChange={(e) => setCityName(e.target.value)}
-            type="text"
-            name="cityName"
-            id="cityName"
-            className="bookmark-input "
-          />
-        </div>
-        <div className=" mb-4 relative">
-          <label htmlFor="country">Country</label>
-          <input
-            value={country}
-            onChange={(e) => setCountry(e.target.value)}
-            type="text"
-            name="country"
-            id="country"
-            className="bookmark-input "
-          />
-          <ReactCountryFlag
-            className="flag absolute right-4 top-[50%]"
-            svg
-            countryCode={countryCode}
-          />
-        </div>
-        <div className="buttons mt-8 flex items-center justify-between">
-          <button
-            className="btn btn--bookmark  bg-slate-900 "
-            onClick={(e) => {
-              e.preventDefault();
-              navigate(-1);
-            }}
-          >
-            &larr; Back
-          </button>
-          <button className="btn btn--bookmark  -bg--violet-700 ">Add</button>
-        </div>
-      </form>
+      {isLoadingGeoCoding ? (
+        <Loader />
+      ) : (
+        <form className=" mt-8" onSubmit={handleSubmit}>
+          <div className="formControl mb-4 relative">
+            <label htmlFor="cityName " className="formLable block mb-2 ">
+              CityName
+            </label>
+            <input
+              value={cityName}
+              onChange={(e) => setCityName(e.target.value)}
+              type="text"
+              name="cityName"
+              id="cityName"
+              className="bookmark-input "
+            />
+          </div>
+          <div className=" mb-4 relative">
+            <label htmlFor="country">Country</label>
+            <input
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+              type="text"
+              name="country"
+              id="country"
+              className="bookmark-input "
+            />
+            <ReactCountryFlag
+              className="flag absolute right-4 top-[50%]"
+              svg
+              countryCode={countryCode}
+            />
+          </div>
+          <div className="buttons mt-8 flex items-center justify-between">
+            <button
+              className="btn btn--bookmark  bg-slate-900 "
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(-1);
+              }}
+            >
+              &larr; Back
+            </button>
+            <button className="btn btn--bookmark  -bg--violet-700 ">Add</button>
+          </div>
+        </form>
+      )}
     </div>
   );
 }

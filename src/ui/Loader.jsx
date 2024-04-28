@@ -1,20 +1,21 @@
-import { LoaderIcon } from 'react-hot-toast';
 
-function Loader() {
+import { ThreeDots } from 'react-loader-spinner';
+
+function Loader({ width = '75', height = '40' }) {
   return (
-    <div
-      style={{
-        color: 'var(--primary-600)',
+    <ThreeDots
+      height={height}
+      width={width}
+      radius={9}
+      color="rgb(var(--color-primary-900))"
+      wrapperStyle={{
         display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center',
-        gap: '1rem',
-        margin: '1rem auto',
+        margin: 'auto',
       }}
-    >
-      <p> Loading Data...</p>
-      <LoaderIcon style={{ width: '1.3rem', height: '1.3rem' }} />
-    </div>
+      visible={true}
+    />
   );
 }
-
 export default Loader;

@@ -7,7 +7,7 @@ import useFetchData from '../../Hooks/useFetchData';
 const HotelContext = createContext();
 const BASE_URL = 'http://localhost:5000/hotels';
 
-function HotelResultProvider({ children }) {
+export function HotelResultProvider({ children }) {
   const [currentHotel, setCurrentHotel] = useState(null);
   const [isLoadingCurrHotel, setIsLoadinCurrHotel] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -45,8 +45,6 @@ function HotelResultProvider({ children }) {
     </HotelContext.Provider>
   );
 }
-
-export default HotelResultProvider;
 
 export function useHotels() {
   return useContext(HotelContext);
